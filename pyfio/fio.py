@@ -1,6 +1,5 @@
 from pyfio.fio_adapter import FIOAdapter
-from pyfio.endpoints import material
-from pyfio.endpoints import exchange
+from pyfio.endpoints import building, exchange, localmarket, material, planet, recipe
 
 
 class FIO:
@@ -13,5 +12,9 @@ class FIO:
     ) -> None:
         self._adapter = FIOAdapter(api_key, version, base_url, ssl_verify)
 
-        self.Material = material.Material(self._adapter)
+        self.Building = building.Building(self._adapter)
         self.Exchange = exchange.Exchange(self._adapter)
+        self.LocalMarket = localmarket.LocalMarket(self._adapter)
+        self.Material = material.Material(self._adapter)
+        self.Planet = planet.Planet(self._adapter)
+        self.Recipe = recipe.Recipe(self._adapter)
