@@ -5,12 +5,12 @@ Python API wrapper for Prosperous Universes community API FIO.
 # Usage
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
 ```python
-from pyfio.fio import FIO
+from pyfio import FIO
 
 fio = FIO()
 
 material = fio.Material.get("DW")
-print(Material)
+print(material)
 ```
 
 This will print the material information of Drinking Water:

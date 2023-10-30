@@ -1,6 +1,5 @@
 import pytest
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.fio import FIO
+from pyfio import FIOAdapter, FIO
 
 
 @pytest.fixture()

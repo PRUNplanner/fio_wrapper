@@ -1,4 +1,4 @@
-from pyfio.fio import FIO
+from pyfio import FIO
 
 fio = FIO()
 

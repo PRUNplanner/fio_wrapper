@@ -1,5 +1,5 @@
 import pytest
-from pyfio.urls import URLs
+from pyfio import URLs
 
 
 @pytest.fixture

@@ -1,7 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio.fio import FIO
-from pyfio.models import MaterialModel, MaterialModelList
+from pyfio import FIO, MaterialModel, MaterialModelList
 
 
 @pytest.fixture()
