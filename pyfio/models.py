@@ -8,8 +8,8 @@ class MaterialModel(BaseModel):
     CategoryId: str = Field(min_length=32)
     Name: str
     Ticker: str
-    Weight: int | float
-    Volume: int | float
+    Weight: float
+    Volume: float
     UserNameSubmitted: str
     Timestamp: NaiveDatetime
 
