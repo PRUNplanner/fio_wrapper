@@ -37,8 +37,7 @@ class Material:
 
         self._validate_ticker(material_ticker=material_ticker)
 
-        (status, data) = self._adapter._do(
-            http_method="get",
+        (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.material_get_url(
                 material_ticker=material_ticker
             ),
@@ -56,8 +55,7 @@ class Material:
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
         """
-        (_, data) = self._adapter._do(
-            http_method="get",
+        (_, data) = self._adapter.get(
             endpoint=self._adapter.urls.material_allmaterials_url(),
         )
         return MaterialTickerList.model_validate(data)
@@ -74,8 +72,7 @@ class Material:
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
         """
-        (status, data) = self._adapter._do(
-            http_method="get",
+        (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.material_get_category(
                 category_name=category_name
             ),

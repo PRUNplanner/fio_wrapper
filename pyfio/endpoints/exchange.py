@@ -70,8 +70,7 @@ class Exchange:
         """
         self._validate_exchangeticker(exchange_ticker=exchange_ticker)
 
-        (status, data) = self._adapter._do(
-            http_method="get",
+        (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.exchange_get_url(
                 exchange_ticker=exchange_ticker
             ),
@@ -106,8 +105,7 @@ class Exchange:
         # 1 to 4 character company code
         validate_company_code(company_code=company_code)
 
-        (_, data) = self._adapter._do(
-            http_method="get",
+        (_, data) = self._adapter.get(
             endpoint=self._adapter.urls.exchange_get_orders_companycode(
                 company_code=company_code
             ),
