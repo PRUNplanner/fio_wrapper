@@ -52,5 +52,8 @@ def validate_exchange_code(exchange_code: str) -> None:
 
 
 def validate_company_code(company_code: str) -> None:
-    if 1 < len(company_code) < 4 or company_code == "":
+    if company_code == "" or company_code is None:
+        raise CompanyCodeInvalid("Invalid company code. Can't be empty or None type")
+
+    if len(company_code) > 4:
         raise CompanyCodeInvalid("Invalid company code. Must be 1 to 4 characters")

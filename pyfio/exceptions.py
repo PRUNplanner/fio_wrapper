@@ -1,3 +1,10 @@
+# Not Implemented
+
+
+class EndpointNotImplemented(Exception):
+    pass
+
+
 # Material
 
 

@@ -1,10 +1,11 @@
+from pyfio.endpoints.abstracts.abstract_material import AbstractMaterial
 from pyfio.fio_adapter import FIOAdapter
 from pyfio.validators import validate_ticker
 from pyfio.models.material_models import MaterialTicker, MaterialTickerList
 from pyfio.exceptions import MaterialTickerNotFound, MaterialCategoryNotFound
 
 
-class Material:
+class Material(AbstractMaterial):
     def __init__(self, adapter: FIOAdapter) -> None:
         self._adapter: FIOAdapter = adapter
 

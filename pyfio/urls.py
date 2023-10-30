@@ -9,6 +9,8 @@ class URLs:
         # exchange
         self.exchange_base = "/exchange"
         self.exchange_orders = "/orders"
+        self.exchange_all = "/all"
+        self.exchange_full = "/full"
 
     # Material
     def material_url(self) -> str:
@@ -29,6 +31,12 @@ class URLs:
 
     def exchange_get_url(self, exchange_ticker: str) -> str:
         return self.exchange_url() + "/" + exchange_ticker
+
+    def exchange_get_all_url(self) -> str:
+        return self.exchange_url() + self.exchange_all
+
+    def exchange_get_full_url(self) -> str:
+        return self.exchange_url() + self.exchange_full
 
     def exchange_get_orders_companycode(self, company_code: str) -> str:
         return self.exchange_url() + self.exchange_orders + "/" + company_code

@@ -1,19 +1,24 @@
+from pyfio.endpoints.abstracts.abstract_exchange import AbstractExchange
 from pyfio.fio_adapter import FIOAdapter
 from pyfio.validators import (
     validate_ticker,
     validate_exchange_code,
     validate_company_code,
 )
-from pyfio.models.exchange_models import ExchangeTicker, OrderList
+from pyfio.models.exchange_models import (
+    ExchangeTickerFull,
+    OrderList,
+    ExchangeTickerList,
+    ExchangeTickerFullList,
+)
 from pyfio.exceptions import (
     ExchangeTickerInvalid,
     MaterialTickerInvalid,
     ExchangeTickerNotFound,
-    CompanyCodeInvalid,
 )
 
 
-class Exchange:
+class Exchange(AbstractExchange):
     def __init__(self, adapter: FIOAdapter) -> None:
         self._adapter: FIOAdapter = adapter
 
@@ -56,7 +61,7 @@ class Exchange:
         validate_exchange_code(exchange_code=splitted[1])
 
     # /exchange/{ExchangeTicker}
-    def get(self, exchange_ticker: str) -> ExchangeTicker:
+    def get(self, exchange_ticker: str) -> ExchangeTickerFull:
         """Gets a single exchange ticker from FIO
 
         Args:
@@ -78,19 +83,35 @@ class Exchange:
         )
 
         if status == 200:
-            return ExchangeTicker.model_validate(data)
+            return ExchangeTickerFull.model_validate(data)
         elif status == 204:
             raise ExchangeTickerNotFound("Exchangeticker not found")
 
     # /exchange/all
+    def get_all(self) -> ExchangeTickerList:
+        """Gets all simple exchange ticker from FIO
+
+        Returns:
+            ExchangeTickerList: Exchange ticker
+        """
+        (_, data) = self._adapter.get(
+            endpoint=self._adapter.urls.exchange_get_all_url()
+        )
+
+        return ExchangeTickerList.model_validate(data)
 
     # /exchange/full
+    def get_full(self) -> ExchangeTickerFullList:
+        """Gets a complete list of all exchange information from FIO
 
-    # /exchange/station
+        Returns:
+            ExchangeTickerFullList: Exchange ticker full
+        """
+        (_, data) = self._adapter.get(
+            endpoint=self._adapter.urls.exchange_get_full_url()
+        )
 
-    # /exchange/cxpc/{ExchangeTicker}
-
-    # /exchange/cxpc/{ExchangeTicker}/{TimeStamp}
+        return ExchangeTickerFullList.model_validate(data)
 
     # /exchange/orders/{CompanyCode}
     def get_orders(self, company_code: str) -> OrderList:
@@ -114,7 +135,7 @@ class Exchange:
         return OrderList.model_validate(data)
 
     # /exchange/orders/{CompanyCode}/{ExchangeCode}
-    def get_order_exchange(self, company_code: str, exchange_code: str) -> OrderList:
+    def get_orders_exchange(self, company_code: str, exchange_code: str) -> OrderList:
         """Gets a companies order data for a specific exchange from FIO
 
         Args:

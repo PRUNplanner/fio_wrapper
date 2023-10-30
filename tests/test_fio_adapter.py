@@ -1,10 +1,15 @@
 import pytest
-from pyfio import FIOAdapter, FIO
+from pyfio import FIOAdapter, FIO, EndpointNotImplemented
 
 
 @pytest.fixture()
 def ftx_fio() -> FIO:
     return FIO()
+
+
+def test_fio_adapter_version_notimplemented() -> None:
+    with pytest.raises(EndpointNotImplemented):
+        FIO(version="0.0.0")
 
 
 def test_fio_adapter_blankinit() -> None:
