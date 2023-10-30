@@ -1,6 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio import FIO, MaterialModel, MaterialModelList
+from pyfio import FIO, MaterialTicker, MaterialTickerList
 
 
 @pytest.fixture()
@@ -38,7 +38,7 @@ def material_2() -> Dict:
     }
 
 
-def test_validate_ticker(ftx_fio) -> None:
+def test_validate_ticker(ftx_fio: FIO) -> None:
     from pyfio.exceptions import MaterialTickerInvalid
 
     with pytest.raises(MaterialTickerInvalid):
@@ -55,10 +55,10 @@ def test_validate_ticker(ftx_fio) -> None:
 
 
 def test_MaterialModelList_iter(material_1, material_2):
-    data = MaterialModelList.model_validate([material_1, material_2])
+    data = MaterialTickerList.model_validate([material_1, material_2])
 
     for material in data:
-        assert type(material) == MaterialModel
+        assert type(material) == MaterialTicker
 
 
 def test_material_fail(requests_mock, ftx_fio: FIO) -> None:
@@ -80,7 +80,7 @@ def test_material_single(requests_mock, material_1, ftx_fio: FIO) -> None:
     data = ftx_fio.Material.get("DW")
     print(data)
 
-    assert type(data) == MaterialModel
+    assert type(data) == MaterialTicker
     assert data.Ticker == "DW"
 
 
@@ -93,7 +93,7 @@ def test_material_all(requests_mock, material_1, material_2, ftx_fio: FIO) -> No
 
     data = ftx_fio.Material.all()
 
-    assert type(data) == MaterialModelList
+    assert type(data) == MaterialTickerList
 
 
 def test_material_category(requests_mock, material_1, material_2, ftx_fio: FIO) -> None:
@@ -105,7 +105,7 @@ def test_material_category(requests_mock, material_1, material_2, ftx_fio: FIO) 
     )
     data = ftx_fio.Material.category(category_name=category)
 
-    assert type(data) == MaterialModelList
+    assert type(data) == MaterialTickerList
 
 
 def test_material_category_notfound(requests_mock, ftx_fio: FIO) -> None:

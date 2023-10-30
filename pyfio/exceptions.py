@@ -1,3 +1,6 @@
+# Material
+
+
 class MaterialTickerInvalid(Exception):
     pass
 
@@ -7,4 +10,19 @@ class MaterialTickerNotFound(Exception):
 
 
 class MaterialCategoryNotFound(Exception):
+    pass
+
+
+# Exchange
+
+
+class ExchangeTickerInvalid(Exception):
+    pass
+
+
+class ExchangeTickerNotFound(Exception):
+    pass
+
+
+class CompanyCodeInvalid(Exception):
     pass

@@ -1,0 +1,56 @@
+from pyfio.exceptions import (
+    MaterialTickerInvalid,
+    ExchangeTickerInvalid,
+    CompanyCodeInvalid,
+)
+
+
+def validate_ticker(material_ticker: str) -> None:
+    """Validates a material ticker
+
+    Args:
+        material_ticker (str): Material ticker
+
+    Raises:
+        MaterialTickerInvalid: Material ticker can't be None type
+        MaterialTickerInvalid: Material ticker can't be longer than 3 characters
+        MaterialTickerInvalid: Material ticker can't be shorter than 1 character
+        MaterialTickerInvalid: Material ticker can't contain spaces
+    """
+    if material_ticker is None:
+        raise MaterialTickerInvalid("Material ticker can't be None type")
+    if len(material_ticker) > 3:
+        raise MaterialTickerInvalid("Material ticker can't be longer than 3 characters")
+
+    if len(material_ticker) < 1:
+        raise MaterialTickerInvalid(
+            "Material ticker can't be shorter than 1 characters"
+        )
+
+    if " " in material_ticker:
+        raise MaterialTickerInvalid("Material ticker can't contain spaces")
+
+
+def validate_exchange_code(exchange_code: str) -> None:
+    if exchange_code is None:
+        raise ExchangeTickerInvalid("Exchange code can't be None type")
+
+    if len(exchange_code) != 3:
+        raise ExchangeTickerInvalid("Exchange code too short. Must have 3 characters")
+
+    # first 2 characters must be str
+    if (
+        type(exchange_code[0]) != str
+        or type(exchange_code[1]) != str
+        or not exchange_code[2].isnumeric()
+    ):
+        raise ExchangeTickerInvalid(
+            "Exchange code must begin with exchange ticker (e.g., AI)"
+        )
+
+    # last character must be int
+
+
+def validate_company_code(company_code: str) -> None:
+    if 1 < len(company_code) < 4 or company_code == "":
+        raise CompanyCodeInvalid("Invalid company code. Must be 1 to 4 characters")

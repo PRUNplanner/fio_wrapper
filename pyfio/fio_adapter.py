@@ -55,3 +55,29 @@ class FIOAdapter:
             raise requests.exceptions.TooManyRedirects from errr
         except requests.exceptions.RequestException as e:
             raise SystemExit(e)
+
+    def get(
+        self,
+        endpoint: str,
+        params: Dict = None,
+        data: Dict = None,
+        err_codes=[],
+    ) -> Tuple[int, any]:
+        """Performs a GET request towards endpoint
+
+        Args:
+            endpoint (str): URL
+            params (Dict, optional): Get parameters. Defaults to None.
+            data (Dict, optional): Get data. Defaults to None.
+            err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+
+        Returns:
+            Tuple[int, any]: Request status code and request data
+        """
+        return self._do(
+            http_method="GET",
+            endpoint=endpoint,
+            params=params,
+            data=data,
+            err_codes=err_codes,
+        )

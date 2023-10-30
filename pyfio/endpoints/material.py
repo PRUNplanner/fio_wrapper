@@ -1,16 +1,12 @@
 from pyfio.fio_adapter import FIOAdapter
-
-from pyfio.models import MaterialModel, MaterialModelList
-from pyfio.exceptions import (
-    MaterialTickerNotFound,
-    MaterialCategoryNotFound,
-    MaterialTickerInvalid,
-)
+from pyfio.validators import validate_ticker
+from pyfio.models.material_models import MaterialTicker, MaterialTickerList
+from pyfio.exceptions import MaterialTickerNotFound, MaterialCategoryNotFound
 
 
 class Material:
     def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter = adapter
+        self._adapter: FIOAdapter = adapter
 
     def _validate_ticker(self, material_ticker: str) -> None:
         """Validates a material ticker
@@ -24,22 +20,9 @@ class Material:
             MaterialTickerInvalid: Material ticker can't be shorter than 1 character
             MaterialTickerInvalid: Material ticker can't contain spaces
         """
-        if material_ticker is None:
-            raise MaterialTickerInvalid("Material ticker can't be None type")
-        if len(material_ticker) > 3:
-            raise MaterialTickerInvalid(
-                "Material ticker can't be longer than 3 characters"
-            )
+        validate_ticker(material_ticker=material_ticker)
 
-        if len(material_ticker) < 1:
-            raise MaterialTickerInvalid(
-                "Material ticker can't be shorter than 1 characters"
-            )
-
-        if " " in material_ticker:
-            raise MaterialTickerInvalid("Material ticker can't contain spaces")
-
-    def get(self, material_ticker: str) -> MaterialModel:
+    def get(self, material_ticker: str) -> MaterialTicker:
         """Gets a single material from FIO
 
         Args:
@@ -63,11 +46,11 @@ class Material:
         )
 
         if status == 200:
-            return MaterialModel.model_validate(data)
+            return MaterialTicker.model_validate(data)
         elif status == 204:
             raise MaterialTickerNotFound("Materialticker not found")
 
-    def all(self) -> MaterialModelList:
+    def all(self) -> MaterialTickerList:
         """Gets all materials from FIO
 
         Returns:
@@ -77,9 +60,9 @@ class Material:
             http_method="get",
             endpoint=self._adapter.urls.material_allmaterials_url(),
         )
-        return MaterialModelList.model_validate(data)
+        return MaterialTickerList.model_validate(data)
 
-    def category(self, category_name: str) -> MaterialModelList:
+    def category(self, category_name: str) -> MaterialTickerList:
         """Gets all materials of specified category
 
         Args:
@@ -100,6 +83,6 @@ class Material:
         )
 
         if status == 200 and len(data) > 0:
-            return MaterialModelList.model_validate(data)
+            return MaterialTickerList.model_validate(data)
         elif status == 204 or len(data) == 0:
             raise MaterialCategoryNotFound("Material category not found")

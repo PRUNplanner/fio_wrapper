@@ -2,7 +2,7 @@ from typing import List
 from pydantic import BaseModel, RootModel, Field, NaiveDatetime
 
 
-class MaterialModel(BaseModel):
+class MaterialTicker(BaseModel):
     MaterialId: str = Field(min_length=32)
     CategoryName: str
     CategoryId: str = Field(min_length=32)
@@ -14,8 +14,8 @@ class MaterialModel(BaseModel):
     Timestamp: NaiveDatetime
 
 
-class MaterialModelList(RootModel):
-    root: List[MaterialModel]
+class MaterialTickerList(RootModel):
+    root: List[MaterialTicker]
 
     def __iter__(self):
         return iter(self.root)
