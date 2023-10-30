@@ -39,6 +39,22 @@ def material_2() -> Dict:
     }
 
 
+def test_validate_ticker(ftx_fio) -> None:
+    from pyfio.exceptions import MaterialTickerInvalid
+
+    with pytest.raises(MaterialTickerInvalid):
+        ftx_fio.Material._validate_ticker(None)
+
+    with pytest.raises(MaterialTickerInvalid):
+        ftx_fio.Material._validate_ticker("1234")
+
+    with pytest.raises(MaterialTickerInvalid):
+        ftx_fio.Material._validate_ticker("D W")
+
+    with pytest.raises(MaterialTickerInvalid):
+        ftx_fio.Material._validate_ticker("")
+
+
 def test_MaterialModelList_iter(material_1, material_2):
     data = MaterialModelList.model_validate([material_1, material_2])
 
