@@ -1,2 +1,9 @@
+# .coveragerc to control coverage.py
 [run]
-omit = tests/*
+omit = 
+    # omit inits
+    __init__.py
+    # omit tests itself
+    tests/*
+    # omit abstract endpoints
+    */abstracts/*

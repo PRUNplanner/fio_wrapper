@@ -288,3 +288,25 @@ def test_get_orders(requests_mock, order_1, order_2, ftx_fio: FIO) -> None:
     data = ftx_fio.Exchange.get_orders(company_code=company_code)
 
     assert type(data) == OrderList
+
+
+def test_get_orders_exchange(requests_mock, order_1, order_2, ftx_fio: FIO) -> None:
+    company_code: str = "SKYP"
+    exchange_code: str = "AI1"
+
+    with pytest.raises(CompanyCodeInvalid):
+        ftx_fio.Exchange.get_orders_exchange(company_code="", exchange_code="")
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.exchange_get_orders_companycode_exchange(
+            company_code=company_code, exchange_code=exchange_code
+        ),
+        status_code=200,
+        json=[order_1, order_2],
+    )
+
+    data = ftx_fio.Exchange.get_orders_exchange(
+        company_code=company_code, exchange_code=exchange_code
+    )
+
+    assert type(data) == OrderList

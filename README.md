@@ -1,6 +1,7 @@
 # pyfio
 
-Python API wrapper for Prosperous Universes community API FIO.
+[FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **pyfio** implements the most used endpoints of Prosperous Universes community game data API.
+
 
 # Usage
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
@@ -32,6 +33,14 @@ MaterialId='4fca6f5b5e6c3b8a1b887c6dc99db146' CategoryName='consumables (basic)'
     "Timestamp": "2023-10-28T19:26:21.831707"
 }
 ```
+
+# Contributing
+
+We welcome contributions of all types! In order to set up **pyfio** locally please do the following:
+
+1. Install Python + Poetry
+2. Run the poetry environment and install depenencies
+3. We are aiming for 100% code coverage
 
 # Tests
 

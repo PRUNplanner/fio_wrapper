@@ -33,3 +33,10 @@ class ExchangeTickerNotFound(Exception):
 
 class CompanyCodeInvalid(Exception):
     pass
+
+
+# Building
+
+
+class BuildingTickerNotFound(Exception):
+    pass

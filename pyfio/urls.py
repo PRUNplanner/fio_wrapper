@@ -12,6 +12,14 @@ class URLs:
         self.exchange_all = "/all"
         self.exchange_full = "/full"
 
+        # building
+        self.building_base = "/building"
+        self.building_all = "/allbuildings"
+
+        # recipe
+        self.recipe_base = "/recipes"
+        self.recipe_all = "/allrecipes"
+
     # Material
     def material_url(self) -> str:
         return self.base_url + self.material_base
@@ -52,3 +60,23 @@ class URLs:
             + "/"
             + exchange_code
         )
+
+    # Building
+    def building_url(self) -> str:
+        return self.base_url + self.building_base
+
+    def building_get_url(self, building_ticker: str) -> str:
+        return self.building_url() + "/" + building_ticker
+
+    def building_get_all_url(self) -> str:
+        return self.building_url() + self.building_all
+
+    # Recipe
+    def recipe_url(self) -> str:
+        return self.base_url + self.recipe_base
+
+    def recipe_get_url(self, material_ticker: str) -> str:
+        return self.recipe_url() + "/" + material_ticker
+
+    def recipe_get_all_url(self) -> str:
+        return self.recipe_url() + self.recipe_all
