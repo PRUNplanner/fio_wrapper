@@ -40,3 +40,10 @@ class CompanyCodeInvalid(Exception):
 
 class BuildingTickerNotFound(Exception):
     pass
+
+
+# Planet
+
+
+class PlanetNotFound(Exception):
+    pass

@@ -247,7 +247,7 @@ def test_exchange_get_notfound(requests_mock, ftx_fio: FIO) -> None:
         ftx_fio.Exchange.get("AAR.AI1")
 
 
-def test_exchange_get_all(
+def test_exchange_all(
     requests_mock, exchangeticker_1, exchangeticker_2, ftx_fio: FIO
 ) -> None:
     requests_mock.get(
@@ -255,18 +255,18 @@ def test_exchange_get_all(
         status_code=200,
         json=[exchangeticker_1, exchangeticker_2],
     )
-    data = ftx_fio.Exchange.get_all()
+    data = ftx_fio.Exchange.all()
 
     assert type(data) == ExchangeTickerList
 
 
-def test_exchange_get_full(requests_mock, exchangeticker_full, ftx_fio: FIO) -> None:
+def test_exchange_full(requests_mock, exchangeticker_full, ftx_fio: FIO) -> None:
     requests_mock.get(
         ftx_fio._adapter.urls.exchange_get_full_url(),
         status_code=200,
         json=[exchangeticker_full, exchangeticker_full],
     )
-    data = ftx_fio.Exchange.get_full()
+    data = ftx_fio.Exchange.full()
 
     assert type(data) == ExchangeTickerFullList
 

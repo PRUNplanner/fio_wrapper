@@ -2,7 +2,7 @@ class AbstractExchange:
     def get(self, exchange_ticker: str):
         raise NotImplementedError()
 
-    def get_all(self):
+    def all(self):
         raise NotImplementedError()
 
     def get_full(self):

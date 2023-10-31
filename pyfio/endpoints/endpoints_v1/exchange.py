@@ -88,7 +88,7 @@ class Exchange(AbstractExchange):
             raise ExchangeTickerNotFound("Exchangeticker not found")
 
     # /exchange/all
-    def get_all(self) -> ExchangeTickerList:
+    def all(self) -> ExchangeTickerList:
         """Gets all simple exchange ticker from FIO
 
         Returns:
@@ -101,7 +101,7 @@ class Exchange(AbstractExchange):
         return ExchangeTickerList.model_validate(data)
 
     # /exchange/full
-    def get_full(self) -> ExchangeTickerFullList:
+    def full(self) -> ExchangeTickerFullList:
         """Gets a complete list of all exchange information from FIO
 
         Returns:

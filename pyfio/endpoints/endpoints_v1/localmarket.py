@@ -1,7 +1,8 @@
+from pyfio.endpoints.abstracts.abstract_localmarket import AbstractLocalMarket
 from pyfio.fio_adapter import FIOAdapter
 
 
-class LocalMarket:
+class LocalMarket(AbstractLocalMarket):
     def __init__(self, adapter: FIOAdapter) -> None:
         self._adapter: FIOAdapter = adapter
 

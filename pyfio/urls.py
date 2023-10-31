@@ -20,6 +20,12 @@ class URLs:
         self.recipe_base = "/recipes"
         self.recipe_all = "/allrecipes"
 
+        # planet
+        self.planet_base = "/planet"
+        self.planet_all = "/allplanets"
+        self.planet_full = "/allplanets/full"
+        self.planet_sites = "/sites"
+
     # Material
     def material_url(self) -> str:
         return self.base_url + self.material_base
@@ -80,3 +86,20 @@ class URLs:
 
     def recipe_get_all_url(self) -> str:
         return self.recipe_url() + self.recipe_all
+
+    # Planet
+
+    def planet_url(self) -> str:
+        return self.base_url + self.planet_base
+
+    def planet_get_url(self, planet: str) -> str:
+        return self.planet_url() + "/" + planet
+
+    def planet_all_url(self) -> str:
+        return self.planet_url() + self.planet_all
+
+    def planet_full_url(self) -> str:
+        return self.planet_url() + self.planet_full
+
+    def planet_sites_url(self, planet: str) -> str:
+        return self.planet_url() + self.planet_sites + "/" + planet

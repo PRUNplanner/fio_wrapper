@@ -78,7 +78,6 @@ def test_material_single(requests_mock, material_1, ftx_fio: FIO) -> None:
         json=material_1,
     )
     data = ftx_fio.Material.get("DW")
-    print(data)
 
     assert type(data) == MaterialTicker
     assert data.Ticker == "DW"

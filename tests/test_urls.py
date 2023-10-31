@@ -74,3 +74,26 @@ def test_recipe_get_url(url: URLs) -> None:
 
 def test_recipe_get_all_url(url: URLs) -> None:
     assert url.recipe_get_all_url() == "foo/recipes/allrecipes"
+
+
+# Planet
+
+
+def test_planet_url(url: URLs) -> None:
+    assert url.planet_url() == "foo/planet"
+
+
+def test_planet_get_url(url: URLs) -> None:
+    assert url.planet_get_url(planet="moo") == "foo/planet/moo"
+
+
+def test_planet_all_url(url: URLs) -> None:
+    assert url.planet_all_url() == "foo/planet/allplanets"
+
+
+def test_planet_full_url(url: URLs) -> None:
+    assert url.planet_full_url() == "foo/planet/allplanets/full"
+
+
+def test_planet_sites_url(url: URLs) -> None:
+    assert url.planet_sites_url(planet="moo") == "foo/planet/sites/moo"
