@@ -10,7 +10,7 @@
 
 - Source Code: [https://github.com/jplacht/fio_wrapper](https://github.com/jplacht/fio_wrapper)
 - Documentation: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
-- PyPi Package: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+- PyPi Package: [https://pypi.org/project/fio-wrapper/](https://pypi.org/project/fio-wrapper/)
 
 # Endpoints
 The following endpoints are available as classes of the wrapper:
