@@ -99,6 +99,10 @@ def test_planet_sites_url(url: URLs) -> None:
     assert url.planet_sites_url(planet="moo") == "foo/planet/sites/moo"
 
 
+def test_planet_search_url(url: URLs) -> None:
+    assert url.planet_search_url() == "foo/planet/search"
+
+
 # LocalMarket
 
 

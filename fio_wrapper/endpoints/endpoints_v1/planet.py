@@ -149,29 +149,27 @@ class Planet(AbstractPlanet):
                 "Invalid distance checks. Can check for up to 3 distances."
             )
 
-        search_data = {
-            "Materials": materials,
-            "IncludeRocky": include_rocky,
-            "IncludeGaseous": include_gaseous,
-            "IncludeLowGravity": include_low_gravity,
-            "IncludeHighGravity": include_high_gravity,
-            "IncludeLowPressure": include_low_pressure,
-            "IncludeHighPressure": include_high_pressure,
-            "IncludeLowTemperature": include_low_temperature,
-            "IncludeHighTemperature": include_high_temperature,
-            "MustBeFertile": must_be_fertile,
-            "MustHaveLocalMarket": must_have_localmarket,
-            "MustHaveChamberOfCommerce": must_have_cogc,
-            "MustHaveWarehouse": must_have_war,
-            "MustHaveAdministrationCenter": must_have_adm,
-            "MustHaveShipyard": must_have_shy,
-            "DistanceChecks": distance_checks,
-        }
-
         (status, data) = self._adapter.post(
             endpoint=self._adapter.urls.planet_search_url(),
-            data=search_data,
-            err_codes=[404],
+            data={
+                "Materials": materials,
+                "IncludeRocky": include_rocky,
+                "IncludeGaseous": include_gaseous,
+                "IncludeLowGravity": include_low_gravity,
+                "IncludeHighGravity": include_high_gravity,
+                "IncludeLowPressure": include_low_pressure,
+                "IncludeHighPressure": include_high_pressure,
+                "IncludeLowTemperature": include_low_temperature,
+                "IncludeHighTemperature": include_high_temperature,
+                "MustBeFertile": must_be_fertile,
+                "MustHaveLocalMarket": must_have_localmarket,
+                "MustHaveChamberOfCommerce": must_have_cogc,
+                "MustHaveWarehouse": must_have_war,
+                "MustHaveAdministrationCenter": must_have_adm,
+                "MustHaveShipyard": must_have_shy,
+                "DistanceChecks": distance_checks,
+            },
+            err_codes=[400],
         )
 
         if status == 200:

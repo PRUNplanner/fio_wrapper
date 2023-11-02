@@ -78,6 +78,9 @@ def validate_localmarket_adtype(adtype: str) -> None:
 
 
 def validate_planet_search_materials(materials: List[str]) -> bool:
+    if materials is None:
+        return False
+
     if len(materials) > 4:
         return False
 
@@ -89,6 +92,9 @@ def validate_planet_search_materials(materials: List[str]) -> bool:
 
 
 def validate_planet_search_distance_checks(distance_checks: List[str]) -> bool:
+    if distance_checks is None:
+        return False
+
     if len(distance_checks) > 3:
         return False
 
