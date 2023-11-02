@@ -1,0 +1,49 @@
+site_name: FIO Wrapper 
+repo_name: "fio_wrapper"
+repo_url: "https://github.com/jplacht/fio_wrapper"
+
+theme:
+  name: "material"
+  palette:
+
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: light
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [fio_wrapper]
+          options:
+            show_source: false
+            show_bases: false
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+nav:
+  - FIO Wrapper: index.md
+  - Usage: usage.md
+  - FIO(): fio.md
+  - Endpoints:
+    - Planet: 'endpoints/planet.md'
+    - Building: 'endpoints/building.md'
+    - Recipe: 'endpoints/recipe.md'
+    - Material: 'endpoints/material.md'
+    - Exchange: 'endpoints/exchange.md'
+    - LocalMarket: 'endpoints/localmarket.md'
+  - FIO Adapter: fio_adapter.md

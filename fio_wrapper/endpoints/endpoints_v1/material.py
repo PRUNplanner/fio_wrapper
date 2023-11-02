@@ -1,3 +1,5 @@
+"""Access material information from FIO.
+"""
 from fio_wrapper.endpoints.abstracts.abstract_material import AbstractMaterial
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import validate_ticker
