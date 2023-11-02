@@ -2,6 +2,10 @@
 
 [FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **fio_wrapper** implements the most used endpoints of Prosperous Universes community game data API.
 
+# Install
+```python
+pip install fio-wrapper
+```
 
 # Usage
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".

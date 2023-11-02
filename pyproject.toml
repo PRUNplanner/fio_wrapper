@@ -5,7 +5,7 @@ description = "Python API wrapper for Prosperous Universes community API FIO."
 authors = ["Jan <jplacht+pyfio@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/jplacht/pyfio"
+repository = "https://github.com/jplacht/fio_wrapper"
 keywords = ["fio", "prosperous universe", "api", "wrapper"]
 
 include = [
