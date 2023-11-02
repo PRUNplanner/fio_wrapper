@@ -60,15 +60,14 @@ class FIOAdapter:
         self,
         endpoint: str,
         params: Dict = None,
-        data: Dict = None,
         err_codes=[],
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
 
         Args:
             endpoint (str): URL
-            params (Dict, optional): Get parameters. Defaults to None.
-            data (Dict, optional): Get data. Defaults to None.
+            params (Dict, optional): GET parameters. Defaults to None.
+            data (Dict, optional): GET data. Defaults to None.
             err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
 
         Returns:
@@ -76,6 +75,27 @@ class FIOAdapter:
         """
         return self._do(
             http_method="GET",
+            endpoint=endpoint,
+            params=params,
+            err_codes=err_codes,
+        )
+
+    def post(
+        self, endpoint: str, params: Dict = None, data: Dict = None, err_codes=[]
+    ) -> Tuple[int, any]:
+        """Performs a POST request towards endpoint
+
+        Args:
+            endpoint (str): URL
+            params (Dict, optional): POST parameters. Defaults to None.
+            data (Dict, optional): POST data. Defaults to None.
+            err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+
+        Returns:
+            Tuple[int, any]: Request status code and request data
+        """
+        return self._do(
+            http_method="POST",
             endpoint=endpoint,
             params=params,
             data=data,

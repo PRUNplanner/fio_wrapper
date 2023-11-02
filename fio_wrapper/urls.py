@@ -25,6 +25,7 @@ class URLs:
         self.planet_all = "/allplanets"
         self.planet_full = "/allplanets/full"
         self.planet_sites = "/sites"
+        self.planet_search = "/search"
 
         # localmarket
         self.localmarket_base = "/localmarket"
@@ -110,6 +111,9 @@ class URLs:
 
     def planet_sites_url(self, planet: str) -> str:
         return self.planet_url() + self.planet_sites + "/" + planet
+
+    def planet_search_url(self) -> str:
+        return self.planet_url() + self.planet_search
 
     # LocalMarket
 

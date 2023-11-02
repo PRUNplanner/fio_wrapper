@@ -20,6 +20,7 @@ The following endpoints are available as classes of the wrapper:
 - /planet/allplanets
 - /planet/allplanets/full
 - /planet/sites/{Planet}
+- /planet/search
 
 # Material
 - /material/{MaterialTicker}
