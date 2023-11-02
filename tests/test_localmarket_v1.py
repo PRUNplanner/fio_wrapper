@@ -11,6 +11,8 @@ from fio_wrapper import (
     LocalMarketAdList,
     LocalMarketShippingAdList,
     LocalMarketAds,
+    PlanetOrAdsNotFound,
+    CompanyOrAdsNotFound,
 )
 
 
@@ -95,7 +97,7 @@ def test_model_LocalMarketShippingAdList(shipping_ad_1) -> None:
 # Endpoints
 
 
-def test_planet_notfound(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
+def test_planet_notfound(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
     requests_mock.get(
         ftx_fio._adapter.urls.localmarket_planet_url(planet=planet), status_code=204
@@ -114,6 +116,176 @@ def test_planet_valid(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
     )
 
     data = ftx_fio.LocalMarket.planet(planet=planet)
+    assert type(data) == LocalMarketAds
+    assert len(data.BuyingAds) == 2
+    assert len(data.SellingAds) == 1
+    assert len(data.ShippingAds) == 1
+
+
+def test_planet_type(requests_mock, ftx_fio: FIO, ad_1) -> None:
+    planet: str = "FOO"
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype="BUY"),
+        status_code=200,
+        json=[ad_1],
+    )
+
+    (status, data) = ftx_fio.LocalMarket._planet_type(planet=planet, adtype="BUY")
+
+    assert status == 200
+
+
+def test_planet_buy(requests_mock, ftx_fio: FIO, ad_1) -> None:
+    planet: str = "FOO"
+    adtype: str = "BUY"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=200,
+        json=[ad_1],
+    )
+
+    data = ftx_fio.LocalMarket.planet_buy(planet=planet)
+    assert type(data) == LocalMarketAdList
+
+
+def test_planet_buy_invalid(requests_mock, ftx_fio: FIO) -> None:
+    planet: str = "FOO"
+    adtype: str = "BUY"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=204,
+    )
+
+    with pytest.raises(PlanetOrAdsNotFound):
+        ftx_fio.LocalMarket.planet_buy(planet=planet)
+
+
+def test_planet_sell(requests_mock, ftx_fio: FIO, ad_1) -> None:
+    planet: str = "FOO"
+    adtype: str = "SELL"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=200,
+        json=[ad_1],
+    )
+
+    data = ftx_fio.LocalMarket.planet_sell(planet=planet)
+    assert type(data) == LocalMarketAdList
+
+
+def test_planet_sell_invalid(requests_mock, ftx_fio: FIO) -> None:
+    planet: str = "FOO"
+    adtype: str = "SELL"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=204,
+    )
+
+    with pytest.raises(PlanetOrAdsNotFound):
+        ftx_fio.LocalMarket.planet_sell(planet=planet)
+
+
+def test_planet_shipping(requests_mock, ftx_fio: FIO, shipping_ad_1) -> None:
+    planet: str = "FOO"
+    adtype: str = "SHIP"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=200,
+        json=[shipping_ad_1],
+    )
+
+    data = ftx_fio.LocalMarket.planet_shipping(planet=planet)
+    assert type(data) == LocalMarketShippingAdList
+
+
+def test_planet_shipping_invalid(requests_mock, ftx_fio: FIO) -> None:
+    planet: str = "FOO"
+    adtype: str = "SHIP"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        status_code=204,
+    )
+
+    with pytest.raises(PlanetOrAdsNotFound):
+        ftx_fio.LocalMarket.planet_shipping(planet=planet)
+
+
+def test_planet_shipping_from(requests_mock, ftx_fio: FIO, shipping_ad_1) -> None:
+    planet: str = "FOO"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_shipping_source_url(planet=planet),
+        status_code=200,
+        json=[shipping_ad_1],
+    )
+
+    data = ftx_fio.LocalMarket.shipping_from(planet=planet)
+    assert type(data) == LocalMarketShippingAdList
+
+
+def test_planet_shipping_from_invalid(requests_mock, ftx_fio: FIO) -> None:
+    planet: str = "FOO"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_shipping_source_url(planet=planet),
+        status_code=204,
+    )
+
+    with pytest.raises(PlanetOrAdsNotFound):
+        ftx_fio.LocalMarket.shipping_from(planet=planet)
+
+
+def test_planet_shipping_to(requests_mock, ftx_fio: FIO, shipping_ad_1) -> None:
+    planet: str = "FOO"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_shipping_destination_url(planet=planet),
+        status_code=200,
+        json=[shipping_ad_1],
+    )
+
+    data = ftx_fio.LocalMarket.shipping_to(planet=planet)
+    assert type(data) == LocalMarketShippingAdList
+
+
+def test_planet_shipping_to_invalid(requests_mock, ftx_fio: FIO) -> None:
+    planet: str = "FOO"
+
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_shipping_destination_url(planet=planet),
+        status_code=204,
+    )
+
+    with pytest.raises(PlanetOrAdsNotFound):
+        ftx_fio.LocalMarket.shipping_to(planet=planet)
+
+
+def test_company_notfound(requests_mock, ftx_fio: FIO) -> None:
+    company: str = "FOO"
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_company_url(companycode=company),
+        status_code=204,
+    )
+
+    with pytest.raises(CompanyOrAdsNotFound):
+        ftx_fio.LocalMarket.company(companycode=company)
+
+
+def test_company_valid(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
+    company: str = "FOO"
+    requests_mock.get(
+        ftx_fio._adapter.urls.localmarket_company_url(companycode=company),
+        status_code=200,
+        json=valid_adlist,
+    )
+
+    data = ftx_fio.LocalMarket.company(companycode=company)
     assert type(data) == LocalMarketAds
     assert len(data.BuyingAds) == 2
     assert len(data.SellingAds) == 1

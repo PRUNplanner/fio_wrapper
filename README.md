@@ -2,12 +2,52 @@
 
 [FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **fio_wrapper** implements the most used endpoints of Prosperous Universes community game data API.
 
-# Install
+# Endpoints
+The following endpoints are available as classes of the wrapper:
+```markdown
+# Planet
+- /planet/{Planet}
+- /planet/allplanets
+- /planet/allplanets/full
+- /planet/sites/{Planet}
+
+# Material
+- /material/{MaterialTicker}
+- /material/allmaterials
+- /material/category/{CategoryName}
+
+# Building
+- /building/{BuildingTicker}
+- /building/allbuildings
+
+# Recipe
+- /recipes/{Ticker}
+- /recipes/allrecipes
+
+# Exchange
+- /exchange/{ExchangeTicker}
+- /exchange/all
+- /exchange/full
+- /exchange/orders/{CompanyCode}
+- /exchange/orders/{CompanyCode}/{ExchangeCode}
+
+# LocalMarket
+- /localmarket/planet/{Planet}
+- /localmarket/planet/{Planet}/{Type}
+- /localmarket/shipping/source/{Planet}
+- /localmarket/shipping/destination/{Planet}
+- /localmarket/company/{Company}
+
+```
+
+
+# Usage
+## Installation
 ```python
 pip install fio-wrapper
 ```
 
-# Usage
+## Access data
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
 ```python
 from fio_wrapper import FIO
