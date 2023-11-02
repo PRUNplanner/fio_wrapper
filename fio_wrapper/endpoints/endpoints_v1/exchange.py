@@ -1,17 +1,17 @@
-from pyfio.endpoints.abstracts.abstract_exchange import AbstractExchange
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.validators import (
+from fio_wrapper.endpoints.abstracts.abstract_exchange import AbstractExchange
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.validators import (
     validate_ticker,
     validate_exchange_code,
     validate_company_code,
 )
-from pyfio.models.exchange_models import (
+from fio_wrapper.models.exchange_models import (
     ExchangeTickerFull,
     OrderList,
     ExchangeTickerList,
     ExchangeTickerFullList,
 )
-from pyfio.exceptions import (
+from fio_wrapper.exceptions import (
     ExchangeTickerInvalid,
     MaterialTickerInvalid,
     ExchangeTickerNotFound,

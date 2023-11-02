@@ -1,6 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio import FIO, MaterialTicker, MaterialTickerList
+from fio_wrapper import FIO, MaterialTicker, MaterialTickerList
 
 
 @pytest.fixture()
@@ -39,7 +39,7 @@ def material_2() -> Dict:
 
 
 def test_validate_ticker(ftx_fio: FIO) -> None:
-    from pyfio.exceptions import MaterialTickerInvalid
+    from fio_wrapper.exceptions import MaterialTickerInvalid
 
     with pytest.raises(MaterialTickerInvalid):
         ftx_fio.Material._validate_ticker(None)
@@ -62,7 +62,7 @@ def test_MaterialModelList_iter(material_1, material_2):
 
 
 def test_material_fail(requests_mock, ftx_fio: FIO) -> None:
-    from pyfio.exceptions import MaterialTickerNotFound
+    from fio_wrapper.exceptions import MaterialTickerNotFound
 
     with pytest.raises(MaterialTickerNotFound):
         requests_mock.get(
@@ -108,7 +108,7 @@ def test_material_category(requests_mock, material_1, material_2, ftx_fio: FIO) 
 
 
 def test_material_category_notfound(requests_mock, ftx_fio: FIO) -> None:
-    from pyfio.exceptions import MaterialCategoryNotFound
+    from fio_wrapper.exceptions import MaterialCategoryNotFound
 
     category: str = "xyz"
     requests_mock.get(
@@ -122,7 +122,7 @@ def test_material_category_notfound(requests_mock, ftx_fio: FIO) -> None:
 
 
 def test_material_category_empty(requests_mock, ftx_fio: FIO) -> None:
-    from pyfio.exceptions import MaterialCategoryNotFound
+    from fio_wrapper.exceptions import MaterialCategoryNotFound
 
     category: str = "xyz"
     requests_mock.get(

@@ -1,7 +1,7 @@
 from typing import Dict, List, Tuple
 import requests
 from urllib3.exceptions import InsecureRequestWarning
-from pyfio.urls import URLs
+from fio_wrapper.urls import URLs
 
 
 class FIOAdapter:

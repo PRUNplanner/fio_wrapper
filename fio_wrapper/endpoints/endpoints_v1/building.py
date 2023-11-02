@@ -1,7 +1,7 @@
-from pyfio.endpoints.abstracts.abstract_building import AbstractBuilding
-from pyfio.exceptions import BuildingTickerNotFound
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.models.building_models import BuildingTicker, BuildingTickerList
+from fio_wrapper.endpoints.abstracts.abstract_building import AbstractBuilding
+from fio_wrapper.exceptions import BuildingTickerNotFound
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.models.building_models import BuildingTicker, BuildingTickerList
 
 
 class Building(AbstractBuilding):

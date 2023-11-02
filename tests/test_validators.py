@@ -1,6 +1,6 @@
 import pytest
-from pyfio import validate_localmarket_adtype
-from pyfio.exceptions import InvalidAdType
+from fio_wrapper import validate_localmarket_adtype
+from fio_wrapper.exceptions import InvalidAdType
 
 
 def test_validate_localmarket_adtype() -> None:

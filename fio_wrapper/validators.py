@@ -1,5 +1,5 @@
 from typing import List
-from pyfio.exceptions import (
+from fio_wrapper.exceptions import (
     InvalidAdType,
     MaterialTickerInvalid,
     ExchangeTickerInvalid,

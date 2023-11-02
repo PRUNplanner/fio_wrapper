@@ -1,5 +1,5 @@
 import pytest
-from pyfio import FIOAdapter, FIO, EndpointNotImplemented
+from fio_wrapper import FIOAdapter, FIO, EndpointNotImplemented
 
 
 @pytest.fixture()

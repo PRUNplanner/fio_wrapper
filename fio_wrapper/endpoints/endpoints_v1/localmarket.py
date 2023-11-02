@@ -1,13 +1,17 @@
 from typing import Tuple
-from pyfio.endpoints.abstracts.abstract_localmarket import AbstractLocalMarket
-from pyfio.exceptions import CompanyOrAdsNotFound, PlanetNotFound, PlanetOrAdsNotFound
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.models.localmarket_models import (
+from fio_wrapper.endpoints.abstracts.abstract_localmarket import AbstractLocalMarket
+from fio_wrapper.exceptions import (
+    CompanyOrAdsNotFound,
+    PlanetNotFound,
+    PlanetOrAdsNotFound,
+)
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.models.localmarket_models import (
     LocalMarketAdList,
     LocalMarketAds,
     LocalMarketShippingAdList,
 )
-from pyfio.validators import validate_localmarket_adtype
+from fio_wrapper.validators import validate_localmarket_adtype
 
 
 class LocalMarket(AbstractLocalMarket):

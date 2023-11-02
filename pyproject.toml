@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "pyfio"
+name = "fio-wrapper"
 version = "0.0.0"
 description = "Python API wrapper for Prosperous Universes community API FIO."
 authors = ["Jan <jplacht+pyfio@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/jplacht/pyfio"
-keywords = ["fio", "prosperous universe"]
+keywords = ["fio", "prosperous universe", "api", "wrapper"]
 
 include = [
     "LICENSE"

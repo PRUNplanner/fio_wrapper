@@ -1,6 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio import (
+from fio_wrapper import (
     FIO,
     Planet,
     PlanetList,
@@ -9,7 +9,7 @@ from pyfio import (
     PlanetSite,
     PlanetSiteList,
 )
-from pyfio.exceptions import PlanetNotFound
+from fio_wrapper.exceptions import PlanetNotFound
 
 
 @pytest.fixture()

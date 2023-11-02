@@ -1,8 +1,8 @@
-from pyfio.endpoints.abstracts.abstract_material import AbstractMaterial
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.validators import validate_ticker
-from pyfio.models.material_models import MaterialTicker, MaterialTickerList
-from pyfio.exceptions import MaterialTickerNotFound, MaterialCategoryNotFound
+from fio_wrapper.endpoints.abstracts.abstract_material import AbstractMaterial
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.validators import validate_ticker
+from fio_wrapper.models.material_models import MaterialTicker, MaterialTickerList
+from fio_wrapper.exceptions import MaterialTickerNotFound, MaterialCategoryNotFound
 
 
 class Material(AbstractMaterial):

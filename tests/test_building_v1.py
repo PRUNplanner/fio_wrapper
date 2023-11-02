@@ -1,7 +1,7 @@
 from typing import Dict
 import pytest
-from pyfio import FIO, BuildingTicker, BuildingTickerList
-from pyfio.exceptions import BuildingTickerNotFound
+from fio_wrapper import FIO, BuildingTicker, BuildingTickerList
+from fio_wrapper.exceptions import BuildingTickerNotFound
 
 
 @pytest.fixture()

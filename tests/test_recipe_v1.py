@@ -1,6 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio import FIO, Recipe, RecipeList, MaterialRecipe, MaterialRecipeList
+from fio_wrapper import FIO, Recipe, RecipeList, MaterialRecipe, MaterialRecipeList
 
 
 from .fixtures import ftx_fio

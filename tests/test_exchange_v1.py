@@ -1,6 +1,6 @@
 from typing import Dict
 import pytest
-from pyfio import (
+from fio_wrapper import (
     FIO,
     validate_exchange_code,
     validate_company_code,
@@ -187,14 +187,14 @@ def test_ExchangeTickerFullList_iter(exchangeticker_full) -> None:
 
 
 def test_validate_exchange_code_none() -> None:
-    from pyfio.exceptions import ExchangeTickerInvalid
+    from fio_wrapper.exceptions import ExchangeTickerInvalid
 
     with pytest.raises(ExchangeTickerInvalid):
         validate_exchange_code(None)
 
 
 def test_validate_exchangeticker(ftx_fio: FIO) -> None:
-    from pyfio.exceptions import ExchangeTickerInvalid
+    from fio_wrapper.exceptions import ExchangeTickerInvalid
 
     with pytest.raises(ExchangeTickerInvalid):
         ftx_fio.Exchange._validate_exchangeticker(None)

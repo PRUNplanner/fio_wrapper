@@ -1,7 +1,7 @@
-from pyfio.endpoints.abstracts.abstract_planet import AbstractPlanet
-from pyfio.exceptions import PlanetNotFound
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.models.planet_models import (
+from fio_wrapper.endpoints.abstracts.abstract_planet import AbstractPlanet
+from fio_wrapper.exceptions import PlanetNotFound
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.models.planet_models import (
     PlanetFull,
     PlanetFullList,
     PlanetList,

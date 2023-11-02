@@ -1,5 +1,5 @@
 import pytest
-from pyfio import FIO
+from fio_wrapper import FIO
 
 
 @pytest.fixture()

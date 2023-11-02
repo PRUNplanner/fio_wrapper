@@ -1,12 +1,12 @@
 # pyfio
 
-[FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **pyfio** implements the most used endpoints of Prosperous Universes community game data API.
+[FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **fio_wrapper** implements the most used endpoints of Prosperous Universes community game data API.
 
 
 # Usage
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
 ```python
-from pyfio import FIO
+from fio_wrapper import FIO
 
 fio = FIO()
 
@@ -36,7 +36,7 @@ MaterialId='4fca6f5b5e6c3b8a1b887c6dc99db146' CategoryName='consumables (basic)'
 
 # Contributing
 
-We welcome contributions of all types! In order to set up **pyfio** locally please do the following:
+We welcome contributions of all types! In order to set up **fio_wrapper** locally please do the following:
 
 1. Install Python + Poetry
 2. Run the poetry environment and install depenencies
@@ -44,7 +44,7 @@ We welcome contributions of all types! In order to set up **pyfio** locally plea
 
 # Tests
 
-**pyfio** uses `pytest`, `requests_mock` and `pytest-cov` to run tests, mock calls towards FIO endpoints and generate the code coverage report and use `black` as formatter.
+**fio_wrapper** uses `pytest`, `requests_mock` and `pytest-cov` to run tests, mock calls towards FIO endpoints and generate the code coverage report and use `black` as formatter.
 
 Run tests:
 ```shell

@@ -1,10 +1,10 @@
 from typing import Dict
 import pytest
 
-from pyfio.exceptions import PlanetNotFound
+from fio_wrapper.exceptions import PlanetNotFound
 from .fixtures import ftx_fio
 
-from pyfio import (
+from fio_wrapper import (
     FIO,
     Ad,
     ShippingAd,

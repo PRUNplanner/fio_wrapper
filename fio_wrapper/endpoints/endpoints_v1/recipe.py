@@ -1,6 +1,6 @@
-from pyfio.endpoints.abstracts.abstract_recipe import AbstractRecipe
-from pyfio.fio_adapter import FIOAdapter
-from pyfio.models.recipe_models import MaterialRecipeList, RecipeList
+from fio_wrapper.endpoints.abstracts.abstract_recipe import AbstractRecipe
+from fio_wrapper.fio_adapter import FIOAdapter
+from fio_wrapper.models.recipe_models import MaterialRecipeList, RecipeList
 
 
 class Recipe(AbstractRecipe):
