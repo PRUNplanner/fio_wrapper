@@ -26,6 +26,13 @@ class URLs:
         self.planet_full = "/allplanets/full"
         self.planet_sites = "/sites"
 
+        # localmarket
+        self.localmarket_base = "/localmarket"
+        self.localmarket_planet = "/planet"
+        self.localmarket_shipping_source = "/shipping/source"
+        self.localmarket_shipping_destination = "/shipping/destination"
+        self.localmarket_company = "/company"
+
     # Material
     def material_url(self) -> str:
         return self.base_url + self.material_base
@@ -103,3 +110,35 @@ class URLs:
 
     def planet_sites_url(self, planet: str) -> str:
         return self.planet_url() + self.planet_sites + "/" + planet
+
+    # LocalMarket
+
+    def localmarket_url(self) -> str:
+        return self.base_url + self.localmarket_base
+
+    def localmarket_planet_url(self, planet: str) -> str:
+        return self.localmarket_url() + self.localmarket_planet + "/" + planet
+
+    def localmarket_planet_type_url(self, planet: str, adtype: str) -> str:
+        return (
+            self.localmarket_url()
+            + self.localmarket_planet
+            + "/"
+            + planet
+            + "/"
+            + adtype
+        )
+
+    def localmarket_shipping_source_url(self, planet: str) -> str:
+        return self.localmarket_url() + self.localmarket_shipping_source + "/" + planet
+
+    def localmarket_shipping_destination_url(self, planet: str) -> str:
+        return (
+            self.localmarket_url()
+            + self.localmarket_shipping_destination
+            + "/"
+            + planet
+        )
+
+    def localmarket_company_url(self, companycode: str) -> str:
+        return self.localmarket_url() + self.localmarket_company + "/" + companycode

@@ -1,4 +1,6 @@
+from typing import List
 from pyfio.exceptions import (
+    InvalidAdType,
     MaterialTickerInvalid,
     ExchangeTickerInvalid,
     CompanyCodeInvalid,
@@ -57,3 +59,19 @@ def validate_company_code(company_code: str) -> None:
 
     if len(company_code) > 4:
         raise CompanyCodeInvalid("Invalid company code. Must be 1 to 4 characters")
+
+
+def validate_localmarket_adtype(adtype: str) -> None:
+    accepted_types: List[str] = [
+        "BUY",
+        "BUYS",
+        "BUYING",
+        "SELL",
+        "SELLS",
+        "SELLING",
+        "SHIP",
+        "SHIPPING",
+    ]
+
+    if not adtype in accepted_types:
+        raise InvalidAdType("Invalid ad type")

@@ -15,9 +15,7 @@ from pyfio import (
 )
 
 
-@pytest.fixture()
-def ftx_fio() -> FIO:
-    return FIO()
+from .fixtures import ftx_fio
 
 
 @pytest.fixture()

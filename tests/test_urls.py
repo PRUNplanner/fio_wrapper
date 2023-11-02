@@ -97,3 +97,41 @@ def test_planet_full_url(url: URLs) -> None:
 
 def test_planet_sites_url(url: URLs) -> None:
     assert url.planet_sites_url(planet="moo") == "foo/planet/sites/moo"
+
+
+# LocalMarket
+
+
+def test_localmarket_url(url: URLs) -> None:
+    assert url.localmarket_url() == "foo/localmarket"
+
+
+def test_localmarket_planet_url(url: URLs) -> None:
+    assert url.localmarket_planet_url(planet="moo") == "foo/localmarket/planet/moo"
+
+
+def test_localmarket_planet_type_url(url: URLs) -> None:
+    assert (
+        url.localmarket_planet_type_url(planet="moo", adtype="BUY")
+        == "foo/localmarket/planet/moo/BUY"
+    )
+
+
+def test_localmarket_shipping_source_url(url: URLs) -> None:
+    assert (
+        url.localmarket_shipping_source_url(planet="moo")
+        == "foo/localmarket/shipping/source/moo"
+    )
+
+
+def test_localmarket_shipping_destination_url(url: URLs) -> None:
+    assert (
+        url.localmarket_shipping_destination_url(planet="moo")
+        == "foo/localmarket/shipping/destination/moo"
+    )
+
+
+def test_localmarket_company_url(url: URLs) -> None:
+    assert (
+        url.localmarket_company_url(companycode="moo") == "foo/localmarket/company/moo"
+    )

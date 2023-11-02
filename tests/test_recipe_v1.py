@@ -3,9 +3,7 @@ import pytest
 from pyfio import FIO, Recipe, RecipeList, MaterialRecipe, MaterialRecipeList
 
 
-@pytest.fixture()
-def ftx_fio() -> FIO:
-    return FIO()
+from .fixtures import ftx_fio
 
 
 @pytest.fixture()

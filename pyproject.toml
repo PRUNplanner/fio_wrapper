@@ -2,10 +2,10 @@
 name = "pyfio"
 version = "0.0.0"
 description = "Python API wrapper for Prosperous Universes community API FIO."
-authors = ["Jan <jplacht@gmail.com>"]
+authors = ["Jan <jplacht+pyfio@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/jplacht/pyfio-dev"
+repository = "https://github.com/jplacht/pyfio"
 keywords = ["fio", "prosperous universe"]
 
 include = [

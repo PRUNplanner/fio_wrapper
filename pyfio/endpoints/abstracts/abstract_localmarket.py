@@ -1,14 +1,16 @@
 class AbstractLocalMarket:
-    # /localmarket/{LocalMarketId}
-    def get(self, localmarket_id: str):
-        raise NotImplementedError()
-
     # /localmarket/planet/{Planet}
     def planet(self, planet: str):
         raise NotImplementedError()
 
     # /localmarket/planet/{Planet}/{Type}
-    def planet_type(self, planet: str, type: str):
+    def planet_buy(self, planet: str):
+        raise NotImplementedError()
+
+    def planet_sell(self, planet: str):
+        raise NotImplementedError()
+
+    def planet_shipping(self, planet: str):
         raise NotImplementedError()
 
     # /localmarket/shipping/source/{SourcePlanet}

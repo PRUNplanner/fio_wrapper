@@ -47,3 +47,18 @@ class BuildingTickerNotFound(Exception):
 
 class PlanetNotFound(Exception):
     pass
+
+
+# LocalMarket
+
+
+class InvalidAdType(Exception):
+    pass
+
+
+class PlanetOrAdsNotFound(Exception):
+    pass
+
+
+class CompanyOrAdsNotFound(Exception):
+    pass

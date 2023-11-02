@@ -10,3 +10,4 @@ from .models.exchange_models import *
 from .models.recipe_models import *
 from .models.building_models import *
 from .models.planet_models import *
+from .models.localmarket_models import *
