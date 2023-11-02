@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="endpoints/planet/">
+        <link rel="next" href="usage/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -74,11 +74,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#installation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Usage
+              FIO Wrapper
             
           </span>
         </div>
@@ -256,10 +251,28 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    FIO Wrapper
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -268,7 +281,25 @@
   
 
       </a>
+    </li>
+  
+
+    
       
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO()
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -288,10 +319,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -302,8 +333,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Endpoints
           </label>
@@ -436,6 +467,25 @@
   
 
     
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fio_adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -452,8 +502,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
 </nav>
@@ -472,34 +520,12 @@
   
 
 
-<h1 id="installation">Installation</h1>
-<pre><code class="language-python">pip install fio-wrapper
-</code></pre>
-<h1 id="usage">Usage</h1>
-<p>Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".</p>
-<pre><code class="language-python">from fio_wrapper import FIO
+  <h1>FIO Wrapper</h1>
 
-fio = FIO()
-
-material = fio.Material.get(&quot;DW&quot;)
-print(material)
-print(material.model_dump_json())
-</code></pre>
-<p>This will print the material information of Drinking Water as MaterialModel and it's JSON.</p>
-<pre><code class="language-python">MaterialId='4fca6f5b5e6c3b8a1b887c6dc99db146' CategoryName='consumables (basic)' CategoryId='3f047ec3043bdd795fd7272d6be98799' Name='drinkingWater' Ticker='DW' Weight=0.10000000149011612 Volume=0.10000000149011612 UserNameSubmitted='SAGANAKI' Timestamp=datetime.datetime(2023, 10, 28, 19, 26, 21, 831707)
-</code></pre>
-<pre><code class="language-json">{
-    &quot;MaterialId&quot;: &quot;4fca6f5b5e6c3b8a1b887c6dc99db146&quot;,
-    &quot;CategoryName&quot;: &quot;consumables (basic)&quot;,
-    &quot;CategoryId&quot;: &quot;3f047ec3043bdd795fd7272d6be98799&quot;,
-    &quot;Name&quot;: &quot;drinkingWater&quot;,
-    &quot;Ticker&quot;: &quot;DW&quot;,
-    &quot;Weight&quot;: 0.10000000149011612,
-    &quot;Volume&quot;: 0.10000000149011612,
-    &quot;UserNameSubmitted&quot;: &quot;SAGANAKI&quot;,
-    &quot;Timestamp&quot;: &quot;2023-10-28T19:26:21.831707&quot;
-}
-</code></pre>
+<p><a href="https://doc.fnar.net/">FIO</a> API wrapper with <a href="https://github.com/pydantic/pydantic">pydantic</a> data validation and easy-to-use querying. <strong>fio_wrapper</strong> implements the most used endpoints of Prosperous Universes community game data API.</p>
+<p>Source Code: <a href="https://github.com/jplacht/fio_wrapper">https://github.com/jplacht/fio_wrapper</a></p>
+<p>Documentation: <a href="https://jplacht.github.io/fio_wrapper/">https://jplacht.github.io/fio_wrapper/</a></p>
+<p>PyPi Package: <a href="https://jplacht.github.io/fio_wrapper/">https://jplacht.github.io/fio_wrapper/</a></p>
 
 
 
@@ -519,10 +545,6 @@ print(material.model_dump_json())
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      2023 Jan Placht
-    </div>
   
   
     Made with

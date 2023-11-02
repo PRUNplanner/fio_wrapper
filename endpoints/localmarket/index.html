@@ -12,6 +12,8 @@
         <link rel="prev" href="../exchange/">
       
       
+        <link rel="next" href="../../fio_adapter/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
@@ -254,7 +256,45 @@
         
   
   <span class="md-ellipsis">
+    FIO Wrapper
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
     Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO()
   </span>
   
 
@@ -280,10 +320,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -294,8 +334,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Endpoints
           </label>
@@ -464,8 +504,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.company" class="md-nav__link">
+    company()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet" class="md-nav__link">
     planet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_buy" class="md-nav__link">
+    planet_buy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_sell" class="md-nav__link">
+    planet_sell()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_shipping" class="md-nav__link">
+    planet_shipping()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.shipping_from" class="md-nav__link">
+    shipping_from()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.shipping_to" class="md-nav__link">
+    shipping_to()
   </a>
   
 </li>
@@ -487,6 +569,25 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio_adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Adapter
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -531,8 +632,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.company" class="md-nav__link">
+    company()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet" class="md-nav__link">
     planet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_buy" class="md-nav__link">
+    planet_buy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_sell" class="md-nav__link">
+    planet_sell()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.planet_shipping" class="md-nav__link">
+    planet_shipping()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.shipping_from" class="md-nav__link">
+    shipping_from()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.localmarket.LocalMarket.shipping_to" class="md-nav__link">
+    shipping_to()
   </a>
   
 </li>
@@ -568,6 +711,8 @@
 
 <a id="endpoints.endpoints_v1.localmarket"></a>
   <div class="doc doc-contents first">
+  
+      <p>Access local market information from FIO.</p>
 
   
 
@@ -607,6 +752,104 @@
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.company" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">company</span><span class="p">(</span><span class="n">companycode</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of all ads of the specified company</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>companycode</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Company Code (e.g., "SKYP")</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.CompanyOrAdsNotFound">CompanyOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Company not found or company has no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketAds</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketAds">LocalMarketAds</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of local market ads of company</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
 
 
 <div class="doc doc-object doc-function">
@@ -707,6 +950,496 @@
 </div>
 
 
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.planet_buy" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">planet_buy</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets all BUY ads from the planets local market</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId, PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetOrAdsNotFound">PlanetOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet not found or no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketAdList</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketAdList">LocalMarketAdList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of planet local market BUY ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.planet_sell" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">planet_sell</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets all SELL ads from planets local market</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId, PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetOrAdsNotFound">PlanetOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet not found or no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketAdList</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketAdList">LocalMarketAdList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of planet local market SELL ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.planet_shipping" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">planet_shipping</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of planets shipping ads</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId, PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetOrAdsNotFound">PlanetOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet not found or no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketShippingAdList</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketShippingAdList">LocalMarketShippingAdList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of planet local market SHIPPING ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.shipping_from" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">shipping_from</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of SHIPPING ads starting from planet</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId, PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetOrAdsNotFound">PlanetOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet not found or no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketShippingAdList</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketShippingAdList">LocalMarketShippingAdList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of shipping ads from planet</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="endpoints.endpoints_v1.localmarket.LocalMarket.shipping_to" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">shipping_to</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of SHIPPING ads ending at planet</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId, PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetOrAdsNotFound">PlanetOrAdsNotFound</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet not found or no ads</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>LocalMarketShippingAdList</code></td>          <td>
+                <code><span title="fio_wrapper.models.localmarket_models.LocalMarketShippingAdList">LocalMarketShippingAdList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of shipping ads to planet</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
 
   </div>
 
@@ -741,10 +1474,6 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      2023 Jan Placht
-    </div>
   
   
     Made with

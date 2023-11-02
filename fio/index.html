@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../building/">
+        <link rel="prev" href="../usage/">
       
       
-        <link rel="next" href="../material/">
+        <link rel="next" href="../endpoints/planet/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Recipe - FIO Wrapper</title>
+        <title>FIO() - FIO Wrapper</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#endpoints.endpoints_v1.recipe" class="md-skip">
+        <a href="#fio" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="FIO Wrapper" class="md-header__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+    <a href=".." title="FIO Wrapper" class="md-header__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Recipe
+              FIO()
             
           </span>
         </div>
@@ -223,7 +223,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="FIO Wrapper" class="md-nav__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+    <a href=".." title="FIO Wrapper" class="md-nav__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -252,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../usage/" class="md-nav__link">
+      <a href="../usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -288,103 +288,6 @@
       
   
   
-  
-    <li class="md-nav__item">
-      <a href="../../fio/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    FIO()
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Endpoints
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Endpoints
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../planet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Planet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../building/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Building
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -398,7 +301,7 @@
           
   
   <span class="md-ellipsis">
-    Recipe
+    FIO()
   </span>
   
 
@@ -409,7 +312,7 @@
         
   
   <span class="md-ellipsis">
-    Recipe
+    FIO()
   </span>
   
 
@@ -429,30 +332,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe" class="md-nav__link">
-    recipe
+  <a href="#fio" class="md-nav__link">
+    fio
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe" class="md-nav__link">
-    Recipe
+  <a href="#fio.FIO" class="md-nav__link">
+    FIO
   </a>
   
-    <nav class="md-nav" aria-label="Recipe">
+    <nav class="md-nav" aria-label="FIO">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe.all" class="md-nav__link">
-    all()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe.get" class="md-nav__link">
-    get()
+  <a href="#fio.FIO.__init__" class="md-nav__link">
+    __init__()
   </a>
   
 </li>
@@ -469,6 +365,61 @@
     </li>
   
 
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Endpoints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Endpoints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/planet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -477,7 +428,47 @@
   
   
     <li class="md-nav__item">
-      <a href="../material/" class="md-nav__link">
+      <a href="../endpoints/building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoints/material/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exchange/" class="md-nav__link">
+      <a href="../endpoints/exchange/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -517,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../localmarket/" class="md-nav__link">
+      <a href="../endpoints/localmarket/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fio_adapter/" class="md-nav__link">
+      <a href="../fio_adapter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -582,30 +573,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe" class="md-nav__link">
-    recipe
+  <a href="#fio" class="md-nav__link">
+    fio
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe" class="md-nav__link">
-    Recipe
+  <a href="#fio.FIO" class="md-nav__link">
+    FIO
   </a>
   
-    <nav class="md-nav" aria-label="Recipe">
+    <nav class="md-nav" aria-label="FIO">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe.all" class="md-nav__link">
-    all()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.recipe.Recipe.get" class="md-nav__link">
-    get()
+  <a href="#fio.FIO.__init__" class="md-nav__link">
+    __init__()
   </a>
   
 </li>
@@ -633,16 +617,16 @@
   
 
 
-  <h1>Recipe</h1>
+  <h1>FIO()</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="endpoints.endpoints_v1.recipe"></a>
+<a id="fio"></a>
   <div class="doc doc-contents first">
   
-      <p>Access recipe information from FIO.</p>
+      <p>Provide the FIO class to access game data through FIO REST API endpoints</p>
 
   
 
@@ -660,8 +644,8 @@
 
 
 
-<h2 id="endpoints.endpoints_v1.recipe.Recipe" class="doc doc-heading">
-          <code>Recipe</code>
+<h2 id="fio.FIO" class="doc doc-heading">
+          <code>FIO</code>
 
 
 </h2>
@@ -669,6 +653,89 @@
 
   <div class="doc doc-contents ">
 
+  
+      <p>FIO API wrapper class</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>Building</code></td>
+          <td>
+                <code><span title="fio.FIO.Building">Building</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Building information</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Exchange</code></td>
+          <td>
+                <code><span title="fio.FIO.Exchange">Exchange</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Exchange information</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>LocalMarket</code></td>
+          <td>
+                <code><span title="fio.FIO.LocalMarket">LocalMarket</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>LocalMarket information</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Material</code></td>
+          <td>
+                <code><span title="fio.FIO.Material">Material</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Material information</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Planet</code></td>
+          <td>
+                <code><span title="fio.FIO.Planet">Planet</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet information</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>Recipe</code></td>
+          <td>
+                <code><span title="fio.FIO.Recipe">Recipe</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Recipe information</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
 
   
@@ -689,59 +756,15 @@
 
 
 
-<h3 id="endpoints.endpoints_v1.recipe.Recipe.all" class="doc doc-heading">
-          <code class="highlight language-python"><span class="nb">all</span><span class="p">()</span></code>
+<h3 id="fio.FIO.__init__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="s1">&#39;https://rest.fnar.net&#39;</span><span class="p">,</span> <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Gets all recipes from FIO</p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-<td><code>RecipeList</code></td>          <td>
-                <code><span title="fio_wrapper.models.recipe_models.RecipeList">RecipeList</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>List of Recipes as List[RecipeList]</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h3 id="endpoints.endpoints_v1.recipe.Recipe.get" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">material_ticker</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Gets all recipes for given material from FIO</p>
+      <p>Initializes the FIO wrapper</p>
 
 
 
@@ -757,17 +780,59 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>material_ticker</code></td>
+          <td><code>api_key</code></td>
           <td>
                 <code>str</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Material Ticker (e.g. "FE")</p>
+              <p>FIO API-Key. Defaults to "".</p>
             </div>
           </td>
           <td>
-              <em>required</em>
+                <code>&#39;&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>version</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>FIO API version. Defaults to "1.0.0".</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;1.0.0&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>base_url</code></td>
+          <td>
+                <code>_type_</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>FIO base url. Defaults to "https://rest.fnar.net".</p>
+            </div>
+          </td>
+          <td>
+                <code>&#39;https://rest.fnar.net&#39;</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ssl_verify</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Verify https connection. Defaults to True.</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
           </td>
         </tr>
     </tbody>
@@ -775,22 +840,22 @@
 
 
 
-  <p><strong>Returns:</strong></p>
+  <p><strong>Raises:</strong></p>
   <table>
     <thead>
       <tr>
-<th>Name</th>        <th>Type</th>
+        <th>Type</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
         <tr>
-<td><code>MaterialRecipeList</code></td>          <td>
-                <code><span title="fio_wrapper.models.recipe_models.MaterialRecipeList">MaterialRecipeList</span></code>
+          <td>
+                <code><span title="fio_wrapper.exceptions.EndpointNotImplemented">EndpointNotImplemented</span></code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>List of Recipes as List[MaterialRecipeList]</p>
+              <p><em>description</em></p>
             </div>
           </td>
         </tr>
@@ -855,10 +920,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
