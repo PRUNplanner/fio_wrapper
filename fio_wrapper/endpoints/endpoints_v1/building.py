@@ -1,3 +1,5 @@
+"""Access building information from FIO.
+"""
 from fio_wrapper.endpoints.abstracts.abstract_building import AbstractBuilding
 from fio_wrapper.exceptions import BuildingTickerNotFound
 from fio_wrapper.fio_adapter import FIOAdapter

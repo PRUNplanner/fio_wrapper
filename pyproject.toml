@@ -5,6 +5,8 @@ description = "Python API wrapper for Prosperous Universes community API FIO."
 authors = ["Jan <jplacht+pyfio@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+homepage = "https://jplacht.github.io/fio_wrapper/"
+documentation = "https://jplacht.github.io/fio_wrapper/"
 repository = "https://github.com/jplacht/fio_wrapper"
 keywords = ["fio", "prosperous universe", "api", "wrapper"]
 
@@ -26,3 +28,11 @@ black = "^23.10.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocstrings = {extras = ["python"], version = "^0.23.0"}
+mkdocs-material = "^9.4.7"

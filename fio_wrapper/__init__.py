@@ -1,3 +1,5 @@
+"""Access FIO endpoints from Python
+"""
 from .fio import *
 from .fio_adapter import *
 from .exceptions import *

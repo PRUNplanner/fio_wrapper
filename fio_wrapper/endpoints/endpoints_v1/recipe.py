@@ -1,3 +1,5 @@
+"""Access recipe information from FIO.
+"""
 from fio_wrapper.endpoints.abstracts.abstract_recipe import AbstractRecipe
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.models.recipe_models import MaterialRecipeList, RecipeList

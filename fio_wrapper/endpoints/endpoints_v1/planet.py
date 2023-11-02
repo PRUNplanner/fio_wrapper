@@ -1,3 +1,6 @@
+"""Access planet information from FIO.
+"""
+
 from fio_wrapper.endpoints.abstracts.abstract_planet import AbstractPlanet
 from fio_wrapper.exceptions import PlanetNotFound
 from fio_wrapper.fio_adapter import FIOAdapter
