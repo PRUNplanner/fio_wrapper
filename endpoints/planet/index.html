@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../fio/">
+        <link rel="prev" href="../../fio_adapter/">
       
       
         <link rel="next" href="../building/">
@@ -171,6 +171,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -256,7 +258,7 @@
         
   
   <span class="md-ellipsis">
-    FIO Wrapper
+    Introduction
   </span>
   
 
@@ -290,15 +292,107 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fio/" class="md-nav__link">
+      <a href="../../routes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FIO()
+    Available Routes
   </span>
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio_adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -312,32 +406,49 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Endpoints
+    Endpoints (FIO v.1)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Endpoints
+            Endpoints (FIO v.1)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -393,15 +504,23 @@
     planet
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="planet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.planet.Planet" class="md-nav__link">
     Planet
   </a>
   
     <nav class="md-nav" aria-label="Planet">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.planet.Planet.get" class="md-nav__link">
+    get()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.planet.Planet.all" class="md-nav__link">
@@ -418,16 +537,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.planet.Planet.get" class="md-nav__link">
-    get()
+  <a href="#endpoints.endpoints_v1.planet.Planet.sites" class="md-nav__link">
+    sites()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.planet.Planet.sites" class="md-nav__link">
-    sites()
+  <a href="#endpoints.endpoints_v1.planet.Planet.search" class="md-nav__link">
+    search()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -557,16 +681,67 @@
   
   
   
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Test Coverage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Test Coverage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../fio_adapter/" class="md-nav__link">
+      <a href="../../coverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FIO Adapter
+    Coverage Report
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -600,15 +775,23 @@
     planet
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="planet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.planet.Planet" class="md-nav__link">
     Planet
   </a>
   
     <nav class="md-nav" aria-label="Planet">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.planet.Planet.get" class="md-nav__link">
+    get()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.planet.Planet.all" class="md-nav__link">
@@ -625,16 +808,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.planet.Planet.get" class="md-nav__link">
-    get()
+  <a href="#endpoints.endpoints_v1.planet.Planet.sites" class="md-nav__link">
+    sites()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpoints.endpoints_v1.planet.Planet.sites" class="md-nav__link">
-    sites()
+  <a href="#endpoints.endpoints_v1.planet.Planet.search" class="md-nav__link">
+    search()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -667,7 +855,13 @@
 
 
 
-<a id="endpoints.endpoints_v1.planet"></a>
+
+<h2 id="endpoints.endpoints_v1.planet" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">endpoints.endpoints_v1.planet</span>
+
+
+</h2>
+
   <div class="doc doc-contents first">
   
       <p>Access planet information from FIO.</p>
@@ -688,15 +882,18 @@
 
 
 
-<h2 id="endpoints.endpoints_v1.planet.Planet" class="doc doc-heading">
-          <code>Planet</code>
+<h3 id="endpoints.endpoints_v1.planet.Planet" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Planet</span>
 
 
-</h2>
-
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Planet</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
 
+  
+      <p>Planet endpoint wrapper</p>
 
 
   
@@ -717,99 +914,13 @@
 
 
 
-<h3 id="endpoints.endpoints_v1.planet.Planet.all" class="doc doc-heading">
-          <code class="highlight language-python"><span class="nb">all</span><span class="p">()</span></code>
-
-</h3>
+<h4 id="endpoints.endpoints_v1.planet.Planet.get" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get</span>
 
 
-  <div class="doc doc-contents ">
-  
-      <p>Gets a list of all Planets with minimal information from FIO</p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-<td><code>PlanetList</code></td>          <td>
-                <code><span title="fio_wrapper.models.planet_models.PlanetList">PlanetList</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>List of Planets as List[Planet]</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h3 id="endpoints.endpoints_v1.planet.Planet.full" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">full</span><span class="p">()</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Gets a list of all planets from FIO with full planet information</p>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-<td><code>PlanetFullList</code></td>          <td>
-                <code><span title="fio_wrapper.models.planet_models.PlanetFullList">PlanetFullList</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>List of Planets with full information as List[PlanetFull]</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h3 id="endpoints.endpoints_v1.planet.Planet.get" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
-
-</h3>
-
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -903,11 +1014,105 @@
 
 
 
-<h3 id="endpoints.endpoints_v1.planet.Planet.sites" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">sites</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span></code>
+<h4 id="endpoints.endpoints_v1.planet.Planet.all" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">all</span>
 
-</h3>
 
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">all</span><span class="p">()</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of all Planets with minimal information from FIO</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>PlanetList</code></td>          <td>
+                <code><span title="fio_wrapper.models.planet_models.PlanetList">PlanetList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of Planets as List[Planet]</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="endpoints.endpoints_v1.planet.Planet.full" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">full</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">full</span><span class="p">()</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets a list of all planets from FIO with full planet information</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>PlanetFullList</code></td>          <td>
+                <code><span title="fio_wrapper.models.planet_models.PlanetFullList">PlanetFullList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of Planets with full information as List[PlanetFull]</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="endpoints.endpoints_v1.planet.Planet.sites" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">sites</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sites</span><span class="p">(</span><span class="n">planet</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
   
@@ -996,6 +1201,353 @@
 </div>
 
 
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="endpoints.endpoints_v1.planet.Planet.search" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">search</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">search</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">materials</span><span class="o">=</span><span class="p">[],</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">include_rocky</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">include_gaseous</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">include_low_gravity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">include_high_gravity</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">include_low_pressure</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">include_high_pressure</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">include_low_temperature</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">include_high_temperature</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">must_be_fertile</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">must_have_localmarket</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">must_have_cogc</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">must_have_war</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">must_have_adm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">must_have_shy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">distance_checks</span><span class="o">=</span><span class="p">[],</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Performs a search request towards FIO to find a planet matching the search parameters</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>materials</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of materials to search for, e.g. ["FEO", "LST"].</p>
+            </div>
+          </td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_rocky</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be Rocky.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_gaseous</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be Gaseous.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_low_gravity</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be low gravity.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_high_gravity</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be high gravity.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_low_pressure</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be low pressure.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_high_pressure</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be high pressure.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_low_temperature</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be low temperature.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>include_high_temperature</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet can be high temperature.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_be_fertile</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must be Fertile.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_have_localmarket</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must have a Local Market.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_have_cogc</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must have a Chamber of Glboal Commerce.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_have_war</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must have warehouses.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_have_adm</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must have a Planetary Administration Center.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>must_have_shy</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Planet must have a Shipyard.</p>
+            </div>
+          </td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>distance_checks</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of other planets to check distance to, e.g. ["ANT", "MOR"].</p>
+            </div>
+          </td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetSearchMaterialsInvalid">PlanetSearchMaterialsInvalid</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p><em>description</em></p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetSearchDistanceChecksInvalid">PlanetSearchDistanceChecksInvalid</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p><em>description</em></p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.PlanetSearchInvalidRequest">PlanetSearchInvalidRequest</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p><em>description</em></p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>PlanetFullList</code></td>          <td>
+                <code><span title="fio_wrapper.models.planet_models.PlanetFullList">PlanetFullList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of Planets with full information as List[PlanetFull]</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
 
   </div>
 
@@ -1021,6 +1573,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
       </main>
@@ -1049,7 +1603,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
