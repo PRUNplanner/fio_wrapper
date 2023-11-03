@@ -1,4 +1,4 @@
-"""Provide the FIO class to access game data through FIO REST API endpoints
+"""FIO class to access game data through FIO REST API endpoints
 """
 
 from fio_wrapper.fio_adapter import FIOAdapter

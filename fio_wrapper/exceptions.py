@@ -49,6 +49,18 @@ class PlanetNotFound(Exception):
     pass
 
 
+class PlanetSearchMaterialsInvalid(Exception):
+    pass
+
+
+class PlanetSearchDistanceChecksInvalid(Exception):
+    pass
+
+
+class PlanetSearchInvalidRequest(Exception):
+    pass
+
+
 # LocalMarket
 
 

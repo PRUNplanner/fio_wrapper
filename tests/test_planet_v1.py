@@ -9,7 +9,12 @@ from fio_wrapper import (
     PlanetSite,
     PlanetSiteList,
 )
-from fio_wrapper.exceptions import PlanetNotFound
+from fio_wrapper.exceptions import (
+    PlanetNotFound,
+    PlanetSearchDistanceChecksInvalid,
+    PlanetSearchInvalidRequest,
+    PlanetSearchMaterialsInvalid,
+)
 
 
 @pytest.fixture()
@@ -742,3 +747,35 @@ def test_planet_sites(requests_mock, ftx_fio: FIO, planet_site_1) -> None:
     data = ftx_fio.Planet.sites(planet=planet)
     for site in data:
         assert type(site) == PlanetSite
+
+
+def test_planet_search_invalid_material(ftx_fio: FIO) -> None:
+    with pytest.raises(PlanetSearchMaterialsInvalid):
+        ftx_fio.Planet.search(materials=None)
+
+
+def test_planet_search_invalid_distances(ftx_fio: FIO) -> None:
+    with pytest.raises(PlanetSearchDistanceChecksInvalid):
+        ftx_fio.Planet.search(distance_checks=None)
+
+
+def test_planet_search(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
+    requests_mock.post(
+        ftx_fio._adapter.urls.planet_search_url(),
+        status_code=200,
+        json=[planet_full_1, planet_full_1],
+    )
+
+    data = ftx_fio.Planet.search()
+
+    assert type(data) == PlanetFullList
+
+
+def test_planet_search_invalid(requests_mock, ftx_fio: FIO) -> None:
+    requests_mock.post(
+        ftx_fio._adapter.urls.planet_search_url(),
+        status_code=400,
+    )
+
+    with pytest.raises(PlanetSearchInvalidRequest):
+        ftx_fio.Planet.search()

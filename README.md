@@ -3,6 +3,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/fio-wrapper.svg)](https://pypi.org/project/fio-wrapper)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fio-wrapper.svg)](https://pypi.org/project/fio-wrapper)
 [![License: MIT](https://img.shields.io/badge/license-MIT-C06524)](https://github.com/jplacht/fio_wrapper/blob/master/LICENSE.md)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/fio-wrapper)
 
 ---
 
@@ -11,45 +12,6 @@
 - Source Code: [https://github.com/jplacht/fio_wrapper](https://github.com/jplacht/fio_wrapper)
 - Documentation: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
 - PyPi Package: [https://pypi.org/project/fio-wrapper/](https://pypi.org/project/fio-wrapper/)
-
-# Endpoints
-The following endpoints are available as classes of the wrapper:
-```markdown
-# Planet
-- /planet/{Planet}
-- /planet/allplanets
-- /planet/allplanets/full
-- /planet/sites/{Planet}
-
-# Material
-- /material/{MaterialTicker}
-- /material/allmaterials
-- /material/category/{CategoryName}
-
-# Building
-- /building/{BuildingTicker}
-- /building/allbuildings
-
-# Recipe
-- /recipes/{Ticker}
-- /recipes/allrecipes
-
-# Exchange
-- /exchange/{ExchangeTicker}
-- /exchange/all
-- /exchange/full
-- /exchange/orders/{CompanyCode}
-- /exchange/orders/{CompanyCode}/{ExchangeCode}
-
-# LocalMarket
-- /localmarket/planet/{Planet}
-- /localmarket/planet/{Planet}/{Type}
-- /localmarket/shipping/source/{Planet}
-- /localmarket/shipping/destination/{Planet}
-- /localmarket/company/{Company}
-
-```
-
 
 # Usage
 ## Installation

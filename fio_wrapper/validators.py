@@ -75,3 +75,27 @@ def validate_localmarket_adtype(adtype: str) -> None:
 
     if not adtype in accepted_types:
         raise InvalidAdType("Invalid ad type")
+
+
+def validate_planet_search_materials(materials: List[str]) -> bool:
+    if materials is None:
+        return False
+
+    if len(materials) > 4:
+        return False
+
+    for material in materials:
+        if len(material) == 0 or len(material) > 3:
+            return False
+
+    return True
+
+
+def validate_planet_search_distance_checks(distance_checks: List[str]) -> bool:
+    if distance_checks is None:
+        return False
+
+    if len(distance_checks) > 3:
+        return False
+
+    return True
