@@ -22,6 +22,8 @@ from fio_wrapper.validators import (
 
 
 class Planet(AbstractPlanet):
+    """Planet endpoint wrapper"""
+
     def __init__(self, adapter: FIOAdapter) -> None:
         self._adapter: FIOAdapter = adapter
 
@@ -110,26 +112,26 @@ class Planet(AbstractPlanet):
         must_have_adm: bool = False,
         must_have_shy: bool = False,
         distance_checks: List[str] = [],
-    ):
+    ) -> PlanetFullList:
         """Performs a search request towards FIO to find a planet matching the search parameters
 
         Args:
-            materials (List[str], optional): List of materials to search for, e.g. ["FEO", "LST"]. Defaults to [].
-            include_rocky (bool, optional): Planet can be Rocky. Defaults to False.
-            include_gaseous (bool, optional): Planet can be Gaseous. Defaults to False.
-            include_low_gravity (bool, optional): Planet can be low gravity. Defaults to False.
-            include_high_gravity (bool, optional): Planet can be high gravity. Defaults to False.
-            include_low_pressure (bool, optional): Planet can be low pressure. Defaults to False.
-            include_high_pressure (bool, optional): Planet can be high pressure. Defaults to False.
-            include_low_temperature (bool, optional): Planet can be low temperature. Defaults to False.
-            include_high_temperature (bool, optional): Planet can be high temperature. Defaults to False.
-            must_be_fertile (bool, optional): Planet must be Fertile. Defaults to False.
-            must_have_localmarket (bool, optional): Planet must have a Local Market. Defaults to False.
-            must_have_cogc (bool, optional): Planet must have a Chamber of Glboal Commerce. Defaults to False.
-            must_have_war (bool, optional): Planet must have warehouses. Defaults to False.
-            must_have_adm (bool, optional): Planet must have a Planetary Administration Center. Defaults to False.
-            must_have_shy (bool, optional): Planet must have a Shipyard. Defaults to False.
-            distance_checks (List[str], optional): List of other planets to check distance to, e.g. ["ANT", "MOR"]. Defaults to [].
+            materials (List[str], optional): List of materials to search for, e.g. ["FEO", "LST"].
+            include_rocky (bool, optional): Planet can be Rocky.
+            include_gaseous (bool, optional): Planet can be Gaseous.
+            include_low_gravity (bool, optional): Planet can be low gravity.
+            include_high_gravity (bool, optional): Planet can be high gravity.
+            include_low_pressure (bool, optional): Planet can be low pressure.
+            include_high_pressure (bool, optional): Planet can be high pressure.
+            include_low_temperature (bool, optional): Planet can be low temperature.
+            include_high_temperature (bool, optional): Planet can be high temperature.
+            must_be_fertile (bool, optional): Planet must be Fertile.
+            must_have_localmarket (bool, optional): Planet must have a Local Market.
+            must_have_cogc (bool, optional): Planet must have a Chamber of Glboal Commerce.
+            must_have_war (bool, optional): Planet must have warehouses.
+            must_have_adm (bool, optional): Planet must have a Planetary Administration Center.
+            must_have_shy (bool, optional): Planet must have a Shipyard.
+            distance_checks (List[str], optional): List of other planets to check distance to, e.g. ["ANT", "MOR"].
 
         Raises:
             PlanetSearchMaterialsInvalid: _description_
@@ -137,7 +139,7 @@ class Planet(AbstractPlanet):
             PlanetSearchInvalidRequest: _description_
 
         Returns:
-            _type_: _description_
+            PlanetFullList: List of Planets with full information as List[PlanetFull]
         """
         if not validate_planet_search_materials(materials=materials):
             raise PlanetSearchMaterialsInvalid(

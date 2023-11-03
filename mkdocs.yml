@@ -4,8 +4,10 @@ repo_url: "https://github.com/jplacht/fio_wrapper"
 
 theme:
   name: "material"
+  plugins:
+    - optimize
+    - typeset
   palette:
-
   # Palette toggle for light mode
   - media: "(prefers-color-scheme: light)"
     scheme: light
@@ -19,6 +21,17 @@ theme:
     toggle:
       icon: material/brightness-4
       name: Switch to light mode
+  features:
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - navigation.indexes
+  - content.tooltips
+  - navigation.path
+  - content.code.annotate
+  - content.code.copy
+  - content.code.select
+  - navigation.sections
 
 plugins:
   - mkdocstrings:
@@ -28,22 +41,52 @@ plugins:
           options:
             show_source: false
             show_bases: false
+            show_root_heading: true
+            show_if_no_docstring: true
+            inherited_members: true
+            members_order: source
+            separate_signature: true
+            unwrap_annotated: true
+            filters: ["!^_"]
+            merge_init_into_class: true
+            docstring_section_style: table
+            signature_crossrefs: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
   - search
+  - coverage:
+      page_name: coverage  # default
+      html_report_dir: coverage  # default
 
 markdown_extensions:
+  - abbr
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
 
 nav:
-  - FIO Wrapper: index.md
+  - Introduction: index.md
   - Usage: usage.md
-  - FIO(): fio.md
-  - Endpoints:
+  - Available Routes: 'routes.md'  
+  - Components:
+    - FIO Class: fio.md
+    - FIO Adapter: fio_adapter.md
+  - Endpoints (FIO v.1): 
     - Planet: 'endpoints/planet.md'
     - Building: 'endpoints/building.md'
     - Recipe: 'endpoints/recipe.md'
     - Material: 'endpoints/material.md'
     - Exchange: 'endpoints/exchange.md'
     - LocalMarket: 'endpoints/localmarket.md'
-  - FIO Adapter: fio_adapter.md
+  - Test Coverage:
+    - Coverage Report: coverage.md

@@ -36,3 +36,4 @@ optional = true
 mkdocs = "^1.5.3"
 mkdocstrings = {extras = ["python"], version = "^0.23.0"}
 mkdocs-material = "^9.4.7"
+mkdocs-coverage = "^1.0.0"

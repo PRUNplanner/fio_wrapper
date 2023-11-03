@@ -524,6 +524,20 @@ Markdown = ">=3.3"
 mkdocs = ">=1.1"
 
 [[package]]
+name = "mkdocs-coverage"
+version = "1.0.0"
+description = "MkDocs plugin to integrate your coverage HTML report into your site."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mkdocs_coverage-1.0.0-py3-none-any.whl", hash = "sha256:29e3c0fc89d1107ee22a0fbe1a9aa927550f97cf2e2682fcad5672ca3f2e14dd"},
+    {file = "mkdocs_coverage-1.0.0.tar.gz", hash = "sha256:3ebe0837c29458f64843c45cbb6618859634326867056d030621ab164649904c"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.2"
+
+[[package]]
 name = "mkdocs-material"
 version = "9.4.7"
 description = "Documentation that simply works"
@@ -1245,4 +1259,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "0569a3bdd464aec779adc93386d6dcb740cf32a83525ab4452a632f80712ef60"
+content-hash = "dc42afa568142c3d427a5449839019c9a6f937a736569a00d3a602fe13193150"

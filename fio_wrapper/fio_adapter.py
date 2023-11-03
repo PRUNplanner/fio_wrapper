@@ -1,4 +1,7 @@
-from typing import Dict, List, Tuple
+"""Request adapter performing actual API calls towards FIO endpoints
+"""
+
+from typing import Dict, Tuple
 import requests
 from urllib3.exceptions import InsecureRequestWarning
 from fio_wrapper.urls import URLs
@@ -67,7 +70,6 @@ class FIOAdapter:
         Args:
             endpoint (str): URL
             params (Dict, optional): GET parameters. Defaults to None.
-            data (Dict, optional): GET data. Defaults to None.
             err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
 
         Returns:
