@@ -157,3 +157,25 @@ def test_sites_planets_get_planet_url(url: URLs) -> None:
 
 def test_sites_warehouses_get(url: URLs) -> None:
     assert url.sites_warehouses_get(username="moo") == "foo/sites/warehouses/moo"
+
+
+# Storage
+
+
+def test_storage_url(url: URLs) -> None:
+    assert url.storage_url() == "foo/storage"
+
+
+def test_storage_get_url(url: URLs) -> None:
+    assert url.storage_get_url(username="moo") == "foo/storage/moo"
+
+
+def test_storage_planets_get_url(url: URLs) -> None:
+    assert url.storage_planets_get_url(username="moo") == "foo/storage/planets/moo"
+
+
+def test_storage_get_specific_url(url: URLs) -> None:
+    assert (
+        url.storage_get_specific_url(username="moo", specific="abc")
+        == "foo/storage/moo/abc"
+    )

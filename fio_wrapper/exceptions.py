@@ -125,3 +125,12 @@ class NoSiteData(Exception):
     """No site data found"""
 
     pass
+
+
+# Storage
+
+
+class NoStorageData(Exception):
+    """No storage data found"""
+
+    pass

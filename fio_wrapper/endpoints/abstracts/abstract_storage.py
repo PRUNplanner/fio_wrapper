@@ -1,8 +1,8 @@
-class AbstractSites:
+class AbstractStorage:
     def get(self, username: str):
         raise NotImplemented()
 
-    def get_planet(self, username: str, planet: str):
+    def get_specific(self, username: str, specific: str):
         raise NotImplemented()
 
     def planets(self, username: str):

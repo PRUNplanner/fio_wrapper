@@ -105,6 +105,21 @@ class Sites(AbstractSites, AbstractEndpoint):
 
     @apikey_required
     def warehouses(self, username: str) -> WarehouseList:
+        """Get warehouse data for username from FIO
+
+        Note:
+            FIO API Key Required
+
+        Args:
+            username (str): Prosperous Universe username
+
+        Raises:
+            NoSiteData: Username has no warehouse site data
+            NotAuthenticated: Not authenticated or no appropiate permissions
+
+        Returns:
+            WarehouseList: List of Warehouses
+        """
         (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.sites_warehouses_get(username=username),
             err_codes=[204, 401],

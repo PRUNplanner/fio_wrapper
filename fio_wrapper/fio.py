@@ -11,6 +11,7 @@ from fio_wrapper.endpoints.endpoints_v1 import material as material_v1
 from fio_wrapper.endpoints.endpoints_v1 import planet as planet_v1
 from fio_wrapper.endpoints.endpoints_v1 import recipe as recipe_v1
 from fio_wrapper.endpoints.endpoints_v1 import sites as sites_v1
+from fio_wrapper.endpoints.endpoints_v1 import storage as storage_v1
 
 
 class FIO:
@@ -23,6 +24,8 @@ class FIO:
         Material (Material): Material information
         Planet (Planet): Planet information
         Recipe (Recipe): Recipe information
+        Sites (Sites): Sites information
+        Storage (Storage): Storage information
     """
 
     def __init__(
@@ -53,6 +56,7 @@ class FIO:
             self.Planet = planet_v1.Planet(self._adapter)
             self.Recipe = recipe_v1.Recipe(self._adapter)
             self.Sites = sites_v1.Sites(self._adapter)
+            self.Storage = storage_v1.Storage(self._adapter)
 
         else:
             raise EndpointNotImplemented()

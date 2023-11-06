@@ -84,12 +84,13 @@ nav:
     - Decorators: decorator.md
     - Exceptions: exception.md
   - Endpoints (FIO v.1): 
-    - Planet: 'endpoints/planet.md'
     - Building: 'endpoints/building.md'
-    - Recipe: 'endpoints/recipe.md'
-    - Material: 'endpoints/material.md'
     - Exchange: 'endpoints/exchange.md'
     - LocalMarket: 'endpoints/localmarket.md'
+    - Material: 'endpoints/material.md'
+    - Planet: 'endpoints/planet.md'
+    - Recipe: 'endpoints/recipe.md'
     - Sites: 'endpoints/sites.md'
+    - Storage: 'endpoints/storage.md'
   - Test Coverage:
     - Coverage Report: coverage.md
