@@ -39,6 +39,10 @@ class URLs:
         self.sites_planets = "/planets"
         self.sites_warehouses = "/warehouses"
 
+        # storage
+        self.storage_base = "/storage"
+        self.storage_planets = "/planets"
+
     # Material
     def material_url(self) -> str:
         return self.base_url + self.material_base
@@ -168,3 +172,16 @@ class URLs:
 
     def sites_warehouses_get(self, username: str) -> str:
         return self.sites_url() + self.sites_warehouses + "/" + username
+
+    # Storage
+    def storage_url(self) -> str:
+        return self.base_url + self.storage_base
+
+    def storage_get_url(self, username: str) -> str:
+        return self.storage_url() + "/" + username
+
+    def storage_planets_get_url(self, username: str) -> str:
+        return self.storage_url() + self.storage_planets + "/" + username
+
+    def storage_get_specific_url(self, username: str, specific: str) -> str:
+        return self.storage_url() + "/" + username + "/" + specific
