@@ -2,26 +2,9 @@
 
 FIO Wrapper includes the most commonly used FIO REST API endpoints.
 
-## Planet
-
-- `GET` /planet/{Planet}
-- `GET` /planet/allplanets
-- `GET` /planet/allplanets/full
-- `GET` /planet/sites/{Planet}
-- `POST` /planet/search
-
-## Material
-- `GET` /material/{MaterialTicker}
-- `GET` /material/allmaterials
-- `GET` /material/category/{CategoryName}
-
 ## Building
 - `GET` /building/{BuildingTicker}
 - `GET` /building/allbuildings
-
-## Recipes
-- `GET` /recipes/{Ticker}
-- `GET` /recipes/allrecipes
 
 ## Exchange
 - `GET` /exchange/{ExchangeTicker}
@@ -36,4 +19,35 @@ FIO Wrapper includes the most commonly used FIO REST API endpoints.
 - `GET` /localmarket/shipping/source/{Planet}
 - `GET` /localmarket/shipping/destination/{Planet}
 - `GET` /localmarket/company/{Company}
+
+## Material
+- `GET` /material/{MaterialTicker}
+- `GET` /material/allmaterials
+- `GET` /material/category/{CategoryName}
+
+## Planet
+
+- `GET` /planet/{Planet}
+- `GET` /planet/allplanets
+- `GET` /planet/allplanets/full
+- `GET` /planet/sites/{Planet}
+- `POST` /planet/search
+
+## Recipes
+- `GET` /recipes/{Ticker}
+- `GET` /recipes/allrecipes
+
+## Sites
+
+- `GET` /sites/{UserName}
+- `GET` /sites/planets/{UserName}
+- `GET` /sites/{UserName}/{Planet}
+- `GET` /sites/warehouses/{UserName}
+
+## Storage
+
+- `GET` /storage/{UserName}
+- `GET` /storage/planets/{UserName}
+- `GET` /storage/{UserName}/{StorageDescription}
+
 
