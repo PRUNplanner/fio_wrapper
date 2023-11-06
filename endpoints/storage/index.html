@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../decorator/">
+        <link rel="prev" href="../sites/">
       
       
-        <link rel="next" href="../endpoints/building/">
+        <link rel="next" href="../../coverage/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
-        <title>Exceptions - FIO Wrapper</title>
+        <title>Storage - FIO Wrapper</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exceptions" class="md-skip">
+        <a href="#endpoints.endpoints_v1.storage" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="FIO Wrapper" class="md-header__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+    <a href="../.." title="FIO Wrapper" class="md-header__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exceptions
+              Storage
             
           </span>
         </div>
@@ -225,7 +225,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="FIO Wrapper" class="md-nav__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+    <a href="../.." title="FIO Wrapper" class="md-nav__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -254,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -273,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage/" class="md-nav__link">
+      <a href="../../usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -292,7 +292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routes/" class="md-nav__link">
+      <a href="../../routes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -309,11 +309,155 @@
       
   
   
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio_adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decorator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decorators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exception/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -335,24 +479,24 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Components
+    Endpoints (FIO v.1)
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Components
+            Endpoints (FIO v.1)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -362,11 +506,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../fio/" class="md-nav__link">
+      <a href="../building/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FIO Class
+    Building
   </span>
   
 
@@ -382,11 +526,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../fio_adapter/" class="md-nav__link">
+      <a href="../exchange/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FIO Adapter
+    Exchange
   </span>
   
 
@@ -402,11 +546,91 @@
   
   
     <li class="md-nav__item">
-      <a href="../decorator/" class="md-nav__link">
+      <a href="../localmarket/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Decorators
+    LocalMarket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sites
   </span>
   
 
@@ -433,7 +657,7 @@
           
   
   <span class="md-ellipsis">
-    Exceptions
+    Storage
   </span>
   
 
@@ -444,7 +668,7 @@
         
   
   <span class="md-ellipsis">
-    Exceptions
+    Storage
   </span>
   
 
@@ -464,143 +688,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exceptions" class="md-nav__link">
-    exceptions
+  <a href="#endpoints.endpoints_v1.storage" class="md-nav__link">
+    storage
   </a>
   
-    <nav class="md-nav" aria-label="exceptions">
+    <nav class="md-nav" aria-label="storage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exceptions.EndpointNotImplemented" class="md-nav__link">
-    EndpointNotImplemented
+  <a href="#endpoints.endpoints_v1.storage.Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.storage.Storage.get" class="md-nav__link">
+    get()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceptions.NoAPIKeyProvided" class="md-nav__link">
-    NoAPIKeyProvided
+  <a href="#endpoints.endpoints_v1.storage.Storage.get_specific" class="md-nav__link">
+    get_specific()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceptions.NotAuthenticated" class="md-nav__link">
-    NotAuthenticated
+  <a href="#endpoints.endpoints_v1.storage.Storage.planets" class="md-nav__link">
+    planets()
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialTickerInvalid" class="md-nav__link">
-    MaterialTickerInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialTickerNotFound" class="md-nav__link">
-    MaterialTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialCategoryNotFound" class="md-nav__link">
-    MaterialCategoryNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.ExchangeTickerInvalid" class="md-nav__link">
-    ExchangeTickerInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.ExchangeTickerNotFound" class="md-nav__link">
-    ExchangeTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.CompanyCodeInvalid" class="md-nav__link">
-    CompanyCodeInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.BuildingTickerNotFound" class="md-nav__link">
-    BuildingTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetNotFound" class="md-nav__link">
-    PlanetNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchMaterialsInvalid" class="md-nav__link">
-    PlanetSearchMaterialsInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchDistanceChecksInvalid" class="md-nav__link">
-    PlanetSearchDistanceChecksInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchInvalidRequest" class="md-nav__link">
-    PlanetSearchInvalidRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.InvalidAdType" class="md-nav__link">
-    InvalidAdType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetOrAdsNotFound" class="md-nav__link">
-    PlanetOrAdsNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.CompanyOrAdsNotFound" class="md-nav__link">
-    CompanyOrAdsNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.NoSiteData" class="md-nav__link">
-    NoSiteData
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.NoStorageData" class="md-nav__link">
-    NoStorageData
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -613,230 +738,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Endpoints (FIO v.1)
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Endpoints (FIO v.1)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/building/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Building
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/exchange/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exchange
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/localmarket/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LocalMarket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/material/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Material
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/planet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Planet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/recipe/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Recipe
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/sites/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Sites
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../endpoints/storage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -898,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coverage/" class="md-nav__link">
+      <a href="../../coverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,143 +845,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exceptions" class="md-nav__link">
-    exceptions
+  <a href="#endpoints.endpoints_v1.storage" class="md-nav__link">
+    storage
   </a>
   
-    <nav class="md-nav" aria-label="exceptions">
+    <nav class="md-nav" aria-label="storage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exceptions.EndpointNotImplemented" class="md-nav__link">
-    EndpointNotImplemented
+  <a href="#endpoints.endpoints_v1.storage.Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav" aria-label="Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.storage.Storage.get" class="md-nav__link">
+    get()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceptions.NoAPIKeyProvided" class="md-nav__link">
-    NoAPIKeyProvided
+  <a href="#endpoints.endpoints_v1.storage.Storage.get_specific" class="md-nav__link">
+    get_specific()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exceptions.NotAuthenticated" class="md-nav__link">
-    NotAuthenticated
+  <a href="#endpoints.endpoints_v1.storage.Storage.planets" class="md-nav__link">
+    planets()
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialTickerInvalid" class="md-nav__link">
-    MaterialTickerInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialTickerNotFound" class="md-nav__link">
-    MaterialTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.MaterialCategoryNotFound" class="md-nav__link">
-    MaterialCategoryNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.ExchangeTickerInvalid" class="md-nav__link">
-    ExchangeTickerInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.ExchangeTickerNotFound" class="md-nav__link">
-    ExchangeTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.CompanyCodeInvalid" class="md-nav__link">
-    CompanyCodeInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.BuildingTickerNotFound" class="md-nav__link">
-    BuildingTickerNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetNotFound" class="md-nav__link">
-    PlanetNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchMaterialsInvalid" class="md-nav__link">
-    PlanetSearchMaterialsInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchDistanceChecksInvalid" class="md-nav__link">
-    PlanetSearchDistanceChecksInvalid
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetSearchInvalidRequest" class="md-nav__link">
-    PlanetSearchInvalidRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.InvalidAdType" class="md-nav__link">
-    InvalidAdType
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.PlanetOrAdsNotFound" class="md-nav__link">
-    PlanetOrAdsNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.CompanyOrAdsNotFound" class="md-nav__link">
-    CompanyOrAdsNotFound
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.NoSiteData" class="md-nav__link">
-    NoSiteData
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exceptions.NoStorageData" class="md-nav__link">
-    NoStorageData
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -1107,15 +909,27 @@
   
 
 
-  <h1>Exceptions</h1>
+  <h1>Storage</h1>
+
+<p>Exposes FIO Storage data for users.
+All storage data requires a <strong>FIO API KEY</strong>. You will need to have access to the data the user has in FIO in order to access it.</p>
+<p>Example:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">fio_wrapper</span> <span class="kn">import</span> <span class="n">FIO</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">fio</span> <span class="o">=</span> <span class="n">FIO</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your_api_key&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Get users storage data</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">user_storage</span> <span class="o">=</span> <span class="n">fio</span><span class="o">.</span><span class="n">Sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;PrUn username&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
+
 
 <div class="doc doc-object doc-module">
 
 
 
 
-<h2 id="exceptions" class="doc doc-heading">
-          <span class="doc doc-object-name doc-module-name">exceptions</span>
+<h2 id="endpoints.endpoints_v1.storage" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">endpoints.endpoints_v1.storage</span>
 
 
 </h2>
@@ -1138,8 +952,8 @@
 
 
 
-<h3 id="exceptions.EndpointNotImplemented" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">EndpointNotImplemented</span>
+<h3 id="endpoints.endpoints_v1.storage.Storage" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Storage</span>
 
 
 </h3>
@@ -1147,405 +961,379 @@
 
   <div class="doc doc-contents ">
 
-  
-      <p>Endpoint is not implemented in fio_wrapper</p>
 
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="endpoints.endpoints_v1.storage.Storage.get" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets users storage data from FIO</p>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>FIO API Key Required</p>
+</details>
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>username</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Prosperous Universe username</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NoStorageData">NoStorageData</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Username has no storage data</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NotAuthenticated">NotAuthenticated</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Not authenticated or no appropiate permissions</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>StorageList</code></td>          <td>
+                <code><span title="fio_wrapper.models.storage_models.StorageList">StorageList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of storages</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
 </div>
 
-<div class="doc doc-object doc-class">
+
+<div class="doc doc-object doc-function">
 
 
 
 
-<h3 id="exceptions.NoAPIKeyProvided" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">NoAPIKeyProvided</span>
+<h4 id="endpoints.endpoints_v1.storage.Storage.get_specific" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_specific</span>
 
 
-</h3>
-
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_specific</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">specific</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
-
   
-      <p>No FIO API Key was provided, but endpoint requires key</p>
+      <p>Gets users specific storage data from FIO</p>
 
+<details class="note" open>
+  <summary>Note</summary>
+  <p>FIO API Key Required</p>
+</details>
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>username</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Prosperous Universe username</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>specific</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>StorageId, PlanetId, PlanetNaturalId or PlanetName</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NoStorageData">NoStorageData</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Username has no storage data</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NotAuthenticated">NotAuthenticated</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Not authenticated or no appropiate permissions</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>StorageModel</code></td>          <td>
+                <code><span title="fio_wrapper.models.storage_models.Storage">Storage</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Storage data</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
 </div>
 
-<div class="doc doc-object doc-class">
+
+<div class="doc doc-object doc-function">
 
 
 
 
-<h3 id="exceptions.NotAuthenticated" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">NotAuthenticated</span>
+<h4 id="endpoints.endpoints_v1.storage.Storage.planets" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">planets</span>
 
 
-</h3>
-
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">planets</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+</span></code></pre></div>
 
   <div class="doc doc-contents ">
-
   
-      <p>FIO returned failed authentication</p>
+      <p>Returns a list of storages from FIO</p>
 
+<details class="note" open>
+  <summary>Note</summary>
+  <p>FIO API Key Required</p>
+</details>
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>username</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Prosperous Universe username</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NoStorageData">NoStorageData</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Username has no storage data</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NotAuthenticated">NotAuthenticated</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Not authenticated or no appropiate permissions</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List[str]: List of StorageIds</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
 </div>
 
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.MaterialTickerInvalid" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">MaterialTickerInvalid</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Invalid Material Ticker provided</p>
 
 
   </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.MaterialTickerNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">MaterialTickerNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Material Ticker not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.MaterialCategoryNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">MaterialCategoryNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Material Category not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.ExchangeTickerInvalid" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">ExchangeTickerInvalid</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Exchange ticker invalid</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.ExchangeTickerNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">ExchangeTickerNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Exchange ticker not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.CompanyCodeInvalid" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">CompanyCodeInvalid</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Company code invalid</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.BuildingTickerNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">BuildingTickerNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Building ticker not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.PlanetNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">PlanetNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Planet not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.PlanetSearchMaterialsInvalid" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">PlanetSearchMaterialsInvalid</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Planet search material ticker provided invalid</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.PlanetSearchDistanceChecksInvalid" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">PlanetSearchDistanceChecksInvalid</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Planet search invalid distance checks</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.PlanetSearchInvalidRequest" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">PlanetSearchInvalidRequest</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Planet search request invalid</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.InvalidAdType" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">InvalidAdType</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Ad type invalid</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.PlanetOrAdsNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">PlanetOrAdsNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Planet or ads not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.CompanyOrAdsNotFound" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">CompanyOrAdsNotFound</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Company or ads not found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.NoSiteData" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">NoSiteData</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>No site data found</p>
-
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h3 id="exceptions.NoStorageData" class="doc doc-heading">
-          <span class="doc doc-object-name doc-class-name">NoStorageData</span>
-
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>No storage data found</p>
-
 
   </div>
 
@@ -1599,10 +1387,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>

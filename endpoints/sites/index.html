@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../localmarket/">
+        <link rel="prev" href="../recipe/">
       
       
-        <link rel="next" href="../../coverage/">
+        <link rel="next" href="../storage/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -465,6 +465,8 @@
       
         
       
+        
+      
     
     
     
@@ -504,71 +506,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../planet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Planet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../building/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Building
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../recipe/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Recipe
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../material/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Material
   </span>
   
 
@@ -609,6 +551,66 @@
   
   <span class="md-ellipsis">
     LocalMarket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe
   </span>
   
 
@@ -723,6 +725,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1348,6 +1370,100 @@ All Sites data requires a <strong>FIO API KEY</strong>. You will need to have ac
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
+  
+      <p>Get warehouse data for username from FIO</p>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>FIO API Key Required</p>
+</details>
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>username</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Prosperous Universe username</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NoSiteData">NoSiteData</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Username has no warehouse site data</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NotAuthenticated">NotAuthenticated</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Not authenticated or no appropiate permissions</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>WarehouseList</code></td>          <td>
+                <code><span title="fio_wrapper.models.sites_models.WarehouseList">WarehouseList</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of Warehouses</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
   </div>
 
