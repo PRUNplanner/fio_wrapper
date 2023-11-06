@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../endpoints/sites/">
+        <link rel="prev" href="../decorator/">
       
+      
+        <link rel="next" href="../endpoints/planet/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Coverage Report - FIO Wrapper</title>
+        <title>Exceptions - FIO Wrapper</title>
       
     
     
@@ -74,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#exceptions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Coverage Report
+              Exceptions
             
           </span>
         </div>
@@ -302,6 +309,8 @@
       
   
   
+    
+  
   
     
     
@@ -321,12 +330,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -340,7 +349,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Components
@@ -411,9 +420,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../exception/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exceptions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -422,6 +449,163 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    exceptions
+  </a>
+  
+    <nav class="md-nav" aria-label="exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.EndpointNotImplemented" class="md-nav__link">
+    EndpointNotImplemented
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NoAPIKeyProvided" class="md-nav__link">
+    NoAPIKeyProvided
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NotAuthenticated" class="md-nav__link">
+    NotAuthenticated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialTickerInvalid" class="md-nav__link">
+    MaterialTickerInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialTickerNotFound" class="md-nav__link">
+    MaterialTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialCategoryNotFound" class="md-nav__link">
+    MaterialCategoryNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.ExchangeTickerInvalid" class="md-nav__link">
+    ExchangeTickerInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.ExchangeTickerNotFound" class="md-nav__link">
+    ExchangeTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.CompanyCodeInvalid" class="md-nav__link">
+    CompanyCodeInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.BuildingTickerNotFound" class="md-nav__link">
+    BuildingTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetNotFound" class="md-nav__link">
+    PlanetNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchMaterialsInvalid" class="md-nav__link">
+    PlanetSearchMaterialsInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchDistanceChecksInvalid" class="md-nav__link">
+    PlanetSearchDistanceChecksInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchInvalidRequest" class="md-nav__link">
+    PlanetSearchInvalidRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.InvalidAdType" class="md-nav__link">
+    InvalidAdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetOrAdsNotFound" class="md-nav__link">
+    PlanetOrAdsNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.CompanyOrAdsNotFound" class="md-nav__link">
+    CompanyOrAdsNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NoSiteData" class="md-nav__link">
+    NoSiteData
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -640,8 +824,6 @@
       
   
   
-    
-  
   
     
     
@@ -655,12 +837,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
@@ -674,7 +856,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Test Coverage
@@ -685,16 +867,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../coverage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -703,7 +878,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -734,6 +908,153 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    exceptions
+  </a>
+  
+    <nav class="md-nav" aria-label="exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.EndpointNotImplemented" class="md-nav__link">
+    EndpointNotImplemented
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NoAPIKeyProvided" class="md-nav__link">
+    NoAPIKeyProvided
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NotAuthenticated" class="md-nav__link">
+    NotAuthenticated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialTickerInvalid" class="md-nav__link">
+    MaterialTickerInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialTickerNotFound" class="md-nav__link">
+    MaterialTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.MaterialCategoryNotFound" class="md-nav__link">
+    MaterialCategoryNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.ExchangeTickerInvalid" class="md-nav__link">
+    ExchangeTickerInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.ExchangeTickerNotFound" class="md-nav__link">
+    ExchangeTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.CompanyCodeInvalid" class="md-nav__link">
+    CompanyCodeInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.BuildingTickerNotFound" class="md-nav__link">
+    BuildingTickerNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetNotFound" class="md-nav__link">
+    PlanetNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchMaterialsInvalid" class="md-nav__link">
+    PlanetSearchMaterialsInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchDistanceChecksInvalid" class="md-nav__link">
+    PlanetSearchDistanceChecksInvalid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetSearchInvalidRequest" class="md-nav__link">
+    PlanetSearchInvalidRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.InvalidAdType" class="md-nav__link">
+    InvalidAdType
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.PlanetOrAdsNotFound" class="md-nav__link">
+    PlanetOrAdsNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.CompanyOrAdsNotFound" class="md-nav__link">
+    CompanyOrAdsNotFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions.NoSiteData" class="md-nav__link">
+    NoSiteData
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -750,34 +1071,436 @@
   
 
 
-  <h1>Coverage Report</h1>
+  <h1>Exceptions</h1>
 
-<style>
-article h1, article > a, .md-sidebar--secondary {
-    display: none !important;
-}
-</style>
+<div class="doc doc-object doc-module">
 
-<p><iframe
-    id="coviframe"
-    src="covindex.html"
-    frameborder="0"
-    scrolling="no"
-    onload="resizeIframe();"
-    width="100%">
-</iframe>
-</p>
-<script>
-var coviframe = document.getElementById("coviframe");
 
-function resizeIframe() {
-    coviframe.style.height = coviframe.contentWindow.document.documentElement.offsetHeight + 'px';
-}
 
-coviframe.contentWindow.document.body.onclick = function() {
-    coviframe.contentWindow.location.reload();
-}
-</script>
+
+<h2 id="exceptions" class="doc doc-heading">
+          <span class="doc doc-object-name doc-module-name">exceptions</span>
+
+
+</h2>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.EndpointNotImplemented" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">EndpointNotImplemented</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Endpoint is not implemented in fio_wrapper</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.NoAPIKeyProvided" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">NoAPIKeyProvided</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>No FIO API Key was provided, but endpoint requires key</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.NotAuthenticated" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">NotAuthenticated</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>FIO returned failed authentication</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.MaterialTickerInvalid" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">MaterialTickerInvalid</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Invalid Material Ticker provided</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.MaterialTickerNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">MaterialTickerNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Material Ticker not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.MaterialCategoryNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">MaterialCategoryNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Material Category not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.ExchangeTickerInvalid" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">ExchangeTickerInvalid</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Exchange ticker invalid</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.ExchangeTickerNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">ExchangeTickerNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Exchange ticker not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.CompanyCodeInvalid" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">CompanyCodeInvalid</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Company code invalid</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.BuildingTickerNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">BuildingTickerNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Building ticker not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.PlanetNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">PlanetNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Planet not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.PlanetSearchMaterialsInvalid" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">PlanetSearchMaterialsInvalid</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Planet search material ticker provided invalid</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.PlanetSearchDistanceChecksInvalid" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">PlanetSearchDistanceChecksInvalid</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Planet search invalid distance checks</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.PlanetSearchInvalidRequest" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">PlanetSearchInvalidRequest</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Planet search request invalid</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.InvalidAdType" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">InvalidAdType</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Ad type invalid</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.PlanetOrAdsNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">PlanetOrAdsNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Planet or ads not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.CompanyOrAdsNotFound" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">CompanyOrAdsNotFound</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Company or ads not found</p>
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="exceptions.NoSiteData" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">NoSiteData</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>No site data found</p>
+
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 
 
