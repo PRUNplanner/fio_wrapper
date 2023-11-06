@@ -10,6 +10,7 @@ from fio_wrapper.endpoints.endpoints_v1 import localmarket as localmarket_v1
 from fio_wrapper.endpoints.endpoints_v1 import material as material_v1
 from fio_wrapper.endpoints.endpoints_v1 import planet as planet_v1
 from fio_wrapper.endpoints.endpoints_v1 import recipe as recipe_v1
+from fio_wrapper.endpoints.endpoints_v1 import sites as sites_v1
 
 
 class FIO:
@@ -22,7 +23,6 @@ class FIO:
         Material (Material): Material information
         Planet (Planet): Planet information
         Recipe (Recipe): Recipe information
-
     """
 
     def __init__(
@@ -52,6 +52,7 @@ class FIO:
             self.Material = material_v1.Material(self._adapter)
             self.Planet = planet_v1.Planet(self._adapter)
             self.Recipe = recipe_v1.Recipe(self._adapter)
+            self.Sites = sites_v1.Sites(self._adapter)
 
         else:
             raise EndpointNotImplemented()
