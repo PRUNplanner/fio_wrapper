@@ -338,29 +338,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#planet" class="md-nav__link">
-    Planet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    Material
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#building" class="md-nav__link">
     Building
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recipes" class="md-nav__link">
-    Recipes
   </a>
   
 </li>
@@ -375,6 +354,41 @@
         <li class="md-nav__item">
   <a href="#localmarket" class="md-nav__link">
     LocalMarket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    Material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planet" class="md-nav__link">
+    Planet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    Recipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sites" class="md-nav__link">
+    Sites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
   </a>
   
 </li>
@@ -844,29 +858,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#planet" class="md-nav__link">
-    Planet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    Material
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#building" class="md-nav__link">
     Building
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recipes" class="md-nav__link">
-    Recipes
   </a>
   
 </li>
@@ -881,6 +874,41 @@
         <li class="md-nav__item">
   <a href="#localmarket" class="md-nav__link">
     LocalMarket
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    Material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planet" class="md-nav__link">
+    Planet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    Recipes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sites" class="md-nav__link">
+    Sites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
   </a>
   
 </li>
@@ -905,29 +933,10 @@
 
 <h1 id="fio-rest-api-endpoints">FIO REST API endpoints</h1>
 <p>FIO Wrapper includes the most commonly used FIO REST API endpoints.</p>
-<h2 id="planet">Planet</h2>
-<ul>
-<li><code>GET</code> /planet/{Planet}</li>
-<li><code>GET</code> /planet/allplanets</li>
-<li><code>GET</code> /planet/allplanets/full</li>
-<li><code>GET</code> /planet/sites/{Planet}</li>
-<li><code>POST</code> /planet/search</li>
-</ul>
-<h2 id="material">Material</h2>
-<ul>
-<li><code>GET</code> /material/{MaterialTicker}</li>
-<li><code>GET</code> /material/allmaterials</li>
-<li><code>GET</code> /material/category/{CategoryName}</li>
-</ul>
 <h2 id="building">Building</h2>
 <ul>
 <li><code>GET</code> /building/{BuildingTicker}</li>
 <li><code>GET</code> /building/allbuildings</li>
-</ul>
-<h2 id="recipes">Recipes</h2>
-<ul>
-<li><code>GET</code> /recipes/{Ticker}</li>
-<li><code>GET</code> /recipes/allrecipes</li>
 </ul>
 <h2 id="exchange">Exchange</h2>
 <ul>
@@ -944,6 +953,38 @@
 <li><code>GET</code> /localmarket/shipping/source/{Planet}</li>
 <li><code>GET</code> /localmarket/shipping/destination/{Planet}</li>
 <li><code>GET</code> /localmarket/company/{Company}</li>
+</ul>
+<h2 id="material">Material</h2>
+<ul>
+<li><code>GET</code> /material/{MaterialTicker}</li>
+<li><code>GET</code> /material/allmaterials</li>
+<li><code>GET</code> /material/category/{CategoryName}</li>
+</ul>
+<h2 id="planet">Planet</h2>
+<ul>
+<li><code>GET</code> /planet/{Planet}</li>
+<li><code>GET</code> /planet/allplanets</li>
+<li><code>GET</code> /planet/allplanets/full</li>
+<li><code>GET</code> /planet/sites/{Planet}</li>
+<li><code>POST</code> /planet/search</li>
+</ul>
+<h2 id="recipes">Recipes</h2>
+<ul>
+<li><code>GET</code> /recipes/{Ticker}</li>
+<li><code>GET</code> /recipes/allrecipes</li>
+</ul>
+<h2 id="sites">Sites</h2>
+<ul>
+<li><code>GET</code> /sites/{UserName}</li>
+<li><code>GET</code> /sites/planets/{UserName}</li>
+<li><code>GET</code> /sites/{UserName}/{Planet}</li>
+<li><code>GET</code> /sites/warehouses/{UserName}</li>
+</ul>
+<h2 id="storage">Storage</h2>
+<ul>
+<li><code>GET</code> /storage/{UserName}</li>
+<li><code>GET</code> /storage/planets/{UserName}</li>
+<li><code>GET</code> /storage/{UserName}/{StorageDescription}</li>
 </ul>
 
 
