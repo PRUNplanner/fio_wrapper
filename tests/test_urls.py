@@ -139,3 +139,21 @@ def test_localmarket_company_url(url: URLs) -> None:
     assert (
         url.localmarket_company_url(companycode="moo") == "foo/localmarket/company/moo"
     )
+
+
+# Sites
+
+
+def test_sites_planets_get_url(url: URLs) -> None:
+    assert url.sites_planets_get_url(username="moo") == "foo/sites/planets/moo"
+
+
+def test_sites_planets_get_planet_url(url: URLs) -> None:
+    assert (
+        url.sites_planets_get_planet_url(username="moo", planet="foo")
+        == "foo/sites/moo/foo"
+    )
+
+
+def test_sites_warehouses_get(url: URLs) -> None:
+    assert url.sites_warehouses_get(username="moo") == "foo/sites/warehouses/moo"

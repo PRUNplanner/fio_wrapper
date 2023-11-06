@@ -81,6 +81,8 @@ nav:
   - Components:
     - FIO Class: fio.md
     - FIO Adapter: fio_adapter.md
+    - Decorators: decorator.md
+    - Exceptions: exception.md
   - Endpoints (FIO v.1): 
     - Planet: 'endpoints/planet.md'
     - Building: 'endpoints/building.md'
@@ -88,5 +90,6 @@ nav:
     - Material: 'endpoints/material.md'
     - Exchange: 'endpoints/exchange.md'
     - LocalMarket: 'endpoints/localmarket.md'
+    - Sites: 'endpoints/sites.md'
   - Test Coverage:
     - Coverage Report: coverage.md
