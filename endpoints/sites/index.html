@@ -689,6 +689,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.sites.Sites.get_planet" class="md-nav__link">
+    get_planet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.sites.Sites.planets" class="md-nav__link">
     planets()
   </a>
@@ -846,6 +853,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#endpoints.endpoints_v1.sites.Sites.get_planet" class="md-nav__link">
+    get_planet()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#endpoints.endpoints_v1.sites.Sites.planets" class="md-nav__link">
     planets()
   </a>
@@ -902,6 +916,10 @@ All Sites data requires a <strong>FIO API KEY</strong>. You will need to have ac
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Get users complete sites data incl. buildings, </span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># their condition and repair / reclaimable materials</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">user_sites</span> <span class="o">=</span> <span class="n">fio</span><span class="o">.</span><span class="n">Sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;PrUn username&quot;</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Get users sites data for specific planet incl. buildings, </span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># their condition and repair / reclaimable materials</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">user_sites</span> <span class="o">=</span> <span class="n">fio</span><span class="o">.</span><span class="n">Sites</span><span class="o">.</span><span class="n">get_planet</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;PrUn username&quot;</span><span class="p">,</span> <span class="n">planet</span><span class="o">=</span><span class="s2">&quot;Montem&quot;</span><span class="p">)</span>
 </span></code></pre></div></p>
 
 
@@ -970,12 +988,12 @@ All Sites data requires a <strong>FIO API KEY</strong>. You will need to have ac
 
 
 </h4>
-<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">planet</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </span></code></pre></div>
 
   <div class="doc doc-contents ">
   
-      <p>Gets site data for given username from FIO, can specify planet.</p>
+      <p>Gets site data for given username from FIO</p>
 
 <details class="note" open>
   <summary>Note</summary>
@@ -1006,20 +1024,6 @@ All Sites data requires a <strong>FIO API KEY</strong>. You will need to have ac
           </td>
           <td>
               <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>planet</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>PlanetId, PlanetNaturalId or PlanetName. Defaults to None.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
           </td>
         </tr>
     </tbody>
@@ -1072,11 +1076,139 @@ All Sites data requires a <strong>FIO API KEY</strong>. You will need to have ac
     <tbody>
         <tr>
           <td>
-                <code><span title="fio_wrapper.models.sites_models.Site">Site</span> | <span title="fio_wrapper.models.sites_models.SiteList">SiteList</span></code>
+                <code><span title="fio_wrapper.models.sites_models.SiteList">SiteList</span></code>
           </td>
           <td>
             <div class="doc-md-description">
               <p>Site | SiteList: Site or List of Sites</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h4 id="endpoints.endpoints_v1.sites.Sites.get_planet" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_planet</span>
+
+
+</h4>
+<div class="doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_planet</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">planet</span><span class="p">)</span>
+</span></code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets site data for given username and planet from FIO</p>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>FIO API Key Required</p>
+</details>
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>username</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Prosperous Universe username</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>planet</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>PlanetId, PlanetNaturalId or PlanetName. Defaults to None.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NoSiteData">NoSiteData</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Username has no site data</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+                <code><span title="fio_wrapper.exceptions.NotAuthenticated">NotAuthenticated</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Not authenticated or no appropiate permissions</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Site</code></td>          <td>
+                <code><span title="fio_wrapper.models.sites_models.Site">Site</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Site</p>
             </div>
           </td>
         </tr>
