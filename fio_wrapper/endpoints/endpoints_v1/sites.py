@@ -11,15 +11,14 @@ from fio_wrapper.models.sites_models import Site, SiteList, WarehouseList
 
 class Sites(AbstractSites, AbstractEndpoint):
     @apikey_required
-    def get(self, username: str, planet: str = None) -> Site | SiteList:
-        """Gets site data for given username from FIO, can specify planet.
+    def get(self, username: str) -> SiteList:
+        """Gets site data for given username from FIO
 
         Note:
             FIO API Key Required
 
         Args:
             username (str): Prosperous Universe username
-            planet (str, optional): PlanetId, PlanetNaturalId or PlanetName. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -29,24 +28,47 @@ class Sites(AbstractSites, AbstractEndpoint):
             Site | SiteList: Site or List of Sites
         """
 
-        if planet is None:
-            (status, data) = self._adapter.get(
-                endpoint=self._adapter.urls.sites_get_url(username=username),
-                err_codes=[204, 401],
-            )
-        else:
-            (status, data) = self._adapter.get(
-                endpoint=self._adapter.urls.sites_planets_get_planet_url(
-                    username=username, planet=planet
-                ),
-                err_codes=[204, 401],
-            )
+        (status, data) = self._adapter.get(
+            endpoint=self._adapter.urls.sites_get_url(username=username),
+            err_codes=[204, 401],
+        )
 
         if status == 200:
-            if planet is None:
-                return SiteList.model_validate(data)
-            else:
-                return Site.model_validate(data)
+            return SiteList.model_validate(data)
+
+        elif status == 204:
+            raise NoSiteData("Username has no site data")
+        elif status == 401:
+            raise NotAuthenticated("Not authenticated or no appropiate permissions")
+
+    @apikey_required
+    def get_planet(self, username: str, planet: str) -> Site:
+        """Gets site data for given username and planet from FIO
+
+        Note:
+            FIO API Key Required
+
+        Args:
+            username (str): Prosperous Universe username
+            planet (str): PlanetId, PlanetNaturalId or PlanetName. Defaults to None.
+
+        Raises:
+            NoSiteData: Username has no site data
+            NotAuthenticated: Not authenticated or no appropiate permissions
+
+        Returns:
+            Site: Site
+        """
+
+        (status, data) = self._adapter.get(
+            endpoint=self._adapter.urls.sites_planets_get_planet_url(
+                username=username, planet=planet
+            ),
+            err_codes=[204, 401],
+        )
+
+        if status == 200:
+            return Site.model_validate(data)
         elif status == 204:
             raise NoSiteData("Username has no site data")
         elif status == 401:

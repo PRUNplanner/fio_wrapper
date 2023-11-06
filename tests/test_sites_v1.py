@@ -239,15 +239,64 @@ def test_warehouse_list(warehouse) -> None:
 
 
 @pytest.mark.parametrize(
-    "username, planet, mock_url, mock_status, json_data, return_data",
+    "username, mock_url, mock_status, json_data, return_data",
     [
         (
             "foo",
-            None,
             FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
             200,
             [site_data, site_data],
             SiteList.model_validate([site_data, site_data]),
+        ),
+        (
+            "foo",
+            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            204,
+            None,
+            NoSiteData,
+        ),
+        (
+            "foo",
+            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            401,
+            None,
+            NotAuthenticated,
+        ),
+    ],
+)
+def test_sites_get(
+    requests_mock,
+    ftx_fio_key: FIO,
+    username,
+    mock_url,
+    mock_status,
+    json_data,
+    return_data,
+) -> None:
+    requests_mock.get(mock_url, status_code=mock_status, json=json_data)
+
+    if return_data not in [NoSiteData, NotAuthenticated]:
+        data = ftx_fio_key.Sites.get(username=username)
+
+        assert data == return_data
+
+    else:
+        with pytest.raises(return_data):
+            ftx_fio_key.Sites.get(username=username)
+
+
+@pytest.mark.parametrize(
+    "username, planet, mock_url, mock_status, json_data, return_data",
+    [
+        (
+            "foo",
+            "moo",
+            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+                username="foo", planet="moo"
+            ),
+            200,
+            site_data,
+            Site.model_validate(site_data),
         ),
         (
             "foo",
@@ -261,15 +310,27 @@ def test_warehouse_list(warehouse) -> None:
         ),
         (
             "foo",
-            None,
-            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            "moo",
+            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+                username="foo", planet="moo"
+            ),
             204,
             None,
             NoSiteData,
         ),
+        (
+            "foo",
+            "moo",
+            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+                username="foo", planet="moo"
+            ),
+            401,
+            None,
+            NotAuthenticated,
+        ),
     ],
 )
-def test_sites_get(
+def test_sites_get_planet(
     requests_mock,
     ftx_fio_key: FIO,
     username,
@@ -282,13 +343,13 @@ def test_sites_get(
     requests_mock.get(mock_url, status_code=mock_status, json=json_data)
 
     if return_data not in [NoSiteData, NotAuthenticated]:
-        data = ftx_fio_key.Sites.get(username=username, planet=planet)
+        data = ftx_fio_key.Sites.get_planet(username=username, planet=planet)
 
         assert data == return_data
 
     else:
         with pytest.raises(return_data):
-            ftx_fio_key.Sites.get(username=username, planet=planet)
+            ftx_fio_key.Sites.get_planet(username=username, planet=planet)
 
 
 @pytest.mark.parametrize(

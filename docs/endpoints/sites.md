@@ -14,6 +14,10 @@ user_warehouses = fio.Sites.warehouses(username="PrUn username")
 # their condition and repair / reclaimable materials
 user_sites = fio.Sites.get(username="PrUn username")
 
+# Get users sites data for specific planet incl. buildings, 
+# their condition and repair / reclaimable materials
+user_sites = fio.Sites.get_planet(username="PrUn username", planet="Montem")
+
 ```
 
 ::: endpoints.endpoints_v1.sites
