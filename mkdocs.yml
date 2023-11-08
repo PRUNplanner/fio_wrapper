@@ -32,6 +32,7 @@ theme:
   - content.code.copy
   - content.code.select
   - navigation.sections
+  - navigation.tabs
 
 plugins:
   - mkdocstrings:
@@ -39,9 +40,11 @@ plugins:
         python:
           paths: [fio_wrapper]
           options:
-            show_source: false
-            show_bases: false
-            show_root_heading: true
+            show_source: true
+            show_bases: true
+            show_root_heading: false
+            show_root_toc_entry: false
+            heading_level: 3
             show_if_no_docstring: true
             inherited_members: true
             members_order: source
@@ -65,6 +68,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -75,22 +79,34 @@ markdown_extensions:
   - pymdownx.tilde
 
 nav:
-  - Introduction: index.md
-  - Usage: usage.md
-  - Available Routes: 'routes.md'  
+  - FIO Wrapper: 
+    - FIO Wrapper: index.md
+    - Usage: usage.md
+    - Available Routes: 'routes.md'  
   - Components:
     - FIO Class: fio.md
     - FIO Adapter: fio_adapter.md
     - Decorators: decorator.md
     - Exceptions: exception.md
-  - Endpoints (FIO v.1): 
+  - Endpoints (FIO 1.0): 
     - Building: 'endpoints/building.md'
     - Exchange: 'endpoints/exchange.md'
+    - Group: 'endpoints/group.md'
     - LocalMarket: 'endpoints/localmarket.md'
     - Material: 'endpoints/material.md'
     - Planet: 'endpoints/planet.md'
     - Recipe: 'endpoints/recipe.md'
     - Sites: 'endpoints/sites.md'
     - Storage: 'endpoints/storage.md'
+  - Models:
+    - Building: 'models/building.md'
+    - Exchange: 'models/exchange.md'
+    - Group: 'models/group.md'
+    - LocalMarket: 'models/localmarket.md'
+    - Material: 'models/material.md'
+    - Planet: 'models/planet.md'
+    - Recipe: 'models/recipe.md'
+    - Sites: 'models/sites.md'
+    - Storage: 'models/storage.md'
   - Test Coverage:
     - Coverage Report: coverage.md

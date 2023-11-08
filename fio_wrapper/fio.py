@@ -12,6 +12,7 @@ from fio_wrapper.endpoints.endpoints_v1 import planet as planet_v1
 from fio_wrapper.endpoints.endpoints_v1 import recipe as recipe_v1
 from fio_wrapper.endpoints.endpoints_v1 import sites as sites_v1
 from fio_wrapper.endpoints.endpoints_v1 import storage as storage_v1
+from fio_wrapper.endpoints.endpoints_v1 import group as group_v1
 
 
 class FIO:
@@ -20,6 +21,7 @@ class FIO:
     Attributes:
         Building (Building): Building information
         Exchange (Exchange): Exchange information
+        Group (Group): Group information
         LocalMarket (LocalMarket): LocalMarket information
         Material (Material): Material information
         Planet (Planet): Planet information
@@ -51,6 +53,7 @@ class FIO:
         if version == "1.0.0":
             self.Building = building_v1.Building(self._adapter)
             self.Exchange = exchange_v1.Exchange(self._adapter)
+            self.Group = group_v1.Group(self._adapter)
             self.LocalMarket = localmarket_v1.LocalMarket(self._adapter)
             self.Material = material_v1.Material(self._adapter)
             self.Planet = planet_v1.Planet(self._adapter)
