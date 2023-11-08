@@ -1,0 +1,3767 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../group/">
+      
+      
+        <link rel="next" href="../material/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>LocalMarket - FIO Wrapper</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#models.localmarket_models.AdBase" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FIO Wrapper" class="md-header__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FIO Wrapper
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LocalMarket
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="light" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jplacht/fio_wrapper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fio_wrapper
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  FIO Wrapper
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fio/" class="md-tabs__link">
+          
+  
+    
+  
+  Components
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../endpoints/building/" class="md-tabs__link">
+          
+  
+    
+  
+  Endpoints (FIO 1.0)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../building/" class="md-tabs__link">
+          
+  
+    
+  
+  Models
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../coverage/" class="md-tabs__link">
+          
+  
+    
+  
+  Test Coverage
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FIO Wrapper" class="md-nav__button md-logo" aria-label="FIO Wrapper" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    FIO Wrapper
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jplacht/fio_wrapper" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    fio_wrapper
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    FIO Wrapper
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            FIO Wrapper
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../routes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Available Routes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fio_adapter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIO Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decorator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decorators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exception/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Endpoints (FIO 1.0)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Endpoints (FIO 1.0)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/localmarket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LocalMarket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/planet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/sites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endpoints/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Models
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    LocalMarket
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    LocalMarket
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase" class="md-nav__link">
+    AdBase
+  </a>
+  
+    <nav class="md-nav" aria-label="AdBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad" class="md-nav__link">
+    Ad
+  </a>
+  
+    <nav class="md-nav" aria-label="Ad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialId" class="md-nav__link">
+    MaterialId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialName" class="md-nav__link">
+    MaterialName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialTicker" class="md-nav__link">
+    MaterialTicker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialCategory" class="md-nav__link">
+    MaterialCategory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialWeight" class="md-nav__link">
+    MaterialWeight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialVolume" class="md-nav__link">
+    MaterialVolume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialAmount" class="md-nav__link">
+    MaterialAmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.Price" class="md-nav__link">
+    Price
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PriceCurrency" class="md-nav__link">
+    PriceCurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd" class="md-nav__link">
+    ShippingAd
+  </a>
+  
+    <nav class="md-nav" aria-label="ShippingAd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetId" class="md-nav__link">
+    OriginPlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetNaturalId" class="md-nav__link">
+    OriginPlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetName" class="md-nav__link">
+    OriginPlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetId" class="md-nav__link">
+    DestinationPlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetNaturalId" class="md-nav__link">
+    DestinationPlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetName" class="md-nav__link">
+    DestinationPlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CargoWeight" class="md-nav__link">
+    CargoWeight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CargoVolume" class="md-nav__link">
+    CargoVolume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PayoutPrice" class="md-nav__link">
+    PayoutPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PayoutCurrency" class="md-nav__link">
+    PayoutCurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds" class="md-nav__link">
+    LocalMarketAds
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketAds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.BuyingAds" class="md-nav__link">
+    BuyingAds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.SellingAds" class="md-nav__link">
+    SellingAds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.ShippingAds" class="md-nav__link">
+    ShippingAds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAdList" class="md-nav__link">
+    LocalMarketAdList
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketAdList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAdList.root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketShippingAdList" class="md-nav__link">
+    LocalMarketShippingAdList
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketShippingAdList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketShippingAdList.root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../material/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Test Coverage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Test Coverage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coverage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coverage Report
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase" class="md-nav__link">
+    AdBase
+  </a>
+  
+    <nav class="md-nav" aria-label="AdBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.AdBase.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad" class="md-nav__link">
+    Ad
+  </a>
+  
+    <nav class="md-nav" aria-label="Ad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialId" class="md-nav__link">
+    MaterialId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialName" class="md-nav__link">
+    MaterialName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialTicker" class="md-nav__link">
+    MaterialTicker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialCategory" class="md-nav__link">
+    MaterialCategory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialWeight" class="md-nav__link">
+    MaterialWeight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialVolume" class="md-nav__link">
+    MaterialVolume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.MaterialAmount" class="md-nav__link">
+    MaterialAmount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.Price" class="md-nav__link">
+    Price
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.Ad.PriceCurrency" class="md-nav__link">
+    PriceCurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd" class="md-nav__link">
+    ShippingAd
+  </a>
+  
+    <nav class="md-nav" aria-label="ShippingAd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.ContractNaturalId" class="md-nav__link">
+    ContractNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetId" class="md-nav__link">
+    PlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetNaturalId" class="md-nav__link">
+    PlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PlanetName" class="md-nav__link">
+    PlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyId" class="md-nav__link">
+    CreatorCompanyId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyName" class="md-nav__link">
+    CreatorCompanyName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreatorCompanyCode" class="md-nav__link">
+    CreatorCompanyCode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DeliveryTime" class="md-nav__link">
+    DeliveryTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CreationTimeEpochMs" class="md-nav__link">
+    CreationTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.ExpiryTimeEpochMs" class="md-nav__link">
+    ExpiryTimeEpochMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.MinimumRating" class="md-nav__link">
+    MinimumRating
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetId" class="md-nav__link">
+    OriginPlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetNaturalId" class="md-nav__link">
+    OriginPlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.OriginPlanetName" class="md-nav__link">
+    OriginPlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetId" class="md-nav__link">
+    DestinationPlanetId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetNaturalId" class="md-nav__link">
+    DestinationPlanetNaturalId
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.DestinationPlanetName" class="md-nav__link">
+    DestinationPlanetName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CargoWeight" class="md-nav__link">
+    CargoWeight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.CargoVolume" class="md-nav__link">
+    CargoVolume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PayoutPrice" class="md-nav__link">
+    PayoutPrice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.ShippingAd.PayoutCurrency" class="md-nav__link">
+    PayoutCurrency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds" class="md-nav__link">
+    LocalMarketAds
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketAds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.BuyingAds" class="md-nav__link">
+    BuyingAds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.SellingAds" class="md-nav__link">
+    SellingAds
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAds.ShippingAds" class="md-nav__link">
+    ShippingAds
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAdList" class="md-nav__link">
+    LocalMarketAdList
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketAdList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketAdList.root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketShippingAdList" class="md-nav__link">
+    LocalMarketShippingAdList
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalMarketShippingAdList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#models.localmarket_models.LocalMarketShippingAdList.root" class="md-nav__link">
+    root
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>LocalMarket</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.AdBase" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">AdBase</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.ContractNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ContractNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ContractNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.PlanetId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.PlanetNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.PlanetName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.CreatorCompanyId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.CreatorCompanyName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.CreatorCompanyCode" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyCode</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyCode</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.DeliveryTime" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DeliveryTime</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DeliveryTime</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.CreationTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreationTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreationTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.ExpiryTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ExpiryTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ExpiryTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.AdBase.MinimumRating" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MinimumRating</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MinimumRating</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.Ad" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">Ad</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="models.localmarket_models.AdBase" href="#models.localmarket_models.AdBase">AdBase</a></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.ContractNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ContractNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ContractNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.PlanetId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.PlanetNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.PlanetName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.CreatorCompanyId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.CreatorCompanyName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.CreatorCompanyCode" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyCode</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyCode</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.DeliveryTime" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DeliveryTime</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DeliveryTime</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.CreationTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreationTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreationTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.ExpiryTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ExpiryTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ExpiryTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MinimumRating" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MinimumRating</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MinimumRating</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialTicker" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialTicker</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialTicker</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialCategory" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialCategory</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialCategory</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialWeight" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialWeight</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialWeight</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialVolume" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialVolume</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialVolume</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.MaterialAmount" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MaterialAmount</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MaterialAmount</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.Price" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">Price</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Price</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.Ad.PriceCurrency" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PriceCurrency</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PriceCurrency</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.ShippingAd" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">ShippingAd</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="models.localmarket_models.AdBase" href="#models.localmarket_models.AdBase">AdBase</a></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.ContractNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ContractNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ContractNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.PlanetId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.PlanetNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.PlanetName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PlanetName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PlanetName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CreatorCompanyId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CreatorCompanyName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CreatorCompanyCode" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreatorCompanyCode</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreatorCompanyCode</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.DeliveryTime" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DeliveryTime</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DeliveryTime</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CreationTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CreationTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CreationTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.ExpiryTimeEpochMs" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ExpiryTimeEpochMs</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ExpiryTimeEpochMs</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.MinimumRating" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">MinimumRating</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">MinimumRating</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.OriginPlanetId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">OriginPlanetId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">OriginPlanetId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.OriginPlanetNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">OriginPlanetNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">OriginPlanetNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.OriginPlanetName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">OriginPlanetName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">OriginPlanetName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.DestinationPlanetId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DestinationPlanetId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DestinationPlanetId</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.DestinationPlanetNaturalId" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DestinationPlanetNaturalId</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DestinationPlanetNaturalId</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.DestinationPlanetName" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">DestinationPlanetName</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">DestinationPlanetName</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CargoWeight" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CargoWeight</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CargoWeight</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.CargoVolume" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">CargoVolume</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">CargoVolume</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.PayoutPrice" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PayoutPrice</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PayoutPrice</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.ShippingAd.PayoutCurrency" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">PayoutCurrency</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">PayoutCurrency</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.LocalMarketAds" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">LocalMarketAds</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.LocalMarketAds.BuyingAds" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">BuyingAds</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">BuyingAds</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.LocalMarketAds.SellingAds" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">SellingAds</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">SellingAds</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.LocalMarketAds.ShippingAds" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ShippingAds</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ShippingAds</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.LocalMarketAdList" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">LocalMarketAdList</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="pydantic.RootModel">RootModel</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.LocalMarketAdList.root" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">root</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">root</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h3 id="models.localmarket_models.LocalMarketShippingAdList" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">LocalMarketShippingAdList</span>
+
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="pydantic.RootModel">RootModel</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h4 id="models.localmarket_models.LocalMarketShippingAdList.root" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">root</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">root</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
