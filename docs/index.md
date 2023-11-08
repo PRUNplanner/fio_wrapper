@@ -5,10 +5,12 @@
 
 ---
 
-[FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **fio_wrapper** implements the most used endpoints of Prosperous Universes community game data API.
+[FIO](https://doc.fnar.net/) API wrapper with [pydantic](https://github.com/pydantic/pydantic) data validation and easy-to-use querying. **FIO Wrapper** implements the most used endpoints of Prosperous Universes community game data API.
 
-Source Code: [https://github.com/jplacht/fio_wrapper](https://github.com/jplacht/fio_wrapper)
+**FIO Wrapper** was developed as part of [PRUNplanner](https://prunplanner.org/), the Prosperous Universe Empire and Base Planning Tool.
 
-Documentation: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+- Source Code: [https://github.com/jplacht/fio_wrapper](https://github.com/jplacht/fio_wrapper)
 
-PyPi Package: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+- Documentation: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+
+- PyPi Package: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)

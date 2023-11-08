@@ -43,6 +43,13 @@ class URLs:
         self.storage_base = "/storage"
         self.storage_planets = "/planets"
 
+        # groups
+        self.groups = "/auth/groups"
+        self.groups_group = "/auth/group"
+        self.groups_groupmemberships = "/auth/groupmemberships"
+        self.groups_hub = "/fioweb/grouphub"
+        self.groups_burn = "/fioweb/burn/group"
+
     # Material
     def material_url(self) -> str:
         return self.base_url + self.material_base
@@ -175,3 +182,20 @@ class URLs:
 
     def storage_get_specific_url(self, username: str, specific: str) -> str:
         return f"{self.storage_url()}/{username}/{specific}"
+
+    # Groups
+
+    def group_all_url(self) -> str:
+        return f"{self.base_url}{self.groups}"
+
+    def group_get_url(self, groupid: int) -> str:
+        return f"{self.base_url}{self.groups_group}/{groupid}"
+
+    def group_memberships_url(self) -> str:
+        return f"{self.base_url}{self.groups_groupmemberships}"
+
+    def group_hub_url(self) -> str:
+        return f"{self.base_url}{self.groups_hub}"
+
+    def group_burn_url(self, groupid: int) -> str:
+        return f"{self.base_url}{self.groups_burn}/{groupid}"

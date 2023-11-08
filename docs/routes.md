@@ -50,4 +50,10 @@ FIO Wrapper includes the most commonly used FIO REST API endpoints.
 - `GET` /storage/planets/{UserName}
 - `GET` /storage/{UserName}/{StorageDescription}
 
+## Group
 
+- `GET` /auth/groups
+- `GET` /auth/group/{GroupId}
+- `GET` /auth/groupmemberships
+- `POST` /fioweb/grouphub
+- `GET` /fioweb/burn/group/{GroupId}

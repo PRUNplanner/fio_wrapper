@@ -19,6 +19,12 @@ class NotAuthenticated(Exception):
     pass
 
 
+class UnknownFIOResponse(Exception):
+    """FIO returned a unknown response"""
+
+    pass
+
+
 # Material
 
 

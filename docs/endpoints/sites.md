@@ -1,7 +1,8 @@
+# Sites
 Exposes FIO Sites data for users, either as whole site data or warehouses. 
 All Sites data requires a **FIO API KEY**. You will need to have access to the data the user has in FIO in order to access it.
 
-Example:
+## Example
 ```python
 from fio_wrapper import FIO
 
@@ -19,5 +20,7 @@ user_sites = fio.Sites.get(username="PrUn username")
 user_sites = fio.Sites.get_planet(username="PrUn username", planet="Montem")
 
 ```
+
+## Endpoints
 
 ::: endpoints.endpoints_v1.sites

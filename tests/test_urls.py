@@ -179,3 +179,26 @@ def test_storage_get_specific_url(url: URLs) -> None:
         url.storage_get_specific_url(username="moo", specific="abc")
         == "foo/storage/moo/abc"
     )
+
+
+# Group
+
+
+def test_group_all_url(url: URLs) -> None:
+    assert url.group_all_url() == "foo/auth/groups"
+
+
+def test_group_get_url(url: URLs) -> None:
+    assert url.group_get_url(groupid=123) == "foo/auth/group/123"
+
+
+def test_group_memberships_url(url: URLs) -> None:
+    assert url.group_memberships_url() == "foo/auth/groupmemberships"
+
+
+def test_group_hub_url(url: URLs) -> None:
+    assert url.group_hub_url() == "foo/fioweb/grouphub"
+
+
+def test_group_burn_url(url: URLs) -> None:
+    assert url.group_burn_url(groupid=123) == "foo/fioweb/burn/group/123"
