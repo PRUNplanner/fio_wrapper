@@ -2,7 +2,6 @@ from typing import List
 from fio_wrapper.decorator import apikey_required
 from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_group import AbstractGroup
-from fio_wrapper.exceptions import UnknownFIOResponse
 from fio_wrapper.models.group_models import (
     BurnList,
     GroupHub,
@@ -32,8 +31,6 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         if status == 200:
             return GroupList.model_validate(data)
-        else:
-            raise UnknownFIOResponse()
 
     @apikey_required
     def get(self, groupid: int) -> GroupModel:
@@ -57,8 +54,6 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         if status == 200:
             return GroupModel.model_validate(data)
-        else:
-            raise UnknownFIOResponse()
 
     @apikey_required
     def memberships(self) -> GroupMembershipList:
@@ -79,8 +74,6 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         if status == 200:
             return GroupMembershipList.model_validate(data)
-        else:
-            raise UnknownFIOResponse()
 
     @apikey_required
     def hub(self, members: List[str]) -> GroupHub:
@@ -104,8 +97,6 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         if status == 200:
             return GroupHub.model_validate(data)
-        else:
-            raise UnknownFIOResponse()
 
     @apikey_required
     def burn(self, groupid: int) -> BurnList:
@@ -129,5 +120,3 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         if status == 200:
             return BurnList.model_validate(data)
-        else:
-            raise UnknownFIOResponse()

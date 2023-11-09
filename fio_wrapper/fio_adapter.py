@@ -3,7 +3,8 @@
 
 from typing import Dict, Tuple
 import requests
-from urllib3.exceptions import InsecureRequestWarning
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from fio_wrapper.exceptions import UnknownFIOResponse
 from fio_wrapper.urls import URLs
 
 
@@ -11,10 +12,11 @@ class FIOAdapter:
     """FIO Adapater
 
     Attributes:
-        api_key (str, optional): FIO API-Key. Defaults to "".
-        version (str, optional): FIO API version. Defaults to "1.0.0".
-        base_url (_type_, optional): FIO base url. Defaults to "https://rest.fnar.net".
-        ssl_verify (bool, optional): Verify https connection. Defaults to True.
+        api_key (str, optional): FIO API-Key.
+        version (str, optional): FIO API version.
+        base_url (str, optional): FIO base url.
+        ssl_verify (bool, optional): Verify https connection.
+        timeout (float, optional): Request timeout.
 
     """
 
@@ -24,12 +26,23 @@ class FIOAdapter:
         version: str = "1.0.0",
         base_url: str = "https://rest.fnar.net",
         ssl_verify: bool = True,
+        timeout: float = 10.0,
     ):
+        """Initializes the FIO adapter
+
+        Args:
+            api_key (str, optional): FIO API-Key. Defaults to "".
+            version (str, optional): FIO API version. Defaults to "1.0.0".
+            base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
+            ssl_verify (bool, optional): Verify https connection. Defaults to True.
+            timeout (float, optional): Request timeout. Defaults to 10.0.
+        """
         self.api_key = api_key
         self.version = version
         self.base_url = base_url
-        self._ssl_verify = ssl_verify
+        self.ssl_verify = ssl_verify
         self.urls = URLs(base_url=base_url)
+        self.timeout = timeout
 
         if not ssl_verify:
             requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
@@ -49,18 +62,22 @@ class FIOAdapter:
             response = requests.request(
                 method=http_method,
                 url=endpoint,
-                verify=self._ssl_verify,
+                verify=self.ssl_verify,
                 headers=self.headers(),
                 params=params,
                 json=data,
+                timeout=self.timeout,
             )
 
+            # successful FIO response
             if response.status_code == 200:
                 return 200, response.json()
+            # FIO response in provided codes to catch in endpoint
             elif response.status_code in err_codes:
                 return response.status_code, None
+            # other FIO response, not accounted for
             else:
-                return response.status_code, None
+                raise UnknownFIOResponse()
 
         except requests.exceptions.Timeout as errt:
             raise requests.exceptions.Timeout() from errt

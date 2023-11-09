@@ -41,7 +41,7 @@ class Planet(AbstractPlanet):
             PlanetFull: Full planet information
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_get_url(planet=planet)
+            endpoint=self._adapter.urls.planet_get_url(planet=planet), err_codes=[204]
         )
 
         if status == 200:
@@ -85,7 +85,7 @@ class Planet(AbstractPlanet):
             PlanetSiteList: List of Planet sites as List[PlanetSite]
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_sites_url(planet=planet)
+            endpoint=self._adapter.urls.planet_sites_url(planet=planet), err_codes=[204]
         )
 
         if status == 200:

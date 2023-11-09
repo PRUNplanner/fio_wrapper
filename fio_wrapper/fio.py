@@ -36,19 +36,27 @@ class FIO:
         version: str = "1.0.0",
         base_url: str = "https://rest.fnar.net",
         ssl_verify: bool = True,
+        timeout: float = None,
     ) -> None:
         """Initializes the FIO wrapper
 
         Args:
             api_key (str, optional): FIO API-Key. Defaults to "".
             version (str, optional): FIO API version. Defaults to "1.0.0".
-            base_url (_type_, optional): FIO base url. Defaults to "https://rest.fnar.net".
+            base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
             ssl_verify (bool, optional): Verify https connection. Defaults to True.
+            timeout (float, optional): Request timeout. Defaults to None.
 
         Raises:
             EndpointNotImplemented: _description_
         """
-        self._adapter = FIOAdapter(api_key, version, base_url, ssl_verify)
+        self._adapter = FIOAdapter(
+            api_key=api_key,
+            version=version,
+            base_url=base_url,
+            ssl_verify=ssl_verify,
+            timeout=timeout,
+        )
 
         if version == "1.0.0":
             self.Building = building_v1.Building(self._adapter)

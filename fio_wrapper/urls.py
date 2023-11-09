@@ -1,4 +1,10 @@
 class URLs:
+    """FIO API URLs
+
+    Attributes:
+        base_url (str): FIO Base URL
+    """
+
     def __init__(self, base_url: str) -> None:
         self.base_url = base_url
 
