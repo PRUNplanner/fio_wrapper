@@ -1,6 +1,9 @@
+from typing import Optional
+
+
 class AbstractRecipe:
-    def get(self, material_ticker: str, timeout: float | None = None):
+    def get(self, material_ticker: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def all(self, timeout: float | None = None):
+    def all(self, timeout: Optional[float] = None):
         raise NotImplementedError()

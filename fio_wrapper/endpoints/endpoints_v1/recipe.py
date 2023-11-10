@@ -1,5 +1,6 @@
 """Access recipe information from FIO.
 """
+from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_recipe import AbstractRecipe
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.models.recipe_models import MaterialRecipeList, RecipeList
@@ -11,13 +12,13 @@ class Recipe(AbstractRecipe):
 
     # /recipes/{Ticker}
     def get(
-        self, material_ticker: str, timeout: float | None = None
+        self, material_ticker: str, timeout: Optional[float] = None
     ) -> MaterialRecipeList:
         """Gets all recipes for given material from FIO
 
         Args:
             material_ticker (str): Material Ticker (e.g. "FE")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             MaterialRecipeList: List of Recipes as List[MaterialRecipeList]
@@ -30,11 +31,11 @@ class Recipe(AbstractRecipe):
         return MaterialRecipeList.model_validate(data)
 
     # /recipes/allrecipes
-    def all(self, timeout: float | None = None) -> RecipeList:
+    def all(self, timeout: Optional[float] = None) -> RecipeList:
         """Gets all recipes from FIO
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             RecipeList: List of Recipes as List[RecipeList]

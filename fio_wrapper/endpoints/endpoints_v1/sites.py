@@ -1,7 +1,7 @@
 """Access site information from FIO.
 """
 
-from typing import List
+from typing import List, Optional
 from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_sites import AbstractSites
 from fio_wrapper.decorator import apikey_required
@@ -11,7 +11,7 @@ from fio_wrapper.models.sites_models import Site, SiteList, WarehouseList
 
 class Sites(AbstractSites, AbstractEndpoint):
     @apikey_required
-    def get(self, username: str, timeout: float | None = None) -> SiteList:
+    def get(self, username: str, timeout: Optional[float] = None) -> SiteList:
         """Gets site data for given username from FIO
 
         Note:
@@ -19,7 +19,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -45,7 +45,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
     @apikey_required
     def get_planet(
-        self, username: str, planet: str, timeout: float | None = None
+        self, username: str, planet: str, timeout: Optional[float] = None
     ) -> Site:
         """Gets site data for given username and planet from FIO
 
@@ -55,7 +55,7 @@ class Sites(AbstractSites, AbstractEndpoint):
         Args:
             username (str): Prosperous Universe username
             planet (str): PlanetId, PlanetNaturalId or PlanetName. Defaults to None.
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -81,7 +81,7 @@ class Sites(AbstractSites, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def planets(self, username: str, timeout: float | None = None) -> List[str]:
+    def planets(self, username: str, timeout: Optional[float] = None) -> List[str]:
         """Gets a list of SiteIds from FIO for given username
 
         Note:
@@ -89,7 +89,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -112,7 +112,9 @@ class Sites(AbstractSites, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def warehouses(self, username: str, timeout: float | None = None) -> WarehouseList:
+    def warehouses(
+        self, username: str, timeout: Optional[float] = None
+    ) -> WarehouseList:
         """Get warehouse data for username from FIO
 
         Note:
@@ -120,7 +122,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no warehouse site data

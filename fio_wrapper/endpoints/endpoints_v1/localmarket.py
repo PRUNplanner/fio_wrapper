@@ -1,6 +1,6 @@
 """Access local market information from FIO.
 """
-from typing import Tuple
+from typing import Tuple, Optional
 from fio_wrapper.endpoints.abstracts.abstract_localmarket import AbstractLocalMarket
 from fio_wrapper.exceptions import (
     CompanyOrAdsNotFound,
@@ -21,12 +21,12 @@ class LocalMarket(AbstractLocalMarket):
         self._adapter: FIOAdapter = adapter
 
     # /localmarket/planet/{Planet}
-    def planet(self, planet: str, timeout: float | None = None) -> LocalMarketAds:
+    def planet(self, planet: str, timeout: Optional[float] = None) -> LocalMarketAds:
         """Gets local market ads for planet
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetNotFound: Planet not found
@@ -46,7 +46,7 @@ class LocalMarket(AbstractLocalMarket):
             raise PlanetNotFound("Planet not found")
 
     def _planet_type(
-        self, planet: str, adtype: str, timeout: float | None = None
+        self, planet: str, adtype: str, timeout: Optional[float] = None
     ) -> Tuple[int, any]:
         validate_localmarket_adtype(adtype=adtype)
 
@@ -60,13 +60,13 @@ class LocalMarket(AbstractLocalMarket):
 
     # /localmarket/planet/{Planet}/{Type}
     def planet_buy(
-        self, planet: str, timeout: float | None = None
+        self, planet: str, timeout: Optional[float] = None
     ) -> LocalMarketAdList:
         """Gets all BUY ads from the planets local market
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetOrAdsNotFound: Planet not found or no ads
@@ -82,13 +82,13 @@ class LocalMarket(AbstractLocalMarket):
             raise PlanetOrAdsNotFound("Planet not found or no ads on planet")
 
     def planet_sell(
-        self, planet: str, timeout: float | None = None
+        self, planet: str, timeout: Optional[float] = None
     ) -> LocalMarketAdList:
         """Gets all SELL ads from planets local market
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetOrAdsNotFound: Planet not found or no ads
@@ -106,13 +106,13 @@ class LocalMarket(AbstractLocalMarket):
             raise PlanetOrAdsNotFound("Planet not found or no ads on planet")
 
     def planet_shipping(
-        self, planet: str, timeout: float | None = None
+        self, planet: str, timeout: Optional[float] = None
     ) -> LocalMarketShippingAdList:
         """Gets a list of planets shipping ads
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetOrAdsNotFound: Planet not found or no ads
@@ -131,13 +131,13 @@ class LocalMarket(AbstractLocalMarket):
 
     # /localmarket/shipping/source/{SourcePlanet}
     def shipping_from(
-        self, planet: str, timeout: float | None = None
+        self, planet: str, timeout: Optional[float] = None
     ) -> LocalMarketShippingAdList:
         """Gets a list of SHIPPING ads starting from planet
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetOrAdsNotFound: Planet not found or no ads
@@ -158,13 +158,13 @@ class LocalMarket(AbstractLocalMarket):
 
     # /localmarket/shipping/destination/{DestinationPlanet}
     def shipping_to(
-        self, planet: str, timeout: float | None = None
+        self, planet: str, timeout: Optional[float] = None
     ) -> LocalMarketShippingAdList:
         """Gets a list of SHIPPING ads ending at planet
 
         Args:
             planet (str): PlanetId, PlanetNaturalId, PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetOrAdsNotFound: Planet not found or no ads
@@ -186,12 +186,14 @@ class LocalMarket(AbstractLocalMarket):
             raise PlanetOrAdsNotFound("Planet not found or no ads on planet")
 
     # /localmarket/company/{Company}
-    def company(self, companycode: str, timeout: float | None = None) -> LocalMarketAds:
+    def company(
+        self, companycode: str, timeout: Optional[float] = None
+    ) -> LocalMarketAds:
         """Gets a list of all ads of the specified company
 
         Args:
             companycode (str): Company Code (e.g., "SKYP")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             CompanyOrAdsNotFound: Company not found or company has no ads

@@ -1,6 +1,9 @@
+from typing import Optional
+
+
 class AbstractBuilding:
-    def get(self, building_ticker: str, timeout: float | None = None):
+    def get(self, building_ticker: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def allbuildings(self, timeout: float | None = None):
+    def allbuildings(self, timeout: Optional[float] = None):
         raise NotImplementedError()

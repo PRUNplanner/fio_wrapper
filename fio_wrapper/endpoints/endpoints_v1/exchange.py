@@ -1,5 +1,6 @@
 """Access exchange information from FIO.
 """
+from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_exchange import AbstractExchange
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import (
@@ -64,13 +65,13 @@ class Exchange(AbstractExchange):
 
     # /exchange/{ExchangeTicker}
     def get(
-        self, exchange_ticker: str, timeout: float | None = None
+        self, exchange_ticker: str, timeout: Optional[float] = None
     ) -> ExchangeTickerFull:
         """Gets a single exchange ticker from FIO
 
         Args:
             exchange_ticker (str): Exchange Ticker (e.g., "DW.AI1")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             ExchangeTickerNotFound: Exchange ticker was not found
@@ -94,11 +95,11 @@ class Exchange(AbstractExchange):
             raise ExchangeTickerNotFound("Exchangeticker not found")
 
     # /exchange/all
-    def all(self, timeout: float | None = None) -> ExchangeTickerList:
+    def all(self, timeout: Optional[float] = None) -> ExchangeTickerList:
         """Gets all simple exchange ticker from FIO
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             ExchangeTickerList: Exchange ticker
@@ -110,11 +111,11 @@ class Exchange(AbstractExchange):
         return ExchangeTickerList.model_validate(data)
 
     # /exchange/full
-    def full(self, timeout: float | None = None) -> ExchangeTickerFullList:
+    def full(self, timeout: Optional[float] = None) -> ExchangeTickerFullList:
         """Gets a complete list of all exchange information from FIO
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             ExchangeTickerFullList: Exchange ticker full
@@ -126,12 +127,14 @@ class Exchange(AbstractExchange):
         return ExchangeTickerFullList.model_validate(data)
 
     # /exchange/orders/{CompanyCode}
-    def get_orders(self, company_code: str, timeout: float | None = None) -> OrderList:
+    def get_orders(
+        self, company_code: str, timeout: Optional[float] = None
+    ) -> OrderList:
         """Gets a companies order data from FIO
 
         Args:
             company_code (str): Company code (1-4 characters)
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             OrderList: Orders
@@ -150,14 +153,14 @@ class Exchange(AbstractExchange):
 
     # /exchange/orders/{CompanyCode}/{ExchangeCode}
     def get_orders_exchange(
-        self, company_code: str, exchange_code: str, timeout: float | None = None
+        self, company_code: str, exchange_code: str, timeout: Optional[float] = None
     ) -> OrderList:
         """Gets a companies order data for a specific exchange from FIO
 
         Args:
             company_code (str): Company code (1-4 characters)
             exchange_code (str): Exchange code (e.g., "AI1")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             OrderList: Orders

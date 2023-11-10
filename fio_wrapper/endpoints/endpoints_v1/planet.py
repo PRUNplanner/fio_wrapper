@@ -1,6 +1,6 @@
 """Access planet information from FIO.
 """
-from typing import List
+from typing import List, Optional
 from fio_wrapper.endpoints.abstracts.abstract_planet import AbstractPlanet
 from fio_wrapper.exceptions import (
     PlanetNotFound,
@@ -28,12 +28,12 @@ class Planet(AbstractPlanet):
         self._adapter: FIOAdapter = adapter
 
     # /planet/{Planet}
-    def get(self, planet: str, timeout: float | None = None) -> PlanetFull:
+    def get(self, planet: str, timeout: Optional[float] = None) -> PlanetFull:
         """Gets full planet data from FIO
 
         Args:
             planet (str): PlanetId, PlanetNaturalId or PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetNotFound: Planet not found
@@ -53,11 +53,11 @@ class Planet(AbstractPlanet):
             raise PlanetNotFound("Planet not found")
 
     # /planet/allplanets
-    def all(self, timeout: float | None = None) -> PlanetList:
+    def all(self, timeout: Optional[float] = None) -> PlanetList:
         """Gets a list of all Planets with minimal information from FIO
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             PlanetList: List of Planets as List[Planet]
@@ -69,11 +69,11 @@ class Planet(AbstractPlanet):
         return PlanetList.model_validate(data)
 
     # /planet/allplanets/full
-    def full(self, timeout: float | None = None) -> PlanetFullList:
+    def full(self, timeout: Optional[float] = None) -> PlanetFullList:
         """Gets a list of all planets from FIO with full planet information
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             PlanetFullList: List of Planets with full information as List[PlanetFull]
@@ -85,12 +85,12 @@ class Planet(AbstractPlanet):
         return PlanetFullList.model_validate(data)
 
     # /planet/sites/{Planet}
-    def sites(self, planet: str, timeout: float | None = None) -> PlanetSiteList:
+    def sites(self, planet: str, timeout: Optional[float] = None) -> PlanetSiteList:
         """Gets a list of sites on the planet from FIO
 
         Args:
             planet (str): PlanetId, PlanetNaturalId or PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetNotFound: Planet not found
@@ -128,7 +128,7 @@ class Planet(AbstractPlanet):
         must_have_adm: bool = False,
         must_have_shy: bool = False,
         distance_checks: List[str] = None,
-        timeout: float | None = None,
+        timeout: Optional[float] = None,
     ) -> PlanetFullList:
         """Performs a search request towards FIO to find a planet matching the search parameters
 
@@ -149,7 +149,7 @@ class Planet(AbstractPlanet):
             must_have_adm (bool, optional): Planet must have a Planetary Administration Center.
             must_have_shy (bool, optional): Planet must have a Shipyard.
             distance_checks (List[str], optional): List of other planets to check distance to, e.g. ["ANT", "MOR"].
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetSearchMaterialsInvalid: _description_

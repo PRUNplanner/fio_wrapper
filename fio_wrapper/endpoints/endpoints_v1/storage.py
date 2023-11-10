@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from fio_wrapper.decorator import apikey_required
 from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_storage import AbstractStorage
@@ -8,7 +8,7 @@ from fio_wrapper.models.storage_models import StorageList, Storage as StorageMod
 
 class Storage(AbstractStorage, AbstractEndpoint):
     @apikey_required
-    def get(self, username: str, timeout: float | None = None) -> StorageList:
+    def get(self, username: str, timeout: Optional[float] = None) -> StorageList:
         """Gets users storage data from FIO
 
         Note:
@@ -16,7 +16,7 @@ class Storage(AbstractStorage, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoStorageData: Username has no storage data
@@ -41,7 +41,7 @@ class Storage(AbstractStorage, AbstractEndpoint):
 
     @apikey_required
     def get_specific(
-        self, username: str, specific: str, timeout: float | None = None
+        self, username: str, specific: str, timeout: Optional[float] = None
     ) -> StorageModel:
         """Gets users specific storage data from FIO
 
@@ -51,7 +51,7 @@ class Storage(AbstractStorage, AbstractEndpoint):
         Args:
             username (str): Prosperous Universe username
             specific (str): StorageId, PlanetId, PlanetNaturalId or PlanetName
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoStorageData: Username has no storage data
@@ -77,7 +77,7 @@ class Storage(AbstractStorage, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def planets(self, username: str, timeout: float | None = None) -> List[str]:
+    def planets(self, username: str, timeout: Optional[float] = None) -> List[str]:
         """Returns a list of storages from FIO
 
         Note:
@@ -85,7 +85,7 @@ class Storage(AbstractStorage, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoStorageData: Username has no storage data

@@ -1,5 +1,6 @@
 """Access material information from FIO.
 """
+from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_material import AbstractMaterial
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import validate_ticker
@@ -16,7 +17,7 @@ class Material(AbstractMaterial):
 
         Args:
             material_ticker (str): Material ticker
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialTickerInvalid: Material ticker can't be None type
@@ -26,12 +27,14 @@ class Material(AbstractMaterial):
         """
         validate_ticker(material_ticker=material_ticker)
 
-    def get(self, material_ticker: str, timeout: float | None = None) -> MaterialTicker:
+    def get(
+        self, material_ticker: str, timeout: Optional[float] = None
+    ) -> MaterialTicker:
         """Gets a single material from FIO
 
         Args:
             material_ticker (str): Material Ticker (e.g., "DW")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialTickerNotFound: Material Ticker was not found
@@ -55,11 +58,11 @@ class Material(AbstractMaterial):
         elif status == 204:
             raise MaterialTickerNotFound("Materialticker not found")
 
-    def all(self, timeout: float | None = None) -> MaterialTickerList:
+    def all(self, timeout: Optional[float] = None) -> MaterialTickerList:
         """Gets all materials from FIO
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
@@ -70,13 +73,13 @@ class Material(AbstractMaterial):
         return MaterialTickerList.model_validate(data)
 
     def category(
-        self, category_name: str, timeout: float | None = None
+        self, category_name: str, timeout: Optional[float] = None
     ) -> MaterialTickerList:
         """Gets all materials of specified category
 
         Args:
             category_name (str): Category name (e.g., "agricultural products")
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialCategoryNotFound: Category was not found

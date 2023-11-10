@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from fio_wrapper.decorator import apikey_required
 from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_group import AbstractGroup
@@ -13,14 +13,14 @@ from fio_wrapper.models.group_models import (
 
 class Group(AbstractGroup, AbstractEndpoint):
     @apikey_required
-    def all(self, timeout: float | None = None) -> GroupList:
+    def all(self, timeout: Optional[float] = None) -> GroupList:
         """Gets all groups from FIO
 
         Note:
             FIO API Key Required
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -36,7 +36,7 @@ class Group(AbstractGroup, AbstractEndpoint):
             return GroupList.model_validate(data)
 
     @apikey_required
-    def get(self, groupid: int, timeout: float | None = None) -> GroupModel:
+    def get(self, groupid: int, timeout: Optional[float] = None) -> GroupModel:
         """Gets group information for specified GroupID from FIO
 
         Note:
@@ -44,7 +44,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             groupid (int): GroupModelId
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -60,14 +60,14 @@ class Group(AbstractGroup, AbstractEndpoint):
             return GroupModel.model_validate(data)
 
     @apikey_required
-    def memberships(self, timeout: float | None = None) -> GroupMembershipList:
+    def memberships(self, timeout: Optional[float] = None) -> GroupMembershipList:
         """Gets all groups the FIO API Key is member of
 
         Note:
             FIO API Key Required
 
         Args:
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -83,7 +83,7 @@ class Group(AbstractGroup, AbstractEndpoint):
             return GroupMembershipList.model_validate(data)
 
     @apikey_required
-    def hub(self, members: List[str], timeout: float | None = None) -> GroupHub:
+    def hub(self, members: List[str], timeout: Optional[float] = None) -> GroupHub:
         """Gets the groups Hub information from FIO
 
         Note:
@@ -91,7 +91,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             members (List[str]): List of members, e.g. ["NAME1", "NAME2"]
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -107,7 +107,7 @@ class Group(AbstractGroup, AbstractEndpoint):
             return GroupHub.model_validate(data)
 
     @apikey_required
-    def burn(self, groupid: int, timeout: float | None = None) -> BurnList:
+    def burn(self, groupid: int, timeout: Optional[float] = None) -> BurnList:
         """Gets the groups Burn information from FIO
 
         Note:
@@ -115,7 +115,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             groupid (int): GroupModelId
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
