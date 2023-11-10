@@ -1,7 +1,7 @@
 """Request adapter performing actual API calls towards FIO endpoints
 """
 
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from fio_wrapper.exceptions import UnknownFIOResponse
@@ -56,7 +56,7 @@ class FIOAdapter:
         endpoint: str,
         params: Dict = None,
         data: Dict = None,
-        err_codes=[],
+        err_codes: List[int] = None,
         timeout: float | None = None,
     ) -> Tuple[int, any]:
         try:
@@ -74,7 +74,7 @@ class FIOAdapter:
             if response.status_code == 200:
                 return 200, response.json()
             # FIO response in provided codes to catch in endpoint
-            elif response.status_code in err_codes:
+            elif isinstance(err_codes, List) and response.status_code in err_codes:
                 return response.status_code, None
             # other FIO response, not accounted for
             else:
@@ -91,7 +91,7 @@ class FIOAdapter:
         self,
         endpoint: str,
         params: Dict = None,
-        err_codes=[],
+        err_codes: List[int] = None,
         timeout: float | None = None,
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
@@ -99,7 +99,7 @@ class FIOAdapter:
         Args:
             endpoint (str): URL
             params (Dict, optional): GET parameters. Defaults to None.
-            err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+            err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.
             timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
@@ -118,7 +118,7 @@ class FIOAdapter:
         endpoint: str,
         params: Dict = None,
         data: Dict = None,
-        err_codes=[],
+        err_codes: List[int] = None,
         timeout: float | None = None,
     ) -> Tuple[int, any]:
         """Performs a POST request towards endpoint
@@ -127,7 +127,7 @@ class FIOAdapter:
             endpoint (str): URL
             params (Dict, optional): POST parameters. Defaults to None.
             data (Dict, optional): POST data. Defaults to None.
-            err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+            err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.
             timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:

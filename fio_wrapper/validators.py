@@ -77,7 +77,7 @@ def validate_localmarket_adtype(adtype: str) -> None:
         raise InvalidAdType("Invalid ad type")
 
 
-def validate_planet_search_materials(materials: List[str]) -> bool:
+def validate_planet_search_materials(materials: List[str] | None) -> bool:
     if materials is None:
         return False
 
@@ -85,17 +85,23 @@ def validate_planet_search_materials(materials: List[str]) -> bool:
         return False
 
     for material in materials:
-        if len(material) == 0 or len(material) > 3:
+        # ensure material is str and length max 3 char
+        if not isinstance(material, str) or len(material) == 0 or len(material) > 3:
             return False
 
     return True
 
 
-def validate_planet_search_distance_checks(distance_checks: List[str]) -> bool:
+def validate_planet_search_distance_checks(distance_checks: List[str] | None) -> bool:
     if distance_checks is None:
         return False
 
     if len(distance_checks) > 3:
         return False
+
+    # ensure all distances are str
+    for distance in distance_checks:
+        if not isinstance(distance, str):
+            return False
 
     return True

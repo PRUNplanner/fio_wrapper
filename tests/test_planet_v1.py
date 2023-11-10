@@ -751,12 +751,12 @@ def test_planet_sites(requests_mock, ftx_fio: FIO, planet_site_1) -> None:
 
 def test_planet_search_invalid_material(ftx_fio: FIO) -> None:
     with pytest.raises(PlanetSearchMaterialsInvalid):
-        ftx_fio.Planet.search(materials=None)
+        ftx_fio.Planet.search(materials=[1, 2, 3])
 
 
 def test_planet_search_invalid_distances(ftx_fio: FIO) -> None:
     with pytest.raises(PlanetSearchDistanceChecksInvalid):
-        ftx_fio.Planet.search(distance_checks=None)
+        ftx_fio.Planet.search(distance_checks=[1, 2, 3])
 
 
 def test_planet_search(requests_mock, ftx_fio: FIO, planet_full_1) -> None:

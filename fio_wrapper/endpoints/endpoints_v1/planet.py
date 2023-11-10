@@ -112,7 +112,7 @@ class Planet(AbstractPlanet):
     # /planet/search
     def search(
         self,
-        materials: List[str] = [],
+        materials: List[str] = None,
         include_rocky: bool = False,
         include_gaseous: bool = False,
         include_low_gravity: bool = False,
@@ -127,7 +127,7 @@ class Planet(AbstractPlanet):
         must_have_war: bool = False,
         must_have_adm: bool = False,
         must_have_shy: bool = False,
-        distance_checks: List[str] = [],
+        distance_checks: List[str] = None,
         timeout: float | None = None,
     ) -> PlanetFullList:
         """Performs a search request towards FIO to find a planet matching the search parameters
@@ -159,20 +159,26 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetFullList: List of Planets with full information as List[PlanetFull]
         """
-        if not validate_planet_search_materials(materials=materials):
-            raise PlanetSearchMaterialsInvalid(
-                "Invalid materials provided. Can check for up to 4 materials."
-            )
 
-        if not validate_planet_search_distance_checks(distance_checks=distance_checks):
-            raise PlanetSearchDistanceChecksInvalid(
-                "Invalid distance checks. Can check for up to 3 distances."
-            )
+        # accept None as materials, don't include materials in search
+        if materials is not None:
+            if not validate_planet_search_materials(materials=materials):
+                raise PlanetSearchMaterialsInvalid(
+                    "Invalid materials provided. Can check for up to 4 materials."
+                )
+
+        if distance_checks is not None:
+            if not validate_planet_search_distance_checks(
+                distance_checks=distance_checks
+            ):
+                raise PlanetSearchDistanceChecksInvalid(
+                    "Invalid distance checks. Can check for up to 3 distances."
+                )
 
         (status, data) = self._adapter.post(
             endpoint=self._adapter.urls.planet_search_url(),
             data={
-                "Materials": materials,
+                "Materials": [] if materials is None else materials,
                 "IncludeRocky": include_rocky,
                 "IncludeGaseous": include_gaseous,
                 "IncludeLowGravity": include_low_gravity,
@@ -187,7 +193,7 @@ class Planet(AbstractPlanet):
                 "MustHaveWarehouse": must_have_war,
                 "MustHaveAdministrationCenter": must_have_adm,
                 "MustHaveShipyard": must_have_shy,
-                "DistanceChecks": distance_checks,
+                "DistanceChecks": [] if distance_checks is None else distance_checks,
             },
             err_codes=[400],
             timeout=timeout,

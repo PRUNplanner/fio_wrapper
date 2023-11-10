@@ -16,7 +16,7 @@ class AbstractPlanet:
 
     def search(
         self,
-        materials: List[str] = [],
+        materials: List[str] = None,
         include_rocky: bool = False,
         include_gaseous: bool = False,
         include_low_gravity: bool = False,
@@ -31,7 +31,7 @@ class AbstractPlanet:
         must_have_war: bool = False,
         must_have_adm: bool = False,
         must_have_shy: bool = False,
-        distance_checks: List[str] = [],
+        distance_checks: List[str] = None,
         timeout: float | None = None,
     ):
         raise NotImplementedError()
