@@ -42,8 +42,8 @@ def validate_exchange_code(exchange_code: str) -> None:
 
     # first 2 characters must be str
     if (
-        type(exchange_code[0]) != str
-        or type(exchange_code[1]) != str
+        not isinstance(exchange_code[0], str)
+        or not isinstance(exchange_code[1], str)
         or not exchange_code[2].isnumeric()
     ):
         raise ExchangeTickerInvalid(
@@ -73,7 +73,7 @@ def validate_localmarket_adtype(adtype: str) -> None:
         "SHIPPING",
     ]
 
-    if not adtype in accepted_types:
+    if adtype not in accepted_types:
         raise InvalidAdType("Invalid ad type")
 
 

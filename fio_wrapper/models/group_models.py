@@ -192,9 +192,6 @@ class ProductionLine(BaseModel):
     Inputs: List[Material]
     Outputs: List[Material]
     LastUpdated: NaiveDatetime
-
-
-class ProductionLine(BaseModel):
     BuildingName: str
     BuildingTicker: str = Field(max_length=3)
     Capacity: int

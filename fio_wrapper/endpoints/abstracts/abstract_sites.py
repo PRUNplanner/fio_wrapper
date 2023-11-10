@@ -1,9 +1,9 @@
 class AbstractSites:
     def get(self, username: str):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def get_planet(self, username: str, planet: str):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def planets(self, username: str):
-        raise NotImplemented()
+        raise NotImplementedError()

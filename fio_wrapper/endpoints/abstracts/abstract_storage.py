@@ -1,9 +1,9 @@
 class AbstractStorage:
     def get(self, username: str):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def get_specific(self, username: str, specific: str):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def planets(self, username: str):
-        raise NotImplemented()
+        raise NotImplementedError()

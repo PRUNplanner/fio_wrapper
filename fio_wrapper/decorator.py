@@ -21,7 +21,7 @@ def apikey_required(func) -> any:
     @wraps(func)
     def wrapper_apikey_required(self, *args, **kwargs):
         # can only decorate endpoint functions
-        if self._adapter is None or type(self._adapter) is not FIOAdapter:
+        if self._adapter is None or not isinstance(self._adapter, FIOAdapter):
             raise SystemExit("apikey_required decorator can only be used on endpoints")
 
         # requires API Key set in adapter

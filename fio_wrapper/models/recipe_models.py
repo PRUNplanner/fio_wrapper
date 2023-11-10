@@ -1,5 +1,5 @@
 from typing import List, Optional
-from pydantic import BaseModel, RootModel, Field, NaiveDatetime
+from pydantic import BaseModel, RootModel, Field
 
 
 class RecipeIO(BaseModel):
