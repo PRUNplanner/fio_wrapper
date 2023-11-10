@@ -13,11 +13,14 @@ from fio_wrapper.models.group_models import (
 
 class Group(AbstractGroup, AbstractEndpoint):
     @apikey_required
-    def all(self) -> GroupList:
+    def all(self, timeout: float | None = None) -> GroupList:
         """Gets all groups from FIO
 
         Note:
             FIO API Key Required
+
+        Args:
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -26,14 +29,14 @@ class Group(AbstractGroup, AbstractEndpoint):
             GroupList: List of Groups
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_all_url(),
+            endpoint=self._adapter.urls.group_all_url(), timeout=timeout
         )
 
         if status == 200:
             return GroupList.model_validate(data)
 
     @apikey_required
-    def get(self, groupid: int) -> GroupModel:
+    def get(self, groupid: int, timeout: float | None = None) -> GroupModel:
         """Gets group information for specified GroupID from FIO
 
         Note:
@@ -41,6 +44,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             groupid (int): GroupModelId
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -49,18 +53,21 @@ class Group(AbstractGroup, AbstractEndpoint):
             GroupModel: GroupModel
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_get_url(groupid=groupid)
+            endpoint=self._adapter.urls.group_get_url(groupid=groupid), timeout=timeout
         )
 
         if status == 200:
             return GroupModel.model_validate(data)
 
     @apikey_required
-    def memberships(self) -> GroupMembershipList:
+    def memberships(self, timeout: float | None = None) -> GroupMembershipList:
         """Gets all groups the FIO API Key is member of
 
         Note:
             FIO API Key Required
+
+        Args:
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -69,14 +76,14 @@ class Group(AbstractGroup, AbstractEndpoint):
             GroupMembershipList: List of Group Memberships
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_memberships_url()
+            endpoint=self._adapter.urls.group_memberships_url(), timeout=timeout
         )
 
         if status == 200:
             return GroupMembershipList.model_validate(data)
 
     @apikey_required
-    def hub(self, members: List[str]) -> GroupHub:
+    def hub(self, members: List[str], timeout: float | None = None) -> GroupHub:
         """Gets the groups Hub information from FIO
 
         Note:
@@ -84,6 +91,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             members (List[str]): List of members, e.g. ["NAME1", "NAME2"]
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -92,14 +100,14 @@ class Group(AbstractGroup, AbstractEndpoint):
             GroupHub: GroupHub data from FIO
         """
         (status, data) = self._adapter.post(
-            endpoint=self._adapter.urls.group_hub_url(), data=members
+            endpoint=self._adapter.urls.group_hub_url(), data=members, timeout=timeout
         )
 
         if status == 200:
             return GroupHub.model_validate(data)
 
     @apikey_required
-    def burn(self, groupid: int) -> BurnList:
+    def burn(self, groupid: int, timeout: float | None = None) -> BurnList:
         """Gets the groups Burn information from FIO
 
         Note:
@@ -107,6 +115,7 @@ class Group(AbstractGroup, AbstractEndpoint):
 
         Args:
             groupid (int): GroupModelId
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             UnknownFIOResponse: FIO returned an unknown response
@@ -115,7 +124,7 @@ class Group(AbstractGroup, AbstractEndpoint):
             BurnList: List of Burn data
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_burn_url(groupid=groupid)
+            endpoint=self._adapter.urls.group_burn_url(groupid=groupid), timeout=timeout
         )
 
         if status == 200:

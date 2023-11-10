@@ -16,7 +16,7 @@ class FIOAdapter:
         version (str, optional): FIO API version.
         base_url (str, optional): FIO base url.
         ssl_verify (bool, optional): Verify https connection.
-        timeout (float, optional): Request timeout.
+        timeout (float, optional): Request timeout in seconds.
 
     """
 
@@ -35,7 +35,7 @@ class FIOAdapter:
             version (str, optional): FIO API version. Defaults to "1.0.0".
             base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
             ssl_verify (bool, optional): Verify https connection. Defaults to True.
-            timeout (float, optional): Request timeout. Defaults to 10.0.
+            timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
         """
         self.api_key = api_key
         self.version = version
@@ -57,6 +57,7 @@ class FIOAdapter:
         params: Dict = None,
         data: Dict = None,
         err_codes=[],
+        timeout: float | None = None,
     ) -> Tuple[int, any]:
         try:
             response = requests.request(
@@ -66,7 +67,7 @@ class FIOAdapter:
                 headers=self.headers(),
                 params=params,
                 json=data,
-                timeout=self.timeout,
+                timeout=timeout if timeout is not None else self.timeout,
             )
 
             # successful FIO response
@@ -91,6 +92,7 @@ class FIOAdapter:
         endpoint: str,
         params: Dict = None,
         err_codes=[],
+        timeout: float | None = None,
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
 
@@ -98,6 +100,7 @@ class FIOAdapter:
             endpoint (str): URL
             params (Dict, optional): GET parameters. Defaults to None.
             err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             Tuple[int, any]: Request status code and request data
@@ -107,10 +110,16 @@ class FIOAdapter:
             endpoint=endpoint,
             params=params,
             err_codes=err_codes,
+            timeout=timeout,
         )
 
     def post(
-        self, endpoint: str, params: Dict = None, data: Dict = None, err_codes=[]
+        self,
+        endpoint: str,
+        params: Dict = None,
+        data: Dict = None,
+        err_codes=[],
+        timeout: float | None = None,
     ) -> Tuple[int, any]:
         """Performs a POST request towards endpoint
 
@@ -119,6 +128,7 @@ class FIOAdapter:
             params (Dict, optional): POST parameters. Defaults to None.
             data (Dict, optional): POST data. Defaults to None.
             err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             Tuple[int, any]: Request status code and request data
@@ -129,4 +139,5 @@ class FIOAdapter:
             params=params,
             data=data,
             err_codes=err_codes,
+            timeout=timeout,
         )

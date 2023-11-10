@@ -2,17 +2,17 @@ from typing import List
 
 
 class AbstractGroup:
-    def all(self):
+    def all(self, timeout: float | None = None):
         raise NotImplementedError()
 
-    def get(self, groupid: int):
+    def get(self, groupid: int, timeout: float | None = None):
         raise NotImplementedError()
 
-    def memberships(self):
+    def memberships(self, timeout: float | None = None):
         raise NotImplementedError()
 
-    def hub(self, members: List[str]):
+    def hub(self, members: List[str], timeout: float | None = None):
         raise NotImplementedError()
 
-    def burn(self, groupid: int):
+    def burn(self, groupid: int, timeout: float | None = None):
         raise NotImplementedError()

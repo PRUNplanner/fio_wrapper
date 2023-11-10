@@ -16,6 +16,7 @@ class Material(AbstractMaterial):
 
         Args:
             material_ticker (str): Material ticker
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialTickerInvalid: Material ticker can't be None type
@@ -25,11 +26,12 @@ class Material(AbstractMaterial):
         """
         validate_ticker(material_ticker=material_ticker)
 
-    def get(self, material_ticker: str) -> MaterialTicker:
+    def get(self, material_ticker: str, timeout: float | None = None) -> MaterialTicker:
         """Gets a single material from FIO
 
         Args:
             material_ticker (str): Material Ticker (e.g., "DW")
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialTickerNotFound: Material Ticker was not found
@@ -45,6 +47,7 @@ class Material(AbstractMaterial):
                 material_ticker=material_ticker
             ),
             err_codes=[204],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -52,22 +55,28 @@ class Material(AbstractMaterial):
         elif status == 204:
             raise MaterialTickerNotFound("Materialticker not found")
 
-    def all(self) -> MaterialTickerList:
+    def all(self, timeout: float | None = None) -> MaterialTickerList:
         """Gets all materials from FIO
+
+        Args:
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
         """
         (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.material_allmaterials_url(),
+            endpoint=self._adapter.urls.material_allmaterials_url(), timeout=timeout
         )
         return MaterialTickerList.model_validate(data)
 
-    def category(self, category_name: str) -> MaterialTickerList:
+    def category(
+        self, category_name: str, timeout: float | None = None
+    ) -> MaterialTickerList:
         """Gets all materials of specified category
 
         Args:
             category_name (str): Category name (e.g., "agricultural products")
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             MaterialCategoryNotFound: Category was not found
@@ -80,6 +89,7 @@ class Material(AbstractMaterial):
                 category_name=category_name
             ),
             err_codes=[204],
+            timeout=timeout,
         )
 
         if status == 200 and len(data) > 0:

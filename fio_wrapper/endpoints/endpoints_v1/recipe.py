@@ -10,28 +10,37 @@ class Recipe(AbstractRecipe):
         self._adapter: FIOAdapter = adapter
 
     # /recipes/{Ticker}
-    def get(self, material_ticker: str) -> MaterialRecipeList:
+    def get(
+        self, material_ticker: str, timeout: float | None = None
+    ) -> MaterialRecipeList:
         """Gets all recipes for given material from FIO
 
         Args:
             material_ticker (str): Material Ticker (e.g. "FE")
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             MaterialRecipeList: List of Recipes as List[MaterialRecipeList]
         """
         (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.recipe_get_url(material_ticker=material_ticker)
+            endpoint=self._adapter.urls.recipe_get_url(material_ticker=material_ticker),
+            timeout=timeout,
         )
 
         return MaterialRecipeList.model_validate(data)
 
     # /recipes/allrecipes
-    def all(self) -> RecipeList:
+    def all(self, timeout: float | None = None) -> RecipeList:
         """Gets all recipes from FIO
+
+        Args:
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             RecipeList: List of Recipes as List[RecipeList]
         """
-        (_, data) = self._adapter.get(endpoint=self._adapter.urls.recipe_get_all_url())
+        (_, data) = self._adapter.get(
+            endpoint=self._adapter.urls.recipe_get_all_url(), timeout=timeout
+        )
 
         return RecipeList.model_validate(data)

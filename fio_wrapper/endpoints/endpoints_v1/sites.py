@@ -11,7 +11,7 @@ from fio_wrapper.models.sites_models import Site, SiteList, WarehouseList
 
 class Sites(AbstractSites, AbstractEndpoint):
     @apikey_required
-    def get(self, username: str) -> SiteList:
+    def get(self, username: str, timeout: float | None = None) -> SiteList:
         """Gets site data for given username from FIO
 
         Note:
@@ -19,6 +19,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -31,6 +32,7 @@ class Sites(AbstractSites, AbstractEndpoint):
         (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.sites_get_url(username=username),
             err_codes=[204, 401],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -42,7 +44,9 @@ class Sites(AbstractSites, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def get_planet(self, username: str, planet: str) -> Site:
+    def get_planet(
+        self, username: str, planet: str, timeout: float | None = None
+    ) -> Site:
         """Gets site data for given username and planet from FIO
 
         Note:
@@ -51,6 +55,7 @@ class Sites(AbstractSites, AbstractEndpoint):
         Args:
             username (str): Prosperous Universe username
             planet (str): PlanetId, PlanetNaturalId or PlanetName. Defaults to None.
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -65,6 +70,7 @@ class Sites(AbstractSites, AbstractEndpoint):
                 username=username, planet=planet
             ),
             err_codes=[204, 401],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -75,7 +81,7 @@ class Sites(AbstractSites, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def planets(self, username: str) -> List[str]:
+    def planets(self, username: str, timeout: float | None = None) -> List[str]:
         """Gets a list of SiteIds from FIO for given username
 
         Note:
@@ -83,6 +89,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no site data
@@ -94,6 +101,7 @@ class Sites(AbstractSites, AbstractEndpoint):
         (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.sites_planets_get_url(username=username),
             err_codes=[204, 401],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -104,7 +112,7 @@ class Sites(AbstractSites, AbstractEndpoint):
             raise NotAuthenticated("Not authenticated or no appropiate permissions")
 
     @apikey_required
-    def warehouses(self, username: str) -> WarehouseList:
+    def warehouses(self, username: str, timeout: float | None = None) -> WarehouseList:
         """Get warehouse data for username from FIO
 
         Note:
@@ -112,6 +120,7 @@ class Sites(AbstractSites, AbstractEndpoint):
 
         Args:
             username (str): Prosperous Universe username
+            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             NoSiteData: Username has no warehouse site data
@@ -123,6 +132,7 @@ class Sites(AbstractSites, AbstractEndpoint):
         (status, data) = self._adapter.get(
             endpoint=self._adapter.urls.sites_warehouses_get(username=username),
             err_codes=[204, 401],
+            timeout=timeout,
         )
 
         if status == 200:
