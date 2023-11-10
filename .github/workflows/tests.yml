@@ -26,3 +26,7 @@ jobs:
       run: python -m pytest -v
     - name: Run test coverage
       run: python -m pytest --cov
+    - name: Generate reprot
+      run: python -m pytest --cov --cov-report=xml:coverage.xml --cov-config=.coveragerc
+    - name: Upload Codacy
+      run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report \ -r coverage.xml
