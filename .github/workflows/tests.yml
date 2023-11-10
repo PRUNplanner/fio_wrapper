@@ -1,8 +1,12 @@
 name: Tests
 
 on:
-  - pull_request
-
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   test:
@@ -26,3 +30,9 @@ jobs:
       run: python -m pytest -v
     - name: Run test coverage
       run: python -m pytest --cov
+    - name: Generate reprot
+      run: python -m pytest --cov --cov-report=xml:coverage.xml --cov-config=.coveragerc
+    - name: Upload Codacy
+      env:
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+      run: bash <(curl -Ls https://coverage.codacy.com/get.sh) report \ -r coverage.xml
