@@ -83,6 +83,7 @@ nav:
     - FIO Wrapper: index.md
     - Usage: usage.md
     - Available Routes: 'routes.md'  
+    - Timeouts: 'timeouts.md'
   - Components:
     - FIO: fio.md
     - Adapter: fio_adapter.md
