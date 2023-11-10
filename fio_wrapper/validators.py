@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from fio_wrapper.exceptions import (
     InvalidAdType,
     MaterialTickerInvalid,
@@ -77,7 +77,7 @@ def validate_localmarket_adtype(adtype: str) -> None:
         raise InvalidAdType("Invalid ad type")
 
 
-def validate_planet_search_materials(materials: List[str] | None) -> bool:
+def validate_planet_search_materials(materials: Optional[List[str]]) -> bool:
     if materials is None:
         return False
 
@@ -92,7 +92,9 @@ def validate_planet_search_materials(materials: List[str] | None) -> bool:
     return True
 
 
-def validate_planet_search_distance_checks(distance_checks: List[str] | None) -> bool:
+def validate_planet_search_distance_checks(
+    distance_checks: Optional[List[str]],
+) -> bool:
     if distance_checks is None:
         return False
 

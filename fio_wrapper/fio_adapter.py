@@ -1,7 +1,7 @@
 """Request adapter performing actual API calls towards FIO endpoints
 """
 
-from typing import Dict, Tuple, List
+from typing import Dict, Tuple, List, Optional
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from fio_wrapper.exceptions import UnknownFIOResponse
@@ -56,8 +56,8 @@ class FIOAdapter:
         endpoint: str,
         params: Dict = None,
         data: Dict = None,
-        err_codes: List[int] = None,
-        timeout: float | None = None,
+        err_codes: Optional[List[int]] = None,
+        timeout: Optional[float] = None,
     ) -> Tuple[int, any]:
         try:
             response = requests.request(
@@ -91,8 +91,8 @@ class FIOAdapter:
         self,
         endpoint: str,
         params: Dict = None,
-        err_codes: List[int] = None,
-        timeout: float | None = None,
+        err_codes: Optional[List[int]] = None,
+        timeout: Optional[float] = None,
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
 
@@ -100,7 +100,7 @@ class FIOAdapter:
             endpoint (str): URL
             params (Dict, optional): GET parameters. Defaults to None.
             err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             Tuple[int, any]: Request status code and request data
@@ -118,8 +118,8 @@ class FIOAdapter:
         endpoint: str,
         params: Dict = None,
         data: Dict = None,
-        err_codes: List[int] = None,
-        timeout: float | None = None,
+        err_codes: Optional[List[int]] = None,
+        timeout: Optional[float] = None,
     ) -> Tuple[int, any]:
         """Performs a POST request towards endpoint
 
@@ -128,7 +128,7 @@ class FIOAdapter:
             params (Dict, optional): POST parameters. Defaults to None.
             data (Dict, optional): POST data. Defaults to None.
             err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.
-            timeout (float | None, optional): Request timeout in seconds. Defaults to None.
+            timeout (float): Request timeout in seconds. Defaults to None.
 
         Returns:
             Tuple[int, any]: Request status code and request data
