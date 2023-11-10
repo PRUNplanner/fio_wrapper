@@ -1,22 +1,22 @@
-from typing import List
+from typing import List, Optional
 
 
 class AbstractPlanet:
-    def get(self, planet: str):
+    def get(self, planet: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def all(self):
+    def all(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def full(self):
+    def full(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def sites(self, planet: str):
+    def sites(self, planet: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
     def search(
         self,
-        materials: List[str] = [],
+        materials: List[str] = None,
         include_rocky: bool = False,
         include_gaseous: bool = False,
         include_low_gravity: bool = False,
@@ -31,6 +31,7 @@ class AbstractPlanet:
         must_have_war: bool = False,
         must_have_adm: bool = False,
         must_have_shy: bool = False,
-        distance_checks: List[str] = [],
+        distance_checks: List[str] = None,
+        timeout: Optional[float] = None,
     ):
         raise NotImplementedError()

@@ -1,5 +1,6 @@
 """Access exchange information from FIO.
 """
+from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_exchange import AbstractExchange
 from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import (
@@ -63,11 +64,14 @@ class Exchange(AbstractExchange):
         validate_exchange_code(exchange_code=splitted[1])
 
     # /exchange/{ExchangeTicker}
-    def get(self, exchange_ticker: str) -> ExchangeTickerFull:
+    def get(
+        self, exchange_ticker: str, timeout: Optional[float] = None
+    ) -> ExchangeTickerFull:
         """Gets a single exchange ticker from FIO
 
         Args:
             exchange_ticker (str): Exchange Ticker (e.g., "DW.AI1")
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             ExchangeTickerNotFound: Exchange ticker was not found
@@ -82,6 +86,7 @@ class Exchange(AbstractExchange):
                 exchange_ticker=exchange_ticker
             ),
             err_codes=[204],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -90,37 +95,46 @@ class Exchange(AbstractExchange):
             raise ExchangeTickerNotFound("Exchangeticker not found")
 
     # /exchange/all
-    def all(self) -> ExchangeTickerList:
+    def all(self, timeout: Optional[float] = None) -> ExchangeTickerList:
         """Gets all simple exchange ticker from FIO
+
+        Args:
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             ExchangeTickerList: Exchange ticker
         """
         (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_all_url()
+            endpoint=self._adapter.urls.exchange_get_all_url(), timeout=timeout
         )
 
         return ExchangeTickerList.model_validate(data)
 
     # /exchange/full
-    def full(self) -> ExchangeTickerFullList:
+    def full(self, timeout: Optional[float] = None) -> ExchangeTickerFullList:
         """Gets a complete list of all exchange information from FIO
+
+        Args:
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             ExchangeTickerFullList: Exchange ticker full
         """
         (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_full_url()
+            endpoint=self._adapter.urls.exchange_get_full_url(), timeout=timeout
         )
 
         return ExchangeTickerFullList.model_validate(data)
 
     # /exchange/orders/{CompanyCode}
-    def get_orders(self, company_code: str) -> OrderList:
+    def get_orders(
+        self, company_code: str, timeout: Optional[float] = None
+    ) -> OrderList:
         """Gets a companies order data from FIO
 
         Args:
             company_code (str): Company code (1-4 characters)
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             OrderList: Orders
@@ -132,17 +146,21 @@ class Exchange(AbstractExchange):
             endpoint=self._adapter.urls.exchange_get_orders_companycode(
                 company_code=company_code
             ),
+            timeout=timeout,
         )
 
         return OrderList.model_validate(data)
 
     # /exchange/orders/{CompanyCode}/{ExchangeCode}
-    def get_orders_exchange(self, company_code: str, exchange_code: str) -> OrderList:
+    def get_orders_exchange(
+        self, company_code: str, exchange_code: str, timeout: Optional[float] = None
+    ) -> OrderList:
         """Gets a companies order data for a specific exchange from FIO
 
         Args:
             company_code (str): Company code (1-4 characters)
             exchange_code (str): Exchange code (e.g., "AI1")
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             OrderList: Orders
@@ -151,9 +169,10 @@ class Exchange(AbstractExchange):
         validate_exchange_code(exchange_code=exchange_code)
 
         (_, data) = self._adapter.get(
-            self._adapter.urls.exchange_get_orders_companycode_exchange(
+            endpoint=self._adapter.urls.exchange_get_orders_companycode_exchange(
                 company_code=company_code, exchange_code=exchange_code
-            )
+            ),
+            timeout=timeout,
         )
 
         return OrderList.model_validate(data)

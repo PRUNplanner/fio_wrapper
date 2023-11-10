@@ -9,16 +9,35 @@ homepage = "https://jplacht.github.io/fio_wrapper/"
 documentation = "https://jplacht.github.io/fio_wrapper/"
 repository = "https://github.com/jplacht/fio_wrapper"
 keywords = ["fio", "prosperous universe", "api", "wrapper"]
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Unix",
+    "Topic :: Internet",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
 
 include = [
-    "LICENSE"
+    "LICENSE",
+    "README.md",
+    "CONTRIBUTING.md"
 ]
+
+[tool.poetry.urls]
+homepage = "https://jplacht.github.io/fio_wrapper/"
+documentation = "https://jplacht.github.io/fio_wrapper/"
+source = "https://github.com/jplacht/fio_wrapper"
+repository = "https://github.com/jplacht/fio_wrapper"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.31.0"
 pydantic = "^2.4.2"
-urllib3 = "^2.0.7"
 
 [tool.poetry.dev-dependencies]
 black = "^23.10.1"

@@ -1,6 +1,6 @@
 """Access planet information from FIO.
 """
-from typing import List
+from typing import List, Optional
 from fio_wrapper.endpoints.abstracts.abstract_planet import AbstractPlanet
 from fio_wrapper.exceptions import (
     PlanetNotFound,
@@ -28,11 +28,12 @@ class Planet(AbstractPlanet):
         self._adapter: FIOAdapter = adapter
 
     # /planet/{Planet}
-    def get(self, planet: str) -> PlanetFull:
+    def get(self, planet: str, timeout: Optional[float] = None) -> PlanetFull:
         """Gets full planet data from FIO
 
         Args:
             planet (str): PlanetId, PlanetNaturalId or PlanetName
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetNotFound: Planet not found
@@ -41,7 +42,9 @@ class Planet(AbstractPlanet):
             PlanetFull: Full planet information
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_get_url(planet=planet)
+            endpoint=self._adapter.urls.planet_get_url(planet=planet),
+            err_codes=[204],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -50,33 +53,44 @@ class Planet(AbstractPlanet):
             raise PlanetNotFound("Planet not found")
 
     # /planet/allplanets
-    def all(self) -> PlanetList:
+    def all(self, timeout: Optional[float] = None) -> PlanetList:
         """Gets a list of all Planets with minimal information from FIO
+
+        Args:
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             PlanetList: List of Planets as List[Planet]
         """
-        (_, data) = self._adapter.get(endpoint=self._adapter.urls.planet_all_url())
+        (_, data) = self._adapter.get(
+            endpoint=self._adapter.urls.planet_all_url(), timeout=timeout
+        )
 
         return PlanetList.model_validate(data)
 
     # /planet/allplanets/full
-    def full(self) -> PlanetFullList:
+    def full(self, timeout: Optional[float] = None) -> PlanetFullList:
         """Gets a list of all planets from FIO with full planet information
+
+        Args:
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Returns:
             PlanetFullList: List of Planets with full information as List[PlanetFull]
         """
-        (_, data) = self._adapter.get(endpoint=self._adapter.urls.planet_full_url())
+        (_, data) = self._adapter.get(
+            endpoint=self._adapter.urls.planet_full_url(), timeout=timeout
+        )
 
         return PlanetFullList.model_validate(data)
 
     # /planet/sites/{Planet}
-    def sites(self, planet: str) -> PlanetSiteList:
+    def sites(self, planet: str, timeout: Optional[float] = None) -> PlanetSiteList:
         """Gets a list of sites on the planet from FIO
 
         Args:
             planet (str): PlanetId, PlanetNaturalId or PlanetName
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetNotFound: Planet not found
@@ -85,7 +99,9 @@ class Planet(AbstractPlanet):
             PlanetSiteList: List of Planet sites as List[PlanetSite]
         """
         (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_sites_url(planet=planet)
+            endpoint=self._adapter.urls.planet_sites_url(planet=planet),
+            err_codes=[204],
+            timeout=timeout,
         )
 
         if status == 200:
@@ -96,7 +112,7 @@ class Planet(AbstractPlanet):
     # /planet/search
     def search(
         self,
-        materials: List[str] = [],
+        materials: List[str] = None,
         include_rocky: bool = False,
         include_gaseous: bool = False,
         include_low_gravity: bool = False,
@@ -111,7 +127,8 @@ class Planet(AbstractPlanet):
         must_have_war: bool = False,
         must_have_adm: bool = False,
         must_have_shy: bool = False,
-        distance_checks: List[str] = [],
+        distance_checks: List[str] = None,
+        timeout: Optional[float] = None,
     ) -> PlanetFullList:
         """Performs a search request towards FIO to find a planet matching the search parameters
 
@@ -132,6 +149,7 @@ class Planet(AbstractPlanet):
             must_have_adm (bool, optional): Planet must have a Planetary Administration Center.
             must_have_shy (bool, optional): Planet must have a Shipyard.
             distance_checks (List[str], optional): List of other planets to check distance to, e.g. ["ANT", "MOR"].
+            timeout (float, optional): Request timeout in seconds. Defaults to None.
 
         Raises:
             PlanetSearchMaterialsInvalid: _description_
@@ -141,20 +159,26 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetFullList: List of Planets with full information as List[PlanetFull]
         """
-        if not validate_planet_search_materials(materials=materials):
-            raise PlanetSearchMaterialsInvalid(
-                "Invalid materials provided. Can check for up to 4 materials."
-            )
 
-        if not validate_planet_search_distance_checks(distance_checks=distance_checks):
-            raise PlanetSearchDistanceChecksInvalid(
-                "Invalid distance checks. Can check for up to 3 distances."
-            )
+        # accept None as materials, don't include materials in search
+        if materials is not None:
+            if not validate_planet_search_materials(materials=materials):
+                raise PlanetSearchMaterialsInvalid(
+                    "Invalid materials provided. Can check for up to 4 materials."
+                )
+
+        if distance_checks is not None:
+            if not validate_planet_search_distance_checks(
+                distance_checks=distance_checks
+            ):
+                raise PlanetSearchDistanceChecksInvalid(
+                    "Invalid distance checks. Can check for up to 3 distances."
+                )
 
         (status, data) = self._adapter.post(
             endpoint=self._adapter.urls.planet_search_url(),
             data={
-                "Materials": materials,
+                "Materials": [] if materials is None else materials,
                 "IncludeRocky": include_rocky,
                 "IncludeGaseous": include_gaseous,
                 "IncludeLowGravity": include_low_gravity,
@@ -169,9 +193,10 @@ class Planet(AbstractPlanet):
                 "MustHaveWarehouse": must_have_war,
                 "MustHaveAdministrationCenter": must_have_adm,
                 "MustHaveShipyard": must_have_shy,
-                "DistanceChecks": distance_checks,
+                "DistanceChecks": [] if distance_checks is None else distance_checks,
             },
             err_codes=[400],
+            timeout=timeout,
         )
 
         if status == 200:

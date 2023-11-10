@@ -146,7 +146,7 @@ def test_group_all(
 
         assert data == return_data
     else:
-        with pytest.raises(return_data):
+        with pytest.raises(UnknownFIOResponse):
             ftx_fio_key.Group.all()
 
 

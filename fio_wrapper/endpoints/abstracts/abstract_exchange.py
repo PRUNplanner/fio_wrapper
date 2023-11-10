@@ -1,15 +1,20 @@
+from typing import Optional
+
+
 class AbstractExchange:
-    def get(self, exchange_ticker: str):
+    def get(self, exchange_ticker: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def all(self):
+    def all(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def get_full(self):
+    def get_full(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def get_orders(self, company_code: str):
+    def get_orders(self, company_code: str, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def get_orders_exchange(self, company_code: str, exchange_code: str):
+    def get_orders_exchange(
+        self, company_code: str, exchange_code: str, timeout: Optional[float] = None
+    ):
         raise NotImplementedError()

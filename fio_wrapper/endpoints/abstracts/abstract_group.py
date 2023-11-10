@@ -1,18 +1,18 @@
-from typing import List
+from typing import List, Optional
 
 
 class AbstractGroup:
-    def all(self):
+    def all(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def get(self, groupid: int):
+    def get(self, groupid: int, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def memberships(self):
+    def memberships(self, timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def hub(self, members: List[str]):
+    def hub(self, members: List[str], timeout: Optional[float] = None):
         raise NotImplementedError()
 
-    def burn(self, groupid: int):
+    def burn(self, groupid: int, timeout: Optional[float] = None):
         raise NotImplementedError()

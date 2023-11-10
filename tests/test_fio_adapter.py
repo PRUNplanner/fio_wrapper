@@ -1,5 +1,6 @@
 import pytest
 from fio_wrapper import FIOAdapter, FIO, EndpointNotImplemented
+from fio_wrapper.exceptions import UnknownFIOResponse
 
 
 @pytest.fixture()
@@ -33,10 +34,9 @@ def test_fio_adapter_otherstatus(requests_mock) -> None:
     url = "https://foo.foo"
 
     requests_mock.get(url, status_code=204)
-    (status, data) = adapter._do("get", url, err_codes=[300])
 
-    assert status == 204
-    assert data == None
+    with pytest.raises(UnknownFIOResponse):
+        (status, data) = adapter._do("get", url, err_codes=[300])
 
 
 def test_fio_adapter_request_exceptions(requests_mock) -> None:

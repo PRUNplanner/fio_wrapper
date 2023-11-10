@@ -83,9 +83,10 @@ nav:
     - FIO Wrapper: index.md
     - Usage: usage.md
     - Available Routes: 'routes.md'  
+    - Timeouts: 'timeouts.md'
   - Components:
-    - FIO Class: fio.md
-    - FIO Adapter: fio_adapter.md
+    - FIO: fio.md
+    - Adapter: fio_adapter.md
     - Decorators: decorator.md
     - Exceptions: exception.md
   - Endpoints (FIO 1.0): 
