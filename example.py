@@ -1,6 +1,16 @@
+import logging
 from fio_wrapper import FIO
 
-fio = FIO(api_key="55a39a35-a65f-4713-bc92-0e2ae344a177")
+logging.basicConfig(
+    level=logging.DEBUG,
+    # format="%(asctime)s | %(levelname)s: %(message)s (Line: %(lineno)d) [%(filename)s]",
+    # format="%(message)s",
+    filename="example.log",
+    filemode="w",
+)
+
+fio = FIO(api_key="dcfdf551-d8f6-4e2f-9a38-c9fbc4c04813")
+# fio = FIO()
 
 # material = fio.Material.get("DW")
 # print(material)
@@ -21,4 +31,11 @@ data = fio.Planet.search(
     distance_checks=["Katoa", "Promitor", "Montem"],
 )
 
-print(data)
+data = fio.Material.all(timeout=2)
+
+groups = fio.Group.all()
+
+for group in groups:
+    detail = fio.Group.get(groupid=group.GroupModelId)
+    print([user.GroupUserName for user in detail.GroupUsers])
+# print(data)
