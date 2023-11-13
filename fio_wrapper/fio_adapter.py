@@ -1,11 +1,13 @@
 """Request adapter performing actual API calls towards FIO endpoints
 """
-
+import logging
 from typing import Dict, Tuple, List, Optional
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from fio_wrapper.exceptions import UnknownFIOResponse
 from fio_wrapper.urls import URLs
+
+logger = logging.getLogger(__name__)
 
 
 class FIOAdapter:
@@ -60,6 +62,14 @@ class FIOAdapter:
         timeout: Optional[float] = None,
     ) -> Tuple[int, any]:
         try:
+            logger.debug(
+                "Calling (%s) %s with params: %s | data: %s",
+                http_method,
+                endpoint,
+                params,
+                data,
+            )
+
             response = requests.request(
                 method=http_method,
                 url=endpoint,
