@@ -28,8 +28,8 @@ class Group(AbstractGroup, AbstractEndpoint):
         Returns:
             GroupList: List of Groups
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_all_url(), timeout=timeout
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.group_all_url(), timeout=timeout
         )
 
         if status == 200:
@@ -52,8 +52,8 @@ class Group(AbstractGroup, AbstractEndpoint):
         Returns:
             GroupModel: GroupModel
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_get_url(groupid=groupid), timeout=timeout
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.group_get_url(groupid=groupid), timeout=timeout
         )
 
         if status == 200:
@@ -75,8 +75,8 @@ class Group(AbstractGroup, AbstractEndpoint):
         Returns:
             GroupMembershipList: List of Group Memberships
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_memberships_url(), timeout=timeout
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.group_memberships_url(), timeout=timeout
         )
 
         if status == 200:
@@ -99,8 +99,8 @@ class Group(AbstractGroup, AbstractEndpoint):
         Returns:
             GroupHub: GroupHub data from FIO
         """
-        (status, data) = self._adapter.post(
-            endpoint=self._adapter.urls.group_hub_url(), data=members, timeout=timeout
+        (status, data) = self.adapter.post(
+            endpoint=self.urls.group_hub_url(), data=members, timeout=timeout
         )
 
         if status == 200:
@@ -123,8 +123,8 @@ class Group(AbstractGroup, AbstractEndpoint):
         Returns:
             BurnList: List of Burn data
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.group_burn_url(groupid=groupid), timeout=timeout
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.group_burn_url(groupid=groupid), timeout=timeout
         )
 
         if status == 200:

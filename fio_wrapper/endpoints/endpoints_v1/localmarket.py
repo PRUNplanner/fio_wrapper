@@ -1,13 +1,14 @@
 """Access local market information from FIO.
 """
 from typing import Tuple, Optional
+from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_localmarket import AbstractLocalMarket
 from fio_wrapper.exceptions import (
     CompanyOrAdsNotFound,
     PlanetNotFound,
     PlanetOrAdsNotFound,
 )
-from fio_wrapper.fio_adapter import FIOAdapter
+
 from fio_wrapper.models.localmarket_models import (
     LocalMarketAdList,
     LocalMarketAds,
@@ -16,10 +17,7 @@ from fio_wrapper.models.localmarket_models import (
 from fio_wrapper.validators import validate_localmarket_adtype
 
 
-class LocalMarket(AbstractLocalMarket):
-    def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter: FIOAdapter = adapter
-
+class LocalMarket(AbstractLocalMarket, AbstractEndpoint):
     # /localmarket/planet/{Planet}
     def planet(self, planet: str, timeout: Optional[float] = None) -> LocalMarketAds:
         """Gets local market ads for planet
@@ -34,8 +32,8 @@ class LocalMarket(AbstractLocalMarket):
         Returns:
             LocalMarketAds: List of ads
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.localmarket_planet_url(planet),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.localmarket_planet_url(planet),
             err_codes=[204],
             timeout=timeout,
         )
@@ -50,8 +48,8 @@ class LocalMarket(AbstractLocalMarket):
     ) -> Tuple[int, any]:
         validate_localmarket_adtype(adtype=adtype)
 
-        return self._adapter.get(
-            endpoint=self._adapter.urls.localmarket_planet_type_url(
+        return self.adapter.get(
+            endpoint=self.urls.localmarket_planet_type_url(
                 planet=planet, adtype=adtype
             ),
             err_codes=[204],
@@ -145,8 +143,8 @@ class LocalMarket(AbstractLocalMarket):
         Returns:
             LocalMarketShippingAdList: List of shipping ads from planet
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.localmarket_shipping_source_url(planet=planet),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.localmarket_shipping_source_url(planet=planet),
             err_codes=[204],
             timeout=timeout,
         )
@@ -172,10 +170,8 @@ class LocalMarket(AbstractLocalMarket):
         Returns:
             LocalMarketShippingAdList: List of shipping ads to planet
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.localmarket_shipping_destination_url(
-                planet=planet
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.localmarket_shipping_destination_url(planet=planet),
             err_codes=[204],
             timeout=timeout,
         )
@@ -201,10 +197,8 @@ class LocalMarket(AbstractLocalMarket):
         Returns:
             LocalMarketAds: List of local market ads of company
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.localmarket_company_url(
-                companycode=companycode
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.localmarket_company_url(companycode=companycode),
             err_codes=[204],
             timeout=timeout,
         )

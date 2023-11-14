@@ -205,7 +205,7 @@ def test_BuildingTickerList(building_1, building_2) -> None:
 def test_building_get_notfound(requests_mock, ftx_fio: FIO) -> None:
     building_ticker: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.building_get_url(building_ticker=building_ticker),
+        ftx_fio.urls.building_get_url(building_ticker=building_ticker),
         status_code=204,
     )
     with pytest.raises(BuildingTickerNotFound):
@@ -215,7 +215,7 @@ def test_building_get_notfound(requests_mock, ftx_fio: FIO) -> None:
 def test_building_get(requests_mock, ftx_fio: FIO, building_1) -> None:
     building_ticker: str = "RIG"
     requests_mock.get(
-        ftx_fio._adapter.urls.building_get_url(building_ticker=building_ticker),
+        ftx_fio.urls.building_get_url(building_ticker=building_ticker),
         status_code=200,
         json=building_1,
     )
@@ -227,7 +227,7 @@ def test_building_get(requests_mock, ftx_fio: FIO, building_1) -> None:
 
 def test_building_all(requests_mock, ftx_fio: FIO, building_1, building_2) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.building_get_all_url(),
+        ftx_fio.urls.building_get_all_url(),
         status_code=200,
         json=[building_1, building_2],
     )

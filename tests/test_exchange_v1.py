@@ -226,7 +226,7 @@ def test_validate_exchangeticker(ftx_fio: FIO) -> None:
 
 def test_exchange_get(requests_mock, exchangeticker_full, ftx_fio: FIO) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_url("AAR.AI1"),
+        ftx_fio.urls.exchange_get_url("AAR.AI1"),
         status_code=200,
         json=exchangeticker_full,
     )
@@ -237,7 +237,7 @@ def test_exchange_get(requests_mock, exchangeticker_full, ftx_fio: FIO) -> None:
 
 def test_exchange_get_notfound(requests_mock, ftx_fio: FIO) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_url("AAR.AI1"),
+        ftx_fio.urls.exchange_get_url("AAR.AI1"),
         status_code=204,
     )
 
@@ -249,7 +249,7 @@ def test_exchange_all(
     requests_mock, exchangeticker_1, exchangeticker_2, ftx_fio: FIO
 ) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_all_url(),
+        ftx_fio.urls.exchange_get_all_url(),
         status_code=200,
         json=[exchangeticker_1, exchangeticker_2],
     )
@@ -260,7 +260,7 @@ def test_exchange_all(
 
 def test_exchange_full(requests_mock, exchangeticker_full, ftx_fio: FIO) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_full_url(),
+        ftx_fio.urls.exchange_get_full_url(),
         status_code=200,
         json=[exchangeticker_full, exchangeticker_full],
     )
@@ -276,9 +276,7 @@ def test_get_orders(requests_mock, order_1, order_2, ftx_fio: FIO) -> None:
     company_code: str = "SKYP"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_orders_companycode(
-            company_code=company_code
-        ),
+        ftx_fio.urls.exchange_get_orders_companycode(company_code=company_code),
         status_code=200,
         json=[order_1, order_2],
     )
@@ -296,7 +294,7 @@ def test_get_orders_exchange(requests_mock, order_1, order_2, ftx_fio: FIO) -> N
         ftx_fio.Exchange.get_orders_exchange(company_code="", exchange_code="")
 
     requests_mock.get(
-        ftx_fio._adapter.urls.exchange_get_orders_companycode_exchange(
+        ftx_fio.urls.exchange_get_orders_companycode_exchange(
             company_code=company_code, exchange_code=exchange_code
         ),
         status_code=200,

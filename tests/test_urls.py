@@ -1,10 +1,10 @@
 import pytest
-from fio_wrapper import URLs
+from fio_wrapper import FIO, URLs
 
 
 @pytest.fixture
 def url() -> URLs:
-    return URLs(base_url="foo")
+    return FIO(base_url="foo").urls
 
 
 def test_url_base(url: URLs) -> None:

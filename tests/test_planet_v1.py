@@ -689,7 +689,7 @@ def test_model_PlanetSiteList(planet_site_1) -> None:
 def test_planet_get_notfound(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
 
-    requests_mock.get(ftx_fio._adapter.urls.planet_get_url(planet), status_code=204)
+    requests_mock.get(ftx_fio.urls.planet_get_url(planet), status_code=204)
 
     with pytest.raises(PlanetNotFound):
         ftx_fio.Planet.get(planet=planet)
@@ -699,7 +699,7 @@ def test_planet_get(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.planet_get_url(planet),
+        ftx_fio.urls.planet_get_url(planet),
         status_code=200,
         json=planet_full_1,
     )
@@ -709,7 +709,7 @@ def test_planet_get(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
 
 
 def test_planet_all(requests_mock, ftx_fio: FIO, planet_1) -> None:
-    requests_mock.get(ftx_fio._adapter.urls.planet_all_url(), json=[planet_1, planet_1])
+    requests_mock.get(ftx_fio.urls.planet_all_url(), json=[planet_1, planet_1])
 
     data = ftx_fio.Planet.all()
     for planet in data:
@@ -718,7 +718,7 @@ def test_planet_all(requests_mock, ftx_fio: FIO, planet_1) -> None:
 
 def test_planet_full(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.planet_full_url(), json=[planet_full_1, planet_full_1]
+        ftx_fio.urls.planet_full_url(), json=[planet_full_1, planet_full_1]
     )
 
     data = ftx_fio.Planet.full()
@@ -729,7 +729,7 @@ def test_planet_full(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
 def test_planet_sites_notfound(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
 
-    requests_mock.get(ftx_fio._adapter.urls.planet_sites_url(planet), status_code=204)
+    requests_mock.get(ftx_fio.urls.planet_sites_url(planet), status_code=204)
 
     with pytest.raises(PlanetNotFound):
         ftx_fio.Planet.sites(planet=planet)
@@ -739,7 +739,7 @@ def test_planet_sites(requests_mock, ftx_fio: FIO, planet_site_1) -> None:
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.planet_sites_url(planet),
+        ftx_fio.urls.planet_sites_url(planet),
         status_code=200,
         json=[planet_site_1, planet_site_1],
     )
@@ -761,7 +761,7 @@ def test_planet_search_invalid_distances(ftx_fio: FIO) -> None:
 
 def test_planet_search(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
     requests_mock.post(
-        ftx_fio._adapter.urls.planet_search_url(),
+        ftx_fio.urls.planet_search_url(),
         status_code=200,
         json=[planet_full_1, planet_full_1],
     )
@@ -773,7 +773,7 @@ def test_planet_search(requests_mock, ftx_fio: FIO, planet_full_1) -> None:
 
 def test_planet_search_invalid(requests_mock, ftx_fio: FIO) -> None:
     requests_mock.post(
-        ftx_fio._adapter.urls.planet_search_url(),
+        ftx_fio.urls.planet_search_url(),
         status_code=400,
     )
 

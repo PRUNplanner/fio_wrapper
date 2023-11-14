@@ -17,6 +17,10 @@ class UnknownFIOResponse(Exception):
     """FIO returned a unknown response"""
 
 
+class UnknownConfig(Exception):
+    """Configuration not available"""
+
+
 # Material
 
 

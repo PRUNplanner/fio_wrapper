@@ -29,8 +29,8 @@ class Sites(AbstractSites, AbstractEndpoint):
             Site | SiteList: Site or List of Sites
         """
 
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.sites_get_url(username=username),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.sites_get_url(username=username),
             err_codes=[204, 401],
             timeout=timeout,
         )
@@ -65,8 +65,8 @@ class Sites(AbstractSites, AbstractEndpoint):
             Site: Site
         """
 
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.sites_planets_get_planet_url(
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.sites_planets_get_planet_url(
                 username=username, planet=planet
             ),
             err_codes=[204, 401],
@@ -98,8 +98,8 @@ class Sites(AbstractSites, AbstractEndpoint):
         Returns:
             List[str]: List of SiteIds
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.sites_planets_get_url(username=username),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.sites_planets_get_url(username=username),
             err_codes=[204, 401],
             timeout=timeout,
         )
@@ -131,8 +131,8 @@ class Sites(AbstractSites, AbstractEndpoint):
         Returns:
             WarehouseList: List of Warehouses
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.sites_warehouses_get(username=username),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.sites_warehouses_get(username=username),
             err_codes=[204, 401],
             timeout=timeout,
         )

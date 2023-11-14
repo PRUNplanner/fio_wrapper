@@ -243,21 +243,21 @@ def test_warehouse_list(warehouse) -> None:
     [
         (
             "foo",
-            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            FIO(api_key="abc").urls.sites_get_url(username="foo"),
             200,
             [site_data, site_data],
             SiteList.model_validate([site_data, site_data]),
         ),
         (
             "foo",
-            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            FIO(api_key="abc").urls.sites_get_url(username="foo"),
             204,
             None,
             NoSiteData,
         ),
         (
             "foo",
-            FIO(api_key="abc")._adapter.urls.sites_get_url(username="foo"),
+            FIO(api_key="abc").urls.sites_get_url(username="foo"),
             401,
             None,
             NotAuthenticated,
@@ -291,7 +291,7 @@ def test_sites_get(
         (
             "foo",
             "moo",
-            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+            FIO(api_key="abc").urls.sites_planets_get_planet_url(
                 username="foo", planet="moo"
             ),
             200,
@@ -301,7 +301,7 @@ def test_sites_get(
         (
             "foo",
             "moo",
-            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+            FIO(api_key="abc").urls.sites_planets_get_planet_url(
                 username="foo", planet="moo"
             ),
             200,
@@ -311,7 +311,7 @@ def test_sites_get(
         (
             "foo",
             "moo",
-            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+            FIO(api_key="abc").urls.sites_planets_get_planet_url(
                 username="foo", planet="moo"
             ),
             204,
@@ -321,7 +321,7 @@ def test_sites_get(
         (
             "foo",
             "moo",
-            FIO(api_key="abc")._adapter.urls.sites_planets_get_planet_url(
+            FIO(api_key="abc").urls.sites_planets_get_planet_url(
                 username="foo", planet="moo"
             ),
             401,
@@ -379,7 +379,7 @@ def test_planets(
     requests_mock, ftx_fio_key: FIO, username, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.sites_planets_get_url(username=username),
+        ftx_fio_key.urls.sites_planets_get_url(username=username),
         status_code=mock_status,
         json=json_data,
     )
@@ -420,7 +420,7 @@ def test_warehouses(
     requests_mock, ftx_fio_key: FIO, username, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.sites_warehouses_get(username=username),
+        ftx_fio_key.urls.sites_warehouses_get(username=username),
         status_code=mock_status,
         json=json_data,
     )

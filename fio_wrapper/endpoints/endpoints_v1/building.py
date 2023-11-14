@@ -2,15 +2,12 @@
 """
 from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_building import AbstractBuilding
+from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.exceptions import BuildingTickerNotFound
-from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.models.building_models import BuildingTicker, BuildingTickerList
 
 
-class Building(AbstractBuilding):
-    def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter: FIOAdapter = adapter
-
+class Building(AbstractBuilding, AbstractEndpoint):
     # /building/{BuildingTicker}
     def get(
         self, building_ticker: str, timeout: Optional[float] = None
@@ -27,10 +24,8 @@ class Building(AbstractBuilding):
         Returns:
             BuildingTicker: Building
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.building_get_url(
-                building_ticker=building_ticker
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.building_get_url(building_ticker=building_ticker),
             err_codes=[204],
             timeout=timeout,
         )
@@ -50,8 +45,8 @@ class Building(AbstractBuilding):
         Returns:
             BuildingTickerList: List of Buildings as List[BuildingTicker]
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.building_get_all_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.building_get_all_url(), timeout=timeout
         )
 
         return BuildingTickerList.model_validate(data)

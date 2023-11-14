@@ -1,6 +1,7 @@
 """Access planet information from FIO.
 """
 from typing import List, Optional
+from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_planet import AbstractPlanet
 from fio_wrapper.exceptions import (
     PlanetNotFound,
@@ -8,7 +9,6 @@ from fio_wrapper.exceptions import (
     PlanetSearchInvalidRequest,
     PlanetSearchMaterialsInvalid,
 )
-from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.models.planet_models import (
     PlanetFull,
     PlanetFullList,
@@ -21,11 +21,8 @@ from fio_wrapper.validators import (
 )
 
 
-class Planet(AbstractPlanet):
+class Planet(AbstractPlanet, AbstractEndpoint):
     """Planet endpoint wrapper"""
-
-    def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter: FIOAdapter = adapter
 
     # /planet/{Planet}
     def get(self, planet: str, timeout: Optional[float] = None) -> PlanetFull:
@@ -41,8 +38,8 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetFull: Full planet information
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_get_url(planet=planet),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.planet_get_url(planet=planet),
             err_codes=[204],
             timeout=timeout,
         )
@@ -62,8 +59,8 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetList: List of Planets as List[Planet]
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_all_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.planet_all_url(), timeout=timeout
         )
 
         return PlanetList.model_validate(data)
@@ -78,8 +75,8 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetFullList: List of Planets with full information as List[PlanetFull]
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_full_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.planet_full_url(), timeout=timeout
         )
 
         return PlanetFullList.model_validate(data)
@@ -98,8 +95,8 @@ class Planet(AbstractPlanet):
         Returns:
             PlanetSiteList: List of Planet sites as List[PlanetSite]
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.planet_sites_url(planet=planet),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.planet_sites_url(planet=planet),
             err_codes=[204],
             timeout=timeout,
         )
@@ -175,8 +172,8 @@ class Planet(AbstractPlanet):
                     "Invalid distance checks. Can check for up to 3 distances."
                 )
 
-        (status, data) = self._adapter.post(
-            endpoint=self._adapter.urls.planet_search_url(),
+        (status, data) = self.adapter.post(
+            endpoint=self.urls.planet_search_url(),
             data={
                 "Materials": [] if materials is None else materials,
                 "IncludeRocky": include_rocky,
