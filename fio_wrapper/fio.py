@@ -30,6 +30,10 @@ class FIO:
         Recipe (Recipe): Recipe information
         Sites (Sites): Sites information
         Storage (Storage): Storage information
+
+        config (Config): FIO Configuration
+        adapter (FIOAdapter): FIO Adapter
+        urls (URLs): FIO URLs
     """
 
     def __init__(
@@ -39,17 +43,19 @@ class FIO:
         api_key: Optional[str] = None,
         base_url: Optional[str] = None,
         timeout: Optional[float] = None,
+        ssl_verify: Optional[bool] = True,
         config: Optional[str] = None,
-        ssl_verify: bool = True,
     ) -> None:
         """Initializes the FIO wrapper
 
         Args:
-            api_key (str, optional): FIO API-Key. Defaults to "".
-            version (str, optional): FIO API version. Defaults to "1.0.0".
-            base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
-            ssl_verify (bool, optional): Verify https connection. Defaults to True.
+            version (str, optional): FIO API version. Defaults to None.
+            application (str, optional): Application name. Defaults to None.
+            api_key (str, optional): FIO API-Key. Defaults to None.
+            base_url (str, optional): FIO base url. Defaults to None.
             timeout (float, optional): Request timeout. Defaults to None.
+            ssl_verify (bool, optional): Verify https connection. Defaults to True.
+            config: (str, optional): User specified configuration file. Defaults to None.
 
         Raises:
             EndpointNotImplemented: _description_
@@ -78,8 +84,10 @@ class FIO:
             timeout=self.config.timeout(),
         )
 
+        # create urls
         self.urls: URLs = URLs(self.config)
 
+        # add version 1.0.0 endpoints
         if self.config.version() == "1.0.0":
             self.Building = building_v1.Building(self.adapter, self.urls)
             self.Exchange = exchange_v1.Exchange(self.adapter, self.urls)
@@ -92,6 +100,11 @@ class FIO:
             self.Storage = storage_v1.Storage(self.adapter, self.urls)
 
     def get_header(self) -> Dict[str, str]:
+        """Creates the header to be included in calls towards FIO
+
+        Returns:
+            Dict[str, str]: Contains "Authorization" and "X-FIO-Application"
+        """
         return {
             "Authorization": self.config.api_key(),
             "X-FIO-Application": self.config.application(),

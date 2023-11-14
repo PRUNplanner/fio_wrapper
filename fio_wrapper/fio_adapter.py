@@ -13,11 +13,9 @@ class FIOAdapter:
     """FIO Adapater
 
     Attributes:
-        api_key (str, optional): FIO API-Key.
-        version (str, optional): FIO API version.
-        base_url (str, optional): FIO base url.
-        ssl_verify (bool, optional): Verify https connection.
-        timeout (float, optional): Request timeout in seconds.
+        header (Dict[str, str]): FIO Header.
+        ssl_verify (bool, optional): Verify https connection. Defaults to True.
+        timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
 
     """
 
@@ -30,16 +28,14 @@ class FIOAdapter:
         """Initializes the FIO adapter
 
         Args:
-            api_key (str, optional): FIO API-Key. Defaults to "".
-            version (str, optional): FIO API version. Defaults to "1.0.0".
-            base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
+            header (Dict[str, str]): FIO Header.
             ssl_verify (bool, optional): Verify https connection. Defaults to True.
             timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
         """
 
+        self.header = header
         self.ssl_verify = ssl_verify
         self.timeout = timeout
-        self.header = header
 
         if not ssl_verify:
             requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)

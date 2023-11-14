@@ -87,6 +87,7 @@ nav:
   - Components:
     - FIO: fio.md
     - Adapter: fio_adapter.md
+    - Config: config.md
     - Decorators: decorator.md
     - Exceptions: exception.md
   - Endpoints (FIO 1.0): 
