@@ -25,11 +25,7 @@ def apikey_required(func) -> any:
             raise SystemExit("apikey_required decorator can only be used on endpoints")
 
         # requires API Key set in adapter
-        if (
-            self.adapter.header is None
-            or self.adapter.header["Authorization"] is None
-            or self.adapter.header["Authorization"] == None
-        ):
+        if self.adapter.header is None or self.adapter.header["Authorization"] is None:
             raise NoAPIKeyProvided(
                 "FIO API Key not provided. This endpoint requires an API key."
             )

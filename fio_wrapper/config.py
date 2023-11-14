@@ -40,8 +40,8 @@ class Config:
     def versions(self) -> List[str]:
         try:
             return self.data.getlist("FIO", "versions")
-        except:
-            raise SystemExit("No list of available FIO versions provided")
+        except Exception as exc:
+            raise SystemExit("No list of available FIO versions provided") from exc
 
     def api_key(self) -> str:
         if self._api_key is not None:

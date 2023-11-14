@@ -90,9 +90,6 @@ class FIO:
             self.Sites = sites_v1.Sites(self.adapter, self.urls)
             self.Storage = storage_v1.Storage(self.adapter, self.urls)
 
-        else:
-            raise EndpointNotImplemented()
-
     def get_header(self) -> Dict[str, str]:
         return {
             "Authorization": self.config.api_key(),
