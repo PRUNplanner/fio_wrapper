@@ -25,8 +25,8 @@ class Storage(AbstractStorage, AbstractEndpoint):
         Returns:
             StorageList: List of storages
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.storage_get_url(username=username),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.storage_get_url(username=username),
             err_codes=[204, 401],
             timeout=timeout,
         )
@@ -60,8 +60,8 @@ class Storage(AbstractStorage, AbstractEndpoint):
         Returns:
             StorageModel: Storage data
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.storage_get_specific_url(
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.storage_get_specific_url(
                 username=username, specific=specific
             ),
             err_codes=[204, 401],
@@ -94,8 +94,8 @@ class Storage(AbstractStorage, AbstractEndpoint):
         Returns:
             List[str]: List of StorageIds
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.storage_planets_get_url(username=username),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.storage_planets_get_url(username=username),
             err_codes=[204, 401],
             timeout=timeout,
         )

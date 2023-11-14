@@ -1,9 +1,10 @@
-# Installation
+# Usage
+## Installation
 ```python
 pip install fio-wrapper
 ```
 
-# Usage
+## Simple Usage
 Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
 ```python
 from fio_wrapper import FIO
@@ -29,4 +30,37 @@ This will print the material information of Drinking Water as MaterialModel and 
     "UserNameSubmitted": "SAGANAKI",
     "Timestamp": "2023-10-28T19:26:21.831707"
 }
+```
+
+## Additional parameters
+
+FIO Wrapper allows you to specify additional attributes when instantiating. The most commonly used is `api_key` that lets you add your FIO API Key (obtained on the [FIO Website](https://fio.fnar.net/settings)) to access protected endpoints like [Site](endpoints/sites.md) or [Storage](endpoints/storage.md).
+
+```python
+from fio_wrapper import FIO
+
+fio = FIO(api_key="YOUR_FIO_API_KEY")
+```
+
+The complete list of parameters can be found on [`FIO()`](fio.md).
+
+## Configuration file
+
+FIO Wrapper can use a configuration file provided upon instantiation to overwrite its [base configuration](config.md).
+
+Example configuration file `config.ini`:
+
+```ini
+[FIO]
+application = My Awesome FIO application
+timeout = 3
+api_key = MY_FIO_API_KEY
+```
+
+Use this configuration file on [`FIO()`](fio.md) by providing the `config` attribute:
+
+```python
+from fio_wrapper import FIO
+
+fio = FIO(config="config.ini")
 ```

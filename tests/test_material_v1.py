@@ -65,15 +65,13 @@ def test_material_fail(requests_mock, ftx_fio: FIO) -> None:
     from fio_wrapper.exceptions import MaterialTickerNotFound
 
     with pytest.raises(MaterialTickerNotFound):
-        requests_mock.get(
-            ftx_fio._adapter.urls.material_get_url("xyz"), status_code=204
-        )
+        requests_mock.get(ftx_fio.urls.material_get_url("xyz"), status_code=204)
         ftx_fio.Material.get("xyz")
 
 
 def test_material_single(requests_mock, material_1, ftx_fio: FIO) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.material_get_url("DW"),
+        ftx_fio.urls.material_get_url("DW"),
         status_code=200,
         json=material_1,
     )
@@ -85,7 +83,7 @@ def test_material_single(requests_mock, material_1, ftx_fio: FIO) -> None:
 
 def test_material_all(requests_mock, material_1, material_2, ftx_fio: FIO) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.material_allmaterials_url(),
+        ftx_fio.urls.material_allmaterials_url(),
         status_code=200,
         json=[material_1, material_2],
     )
@@ -98,7 +96,7 @@ def test_material_all(requests_mock, material_1, material_2, ftx_fio: FIO) -> No
 def test_material_category(requests_mock, material_1, material_2, ftx_fio: FIO) -> None:
     category: str = "agricultural products"
     requests_mock.get(
-        ftx_fio._adapter.urls.material_get_category(category_name=category),
+        ftx_fio.urls.material_get_category(category_name=category),
         status_code=200,
         json=[material_1, material_2],
     )
@@ -112,7 +110,7 @@ def test_material_category_notfound(requests_mock, ftx_fio: FIO) -> None:
 
     category: str = "xyz"
     requests_mock.get(
-        ftx_fio._adapter.urls.material_get_category(category_name=category),
+        ftx_fio.urls.material_get_category(category_name=category),
         status_code=204,
         json=[],
     )
@@ -126,7 +124,7 @@ def test_material_category_empty(requests_mock, ftx_fio: FIO) -> None:
 
     category: str = "xyz"
     requests_mock.get(
-        ftx_fio._adapter.urls.material_get_category(category_name=category),
+        ftx_fio.urls.material_get_category(category_name=category),
         status_code=200,
         json=[],
     )

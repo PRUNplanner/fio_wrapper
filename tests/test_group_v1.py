@@ -136,7 +136,7 @@ def test_group_all(
     requests_mock, ftx_fio_key: FIO, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.group_all_url(),
+        ftx_fio_key.urls.group_all_url(),
         status_code=mock_status,
         json=json_data,
     )
@@ -171,7 +171,7 @@ def test_group_get(
     requests_mock, ftx_fio_key: FIO, groupid, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.group_get_url(groupid=groupid),
+        ftx_fio_key.urls.group_get_url(groupid=groupid),
         status_code=mock_status,
         json=json_data,
     )
@@ -204,7 +204,7 @@ def test_group_memberships(
     requests_mock, ftx_fio_key: FIO, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.group_memberships_url(),
+        ftx_fio_key.urls.group_memberships_url(),
         status_code=mock_status,
         json=json_data,
     )
@@ -239,7 +239,7 @@ def test_group_hub(
     requests_mock, ftx_fio_key: FIO, members, mock_status, json_data, return_data
 ) -> None:
     requests_mock.post(
-        ftx_fio_key._adapter.urls.group_hub_url(),
+        ftx_fio_key.urls.group_hub_url(),
         status_code=mock_status,
         json=json_data,
     )
@@ -274,7 +274,7 @@ def test_group_burn(
     requests_mock, ftx_fio_key: FIO, groupid, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.group_burn_url(groupid=groupid),
+        ftx_fio_key.urls.group_burn_url(groupid=groupid),
         status_code=mock_status,
         json=json_data,
     )

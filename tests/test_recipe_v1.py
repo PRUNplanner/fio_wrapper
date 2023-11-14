@@ -79,7 +79,7 @@ def test_MaterialRecipeList(material_recipe_1) -> None:
 def test_recipe_get(requests_mock, ftx_fio: FIO, material_recipe_1) -> None:
     material_ticker: str = "AL"
     requests_mock.get(
-        ftx_fio._adapter.urls.recipe_get_url(material_ticker=material_ticker),
+        ftx_fio.urls.recipe_get_url(material_ticker=material_ticker),
         status_code=200,
         json=[material_recipe_1],
     )
@@ -90,7 +90,7 @@ def test_recipe_get(requests_mock, ftx_fio: FIO, material_recipe_1) -> None:
 
 def test_recipe_all(requests_mock, ftx_fio: FIO, recipe_1) -> None:
     requests_mock.get(
-        ftx_fio._adapter.urls.recipe_get_all_url(),
+        ftx_fio.urls.recipe_get_all_url(),
         status_code=200,
         json=[recipe_1, recipe_1],
     )

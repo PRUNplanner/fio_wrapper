@@ -1,17 +1,14 @@
 """Access material information from FIO.
 """
 from typing import Optional
+from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_material import AbstractMaterial
-from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import validate_ticker
 from fio_wrapper.models.material_models import MaterialTicker, MaterialTickerList
 from fio_wrapper.exceptions import MaterialTickerNotFound, MaterialCategoryNotFound
 
 
-class Material(AbstractMaterial):
-    def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter: FIOAdapter = adapter
-
+class Material(AbstractMaterial, AbstractEndpoint):
     def _validate_ticker(self, material_ticker: str) -> None:
         """Validates a material ticker
 
@@ -45,10 +42,8 @@ class Material(AbstractMaterial):
 
         self._validate_ticker(material_ticker=material_ticker)
 
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.material_get_url(
-                material_ticker=material_ticker
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.material_get_url(material_ticker=material_ticker),
             err_codes=[204],
             timeout=timeout,
         )
@@ -67,8 +62,8 @@ class Material(AbstractMaterial):
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.material_allmaterials_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.material_allmaterials_url(), timeout=timeout
         )
         return MaterialTickerList.model_validate(data)
 
@@ -87,10 +82,8 @@ class Material(AbstractMaterial):
         Returns:
             MaterialModelList: List of Materials as List[MaterialModel]
         """
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.material_get_category(
-                category_name=category_name
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.material_get_category(category_name=category_name),
             err_codes=[204],
             timeout=timeout,
         )

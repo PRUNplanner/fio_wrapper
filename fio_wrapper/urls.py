@@ -1,3 +1,6 @@
+from fio_wrapper.config import Config
+
+
 class URLs:
     """FIO API URLs
 
@@ -5,56 +8,64 @@ class URLs:
         base_url (str): FIO Base URL
     """
 
-    def __init__(self, base_url: str) -> None:
-        self.base_url = base_url
+    def __init__(self, config: Config) -> None:
+        self.config = config
+
+        self.base_url = config.base_url()
 
         # material
-        self.material_base = "/material"
-        self.material_allmaterials = "/allmaterials"
+        self.material_base = config.get_versioned("URL", "material_base")
+        self.material_allmaterials = config.get_versioned("URL", "material_all")
 
         # exchange
-        self.exchange_base = "/exchange"
-        self.exchange_orders = "/orders"
-        self.exchange_all = "/all"
-        self.exchange_full = "/full"
+        self.exchange_base = config.get_versioned("URL", "exchange_base")
+        self.exchange_orders = config.get_versioned("URL", "exchange_orders")
+        self.exchange_all = config.get_versioned("URL", "exchange_all")
+        self.exchange_full = config.get_versioned("URL", "exchange_full")
 
         # building
-        self.building_base = "/building"
-        self.building_all = "/allbuildings"
+        self.building_base = config.get_versioned("URL", "building_base")
+        self.building_all = config.get_versioned("URL", "building_all")
 
         # recipe
-        self.recipe_base = "/recipes"
-        self.recipe_all = "/allrecipes"
+        self.recipe_base = config.get_versioned("URL", "recipe_base")
+        self.recipe_all = config.get_versioned("URL", "recipe_all")
 
         # planet
-        self.planet_base = "/planet"
-        self.planet_all = "/allplanets"
-        self.planet_full = "/allplanets/full"
-        self.planet_sites = "/sites"
-        self.planet_search = "/search"
+        self.planet_base = config.get_versioned("URL", "planet_base")
+        self.planet_all = config.get_versioned("URL", "planet_all")
+        self.planet_full = config.get_versioned("URL", "planet_full")
+        self.planet_sites = config.get_versioned("URL", "planet_sites")
+        self.planet_search = config.get_versioned("URL", "planet_search")
 
         # localmarket
-        self.localmarket_base = "/localmarket"
-        self.localmarket_planet = "/planet"
-        self.localmarket_shipping_source = "/shipping/source"
-        self.localmarket_shipping_destination = "/shipping/destination"
-        self.localmarket_company = "/company"
+        self.localmarket_base = config.get_versioned("URL", "localmarket_base")
+        self.localmarket_planet = config.get_versioned("URL", "localmarket_planet")
+        self.localmarket_shipping_source = config.get_versioned(
+            "URL", "localmarket_shipping_source"
+        )
+        self.localmarket_shipping_destination = config.get_versioned(
+            "URL", "localmarket_shipping_destination"
+        )
+        self.localmarket_company = config.get_versioned("URL", "localmarket_company")
 
         # sites
-        self.sites_base = "/sites"
-        self.sites_planets = "/planets"
-        self.sites_warehouses = "/warehouses"
+        self.sites_base = config.get_versioned("URL", "sites_base")
+        self.sites_planets = config.get_versioned("URL", "sites_planets")
+        self.sites_warehouses = config.get_versioned("URL", "sites_warehouses")
 
         # storage
-        self.storage_base = "/storage"
-        self.storage_planets = "/planets"
+        self.storage_base = config.get_versioned("URL", "storage_base")
+        self.storage_planets = config.get_versioned("URL", "storage_planets")
 
         # groups
-        self.groups = "/auth/groups"
-        self.groups_group = "/auth/group"
-        self.groups_groupmemberships = "/auth/groupmemberships"
-        self.groups_hub = "/fioweb/grouphub"
-        self.groups_burn = "/fioweb/burn/group"
+        self.groups = config.get_versioned("URL", "groups")
+        self.groups_group = config.get_versioned("URL", "groups_group")
+        self.groups_groupmemberships = config.get_versioned(
+            "URL", "groups_groupmemberships"
+        )
+        self.groups_hub = config.get_versioned("URL", "groups_hub")
+        self.groups_burn = config.get_versioned("URL", "groups_burn")
 
     # Material
     def material_url(self) -> str:

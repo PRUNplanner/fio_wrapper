@@ -1,8 +1,8 @@
 """Access exchange information from FIO.
 """
 from typing import Optional
+from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_exchange import AbstractExchange
-from fio_wrapper.fio_adapter import FIOAdapter
 from fio_wrapper.validators import (
     validate_ticker,
     validate_exchange_code,
@@ -21,10 +21,7 @@ from fio_wrapper.exceptions import (
 )
 
 
-class Exchange(AbstractExchange):
-    def __init__(self, adapter: FIOAdapter) -> None:
-        self._adapter: FIOAdapter = adapter
-
+class Exchange(AbstractExchange, AbstractEndpoint):
     def _validate_exchangeticker(self, exchange_ticker: str) -> None:
         """Validates an exchange ticker
 
@@ -81,10 +78,8 @@ class Exchange(AbstractExchange):
         """
         self._validate_exchangeticker(exchange_ticker=exchange_ticker)
 
-        (status, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_url(
-                exchange_ticker=exchange_ticker
-            ),
+        (status, data) = self.adapter.get(
+            endpoint=self.urls.exchange_get_url(exchange_ticker=exchange_ticker),
             err_codes=[204],
             timeout=timeout,
         )
@@ -104,8 +99,8 @@ class Exchange(AbstractExchange):
         Returns:
             ExchangeTickerList: Exchange ticker
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_all_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.exchange_get_all_url(), timeout=timeout
         )
 
         return ExchangeTickerList.model_validate(data)
@@ -120,8 +115,8 @@ class Exchange(AbstractExchange):
         Returns:
             ExchangeTickerFullList: Exchange ticker full
         """
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_full_url(), timeout=timeout
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.exchange_get_full_url(), timeout=timeout
         )
 
         return ExchangeTickerFullList.model_validate(data)
@@ -142,8 +137,8 @@ class Exchange(AbstractExchange):
         # 1 to 4 character company code
         validate_company_code(company_code=company_code)
 
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_orders_companycode(
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.exchange_get_orders_companycode(
                 company_code=company_code
             ),
             timeout=timeout,
@@ -168,8 +163,8 @@ class Exchange(AbstractExchange):
         validate_company_code(company_code=company_code)
         validate_exchange_code(exchange_code=exchange_code)
 
-        (_, data) = self._adapter.get(
-            endpoint=self._adapter.urls.exchange_get_orders_companycode_exchange(
+        (_, data) = self.adapter.get(
+            endpoint=self.urls.exchange_get_orders_companycode_exchange(
                 company_code=company_code, exchange_code=exchange_code
             ),
             timeout=timeout,

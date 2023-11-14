@@ -5,7 +5,6 @@ from typing import Dict, Tuple, List, Optional
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from fio_wrapper.exceptions import UnknownFIOResponse
-from fio_wrapper.urls import URLs
 
 logger = logging.getLogger(__name__)
 
@@ -14,43 +13,32 @@ class FIOAdapter:
     """FIO Adapater
 
     Attributes:
-        api_key (str, optional): FIO API-Key.
-        version (str, optional): FIO API version.
-        base_url (str, optional): FIO base url.
-        ssl_verify (bool, optional): Verify https connection.
-        timeout (float, optional): Request timeout in seconds.
+        header (Dict[str, str]): FIO Header.
+        ssl_verify (bool, optional): Verify https connection. Defaults to True.
+        timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
 
     """
 
     def __init__(
         self,
-        api_key: str = "",
-        version: str = "1.0.0",
-        base_url: str = "https://rest.fnar.net",
+        header: Dict[str, str],
         ssl_verify: bool = True,
         timeout: float = 10.0,
     ):
         """Initializes the FIO adapter
 
         Args:
-            api_key (str, optional): FIO API-Key. Defaults to "".
-            version (str, optional): FIO API version. Defaults to "1.0.0".
-            base_url (str, optional): FIO base url. Defaults to "https://rest.fnar.net".
+            header (Dict[str, str]): FIO Header.
             ssl_verify (bool, optional): Verify https connection. Defaults to True.
             timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
         """
-        self.api_key = api_key
-        self.version = version
-        self.base_url = base_url
+
+        self.header = header
         self.ssl_verify = ssl_verify
-        self.urls = URLs(base_url=base_url)
         self.timeout = timeout
 
         if not ssl_verify:
             requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
-
-    def headers(self):
-        return {"Authorization": self.api_key}
 
     def _do(
         self,
@@ -74,7 +62,7 @@ class FIOAdapter:
                 method=http_method,
                 url=endpoint,
                 verify=self.ssl_verify,
-                headers=self.headers(),
+                headers=self.header,
                 params=params,
                 json=data,
                 timeout=timeout if timeout is not None else self.timeout,

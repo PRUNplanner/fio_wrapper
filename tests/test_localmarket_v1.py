@@ -100,7 +100,7 @@ def test_model_LocalMarketShippingAdList(shipping_ad_1) -> None:
 def test_planet_notfound(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_url(planet=planet), status_code=204
+        ftx_fio.urls.localmarket_planet_url(planet=planet), status_code=204
     )
 
     with pytest.raises(PlanetNotFound):
@@ -110,7 +110,7 @@ def test_planet_notfound(requests_mock, ftx_fio: FIO) -> None:
 def test_planet_valid(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
     planet: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_url(planet=planet),
+        ftx_fio.urls.localmarket_planet_url(planet=planet),
         status_code=200,
         json=valid_adlist,
     )
@@ -125,7 +125,7 @@ def test_planet_valid(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
 def test_planet_type(requests_mock, ftx_fio: FIO, ad_1) -> None:
     planet: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype="BUY"),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype="BUY"),
         status_code=200,
         json=[ad_1],
     )
@@ -140,7 +140,7 @@ def test_planet_buy(requests_mock, ftx_fio: FIO, ad_1) -> None:
     adtype: str = "BUY"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=200,
         json=[ad_1],
     )
@@ -154,7 +154,7 @@ def test_planet_buy_invalid(requests_mock, ftx_fio: FIO) -> None:
     adtype: str = "BUY"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=204,
     )
 
@@ -167,7 +167,7 @@ def test_planet_sell(requests_mock, ftx_fio: FIO, ad_1) -> None:
     adtype: str = "SELL"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=200,
         json=[ad_1],
     )
@@ -181,7 +181,7 @@ def test_planet_sell_invalid(requests_mock, ftx_fio: FIO) -> None:
     adtype: str = "SELL"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=204,
     )
 
@@ -194,7 +194,7 @@ def test_planet_shipping(requests_mock, ftx_fio: FIO, shipping_ad_1) -> None:
     adtype: str = "SHIP"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=200,
         json=[shipping_ad_1],
     )
@@ -208,7 +208,7 @@ def test_planet_shipping_invalid(requests_mock, ftx_fio: FIO) -> None:
     adtype: str = "SHIP"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
+        ftx_fio.urls.localmarket_planet_type_url(planet=planet, adtype=adtype),
         status_code=204,
     )
 
@@ -220,7 +220,7 @@ def test_planet_shipping_from(requests_mock, ftx_fio: FIO, shipping_ad_1) -> Non
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_shipping_source_url(planet=planet),
+        ftx_fio.urls.localmarket_shipping_source_url(planet=planet),
         status_code=200,
         json=[shipping_ad_1],
     )
@@ -233,7 +233,7 @@ def test_planet_shipping_from_invalid(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_shipping_source_url(planet=planet),
+        ftx_fio.urls.localmarket_shipping_source_url(planet=planet),
         status_code=204,
     )
 
@@ -245,7 +245,7 @@ def test_planet_shipping_to(requests_mock, ftx_fio: FIO, shipping_ad_1) -> None:
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_shipping_destination_url(planet=planet),
+        ftx_fio.urls.localmarket_shipping_destination_url(planet=planet),
         status_code=200,
         json=[shipping_ad_1],
     )
@@ -258,7 +258,7 @@ def test_planet_shipping_to_invalid(requests_mock, ftx_fio: FIO) -> None:
     planet: str = "FOO"
 
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_shipping_destination_url(planet=planet),
+        ftx_fio.urls.localmarket_shipping_destination_url(planet=planet),
         status_code=204,
     )
 
@@ -269,7 +269,7 @@ def test_planet_shipping_to_invalid(requests_mock, ftx_fio: FIO) -> None:
 def test_company_notfound(requests_mock, ftx_fio: FIO) -> None:
     company: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_company_url(companycode=company),
+        ftx_fio.urls.localmarket_company_url(companycode=company),
         status_code=204,
     )
 
@@ -280,7 +280,7 @@ def test_company_notfound(requests_mock, ftx_fio: FIO) -> None:
 def test_company_valid(requests_mock, ftx_fio: FIO, valid_adlist) -> None:
     company: str = "FOO"
     requests_mock.get(
-        ftx_fio._adapter.urls.localmarket_company_url(companycode=company),
+        ftx_fio.urls.localmarket_company_url(companycode=company),
         status_code=200,
         json=valid_adlist,
     )

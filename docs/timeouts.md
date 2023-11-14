@@ -23,6 +23,10 @@ fio = FIO(timeout=5)
 
 FIO Wrapper will now apply the timeout of `5 seconds` to all calls it is making towards FIO.
 
+## Configuration file
+
+A standard timeout can also be defined in a users [configuration file](config.md).
+
 ## Indidivual endpoint calls
 
 All endpoints allow passing the optional `timeout` argument that is of type `Optional[float]` and defaults to `None`.

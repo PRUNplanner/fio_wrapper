@@ -87,7 +87,7 @@ def test_storage_get(
     requests_mock, ftx_fio_key: FIO, username, mock_status, json_data, return_data
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.storage_get_url(username=username),
+        ftx_fio_key.urls.storage_get_url(username=username),
         status_code=mock_status,
         json=json_data,
     )
@@ -137,9 +137,7 @@ def test_storage_get_specific(
     return_data,
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.storage_get_specific_url(
-            username=username, specific=specific
-        ),
+        ftx_fio_key.urls.storage_get_specific_url(username=username, specific=specific),
         status_code=mock_status,
         json=json_data,
     )
@@ -185,7 +183,7 @@ def test_storage_planets(
     return_data,
 ) -> None:
     requests_mock.get(
-        ftx_fio_key._adapter.urls.storage_planets_get_url(username=username),
+        ftx_fio_key.urls.storage_planets_get_url(username=username),
         status_code=mock_status,
         json=json_data,
     )
