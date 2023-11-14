@@ -16,6 +16,7 @@ class Config:
         application: Optional[str],
         base_url: Optional[str],
         timeout: Optional[float],
+        ssl_verify: Optional[bool],
         user_config: Optional[str],
     ):
         # FIO instantiation overwrites
@@ -24,6 +25,7 @@ class Config:
         self._application = application
         self._base_url = base_url
         self._timeout = timeout
+        self._ssl_verify = ssl_verify
 
         # converters
         converters = {"list": lambda x: [i.strip() for i in x.split(",")]}
@@ -89,6 +91,15 @@ class Config:
             return float(self.get("FIO", "timeout"))
         except Exception as exc:
             raise UnknownConfig("No timeout setting found") from exc
+
+    def ssl_verify(self) -> float:
+        if self._ssl_verify is not None:
+            return self._ssl_verify
+
+        try:
+            return bool(self.get("FIO", "ssl_verify"))
+        except Exception as exc:
+            raise UnknownConfig("No ssl_verify setting found") from exc
 
     def get(self, section: str, option: str) -> str:
         logger.debug("get(): %s | %s", section, option)

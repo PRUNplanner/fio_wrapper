@@ -63,6 +63,7 @@ class FIO:
             application=application,
             base_url=base_url,
             timeout=timeout,
+            ssl_verify=ssl_verify,
             user_config=config,
         )
 
@@ -73,7 +74,7 @@ class FIO:
         # create adapter
         self.adapter = FIOAdapter(
             header=self.get_header(),
-            ssl_verify=ssl_verify,
+            ssl_verify=self.config.ssl_verify(),
             timeout=self.config.timeout(),
         )
 
