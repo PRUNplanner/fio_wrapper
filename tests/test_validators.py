@@ -47,8 +47,8 @@ def test_validate_planet_search_materials(input, expected) -> None:
     "input, expected",
     [
         ([], True),
-        (["1", "2", "3"], True),
-        (["1", "2", "3", "4"], False),
+        (["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], True),
+        (["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], False),
         (None, False),
     ],
 )
