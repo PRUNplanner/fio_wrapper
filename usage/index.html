@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#usage" class="md-skip">
           Skip to content
         </a>
       
@@ -377,6 +377,8 @@
       
         
       
+        
+      
     
     
     
@@ -435,6 +437,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -444,6 +457,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-usage" class="md-nav__link">
+    Simple Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-parameters" class="md-nav__link">
+    Additional parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    Configuration file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -470,6 +530,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -484,6 +564,8 @@
   
     
     
+      
+        
       
         
       
@@ -536,7 +618,7 @@
         
   
   <span class="md-ellipsis">
-    FIO Class
+    FIO
   </span>
   
 
@@ -556,7 +638,27 @@
         
   
   <span class="md-ellipsis">
-    FIO Adapter
+    Adapter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config
   </span>
   
 
@@ -1195,6 +1297,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-usage" class="md-nav__link">
+    Simple Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-parameters" class="md-nav__link">
+    Additional parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    Configuration file
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1211,10 +1349,11 @@
   
 
 
-<h1 id="installation">Installation</h1>
+<h1 id="usage">Usage</h1>
+<h2 id="installation">Installation</h2>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">fio</span><span class="o">-</span><span class="n">wrapper</span>
 </span></code></pre></div></td></tr></table></div>
-<h1 id="usage">Usage</h1>
+<h2 id="simple-usage">Simple Usage</h2>
 <p>Creating the FIO adapter and looking for information about the material Drinking Water by its ticker "DW".
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -1252,6 +1391,33 @@
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nt">&quot;UserNameSubmitted&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SAGANAKI&quot;</span><span class="p">,</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;Timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-28T19:26:21.831707&quot;</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="additional-parameters">Additional parameters</h2>
+<p>FIO Wrapper allows you to specify additional attributes when instantiating. The most commonly used is <code>api_key</code> that lets you add your FIO API Key (obtained on the <a href="https://fio.fnar.net/settings">FIO Website</a>) to access protected endpoints like <a href="../endpoints/sites/">Site</a> or <a href="../endpoints/storage/">Storage</a>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">fio_wrapper</span> <span class="kn">import</span> <span class="n">FIO</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">fio</span> <span class="o">=</span> <span class="n">FIO</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_FIO_API_KEY&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The complete list of parameters can be found on <a href="../fio/"><code>FIO()</code></a>.</p>
+<h2 id="configuration-file">Configuration file</h2>
+<p>FIO Wrapper can use a configuration file provided upon instantiation to overwrite its <a href="../config/">base configuration</a>.</p>
+<p>Example configuration file <code>config.ini</code>:</p>
+<div class="language-ini highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">[FIO]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="na">application</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">My Awesome FIO application</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="na">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="na">api_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">MY_FIO_API_KEY</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Use this configuration file on <a href="../fio/"><code>FIO()</code></a> by providing the <code>config</code> attribute:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">fio_wrapper</span> <span class="kn">import</span> <span class="n">FIO</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">fio</span> <span class="o">=</span> <span class="n">FIO</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="s2">&quot;config.ini&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
 
@@ -1296,7 +1462,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections", "navigation.tabs"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   </body>

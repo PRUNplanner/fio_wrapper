@@ -12,15 +12,15 @@
         <link rel="prev" href="../fio/">
       
       
-        <link rel="next" href="../decorator/">
+        <link rel="next" href="../config/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
     
     
       
-        <title>FIO Adapter - FIO Wrapper</title>
+        <title>Adapter - FIO Wrapper</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fio_adapter.FIOAdapter" class="md-skip">
+        <a href="#fio_adapter.logger" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FIO Adapter
+              Adapter
             
           </span>
         </div>
@@ -375,6 +375,8 @@
       
         
       
+        
+      
     
     
     
@@ -458,6 +460,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -474,6 +496,8 @@
   
     
     
+      
+        
       
         
       
@@ -526,7 +550,7 @@
         
   
   <span class="md-ellipsis">
-    FIO Class
+    FIO
   </span>
   
 
@@ -553,7 +577,7 @@
           
   
   <span class="md-ellipsis">
-    FIO Adapter
+    Adapter
   </span>
   
 
@@ -564,7 +588,7 @@
         
   
   <span class="md-ellipsis">
-    FIO Adapter
+    Adapter
   </span>
   
 
@@ -584,6 +608,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fio_adapter.logger" class="md-nav__link">
+    logger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fio_adapter.FIOAdapter" class="md-nav__link">
     FIOAdapter
   </a>
@@ -592,36 +623,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.api_key" class="md-nav__link">
-    api_key
+  <a href="#fio_adapter.FIOAdapter.header" class="md-nav__link">
+    header
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.version" class="md-nav__link">
-    version
+  <a href="#fio_adapter.FIOAdapter.ssl_verify" class="md-nav__link">
+    ssl_verify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.base_url" class="md-nav__link">
-    base_url
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.urls" class="md-nav__link">
-    urls
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.headers" class="md-nav__link">
-    headers()
+  <a href="#fio_adapter.FIOAdapter.timeout" class="md-nav__link">
+    timeout
   </a>
   
 </li>
@@ -649,6 +666,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Config
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1288,6 +1325,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fio_adapter.logger" class="md-nav__link">
+    logger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fio_adapter.FIOAdapter" class="md-nav__link">
     FIOAdapter
   </a>
@@ -1296,36 +1340,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.api_key" class="md-nav__link">
-    api_key
+  <a href="#fio_adapter.FIOAdapter.header" class="md-nav__link">
+    header
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.version" class="md-nav__link">
-    version
+  <a href="#fio_adapter.FIOAdapter.ssl_verify" class="md-nav__link">
+    ssl_verify
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.base_url" class="md-nav__link">
-    base_url
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.urls" class="md-nav__link">
-    urls
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fio_adapter.FIOAdapter.headers" class="md-nav__link">
-    headers()
+  <a href="#fio_adapter.FIOAdapter.timeout" class="md-nav__link">
+    timeout
   </a>
   
 </li>
@@ -1367,7 +1397,7 @@
   
 
 
-  <h1>FIO Adapter</h1>
+  <h1>Adapter</h1>
 
 <div class="doc doc-object doc-module">
 
@@ -1388,6 +1418,28 @@
 
 
 
+<div class="doc doc-object doc-attribute">
+
+
+
+
+<h3 id="fio_adapter.logger" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">logger</span>
+
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
 
 <div class="doc doc-object doc-class">
 
@@ -1399,17 +1451,7 @@
 
 
 </h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">FIOAdapter</span><span class="p">(</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://rest.fnar.net&quot;</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">FIOAdapter</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">ssl_verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1430,35 +1472,13 @@
     </thead>
     <tbody>
         <tr>
-          <td><code>api_key</code></td>
+          <td><code>header</code></td>
           <td>
-                <code>str</code>
+                <code><span title="typing.Dict">Dict</span>[str, str]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>FIO API-Key. Defaults to "".</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>version</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>FIO API version. Defaults to "1.0.0".</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>base_url</code></td>
-          <td>
-                <code>_type_</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>FIO base url. Defaults to "https://rest.fnar.net".</p>
+              <p>FIO Header.</p>
             </div>
           </td>
         </tr>
@@ -1473,13 +1493,83 @@
             </div>
           </td>
         </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Request timeout in seconds. Defaults to 10.0.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  
+      <p>Initializes the FIO adapter</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>header</code></td>
+          <td>
+                <code><span title="typing.Dict">Dict</span>[str, str]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>FIO Header.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ssl_verify</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Verify https connection. Defaults to True.</p>
+            </div>
+          </td>
+          <td>
+                <code>True</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Request timeout in seconds. Defaults to 10.0.</p>
+            </div>
+          </td>
+          <td>
+                <code>10.0</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
                 <details class="quote">
                   <summary>Source code in <code>fio_wrapper/fio_adapter.py</code></summary>
-                  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+                  <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-22">22</a></span>
 <span class="normal"><a href="#__codelineno-0-23">23</a></span>
 <span class="normal"><a href="#__codelineno-0-24">24</a></span>
 <span class="normal"><a href="#__codelineno-0-25">25</a></span>
@@ -1492,21 +1582,32 @@
 <span class="normal"><a href="#__codelineno-0-32">32</a></span>
 <span class="normal"><a href="#__codelineno-0-33">33</a></span>
 <span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="bp">self</span><span class="p">,</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;https://rest.fnar.net&quot;</span><span class="p">,</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="n">ssl_verify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="n">header</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">ssl_verify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">,</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="p">):</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ssl_verify</span> <span class="o">=</span> <span class="n">ssl_verify</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">urls</span> <span class="o">=</span> <span class="n">URLs</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">)</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ssl_verify</span><span class="p">:</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>        <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Initializes the FIO adapter</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="sd">        header (Dict[str, str]): FIO Header.</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="sd">        ssl_verify (bool, optional): Verify https connection. Defaults to True.</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="sd">        timeout (float, optional): Request timeout in seconds. Defaults to 10.0.</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="n">header</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">ssl_verify</span> <span class="o">=</span> <span class="n">ssl_verify</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">ssl_verify</span><span class="p">:</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>        <span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                 </details>
 
@@ -1525,8 +1626,8 @@
 
 
 
-<h4 id="fio_adapter.FIOAdapter.api_key" class="doc doc-heading">
-          <span class="doc doc-object-name doc-attribute-name">api_key</span>
+<h4 id="fio_adapter.FIOAdapter.header" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">header</span>
 
   
   <span class="doc doc-labels">
@@ -1534,7 +1635,7 @@
   </span>
 
 </h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">header</span> <span class="o">=</span> <span class="n">header</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1547,8 +1648,8 @@
 
 
 
-<h4 id="fio_adapter.FIOAdapter.version" class="doc doc-heading">
-          <span class="doc doc-object-name doc-attribute-name">version</span>
+<h4 id="fio_adapter.FIOAdapter.ssl_verify" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">ssl_verify</span>
 
   
   <span class="doc doc-labels">
@@ -1556,7 +1657,7 @@
   </span>
 
 </h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">ssl_verify</span> <span class="o">=</span> <span class="n">ssl_verify</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1569,8 +1670,8 @@
 
 
 
-<h4 id="fio_adapter.FIOAdapter.base_url" class="doc doc-heading">
-          <span class="doc doc-object-name doc-attribute-name">base_url</span>
+<h4 id="fio_adapter.FIOAdapter.timeout" class="doc doc-heading">
+          <span class="doc doc-object-name doc-attribute-name">timeout</span>
 
   
   <span class="doc doc-labels">
@@ -1578,29 +1679,7 @@
   </span>
 
 </h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
-</span></code></pre></div></td></tr></table></div>
-
-  <div class="doc doc-contents ">
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-attribute">
-
-
-
-
-<h4 id="fio_adapter.FIOAdapter.urls" class="doc doc-heading">
-          <span class="doc doc-object-name doc-attribute-name">urls</span>
-
-  
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
-  </span>
-
-</h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">urls</span> <span class="o">=</span> <span class="n">URLs</span><span class="p">(</span><span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1609,33 +1688,6 @@
 </div>
 
 
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h4 id="fio_adapter.FIOAdapter.headers" class="doc doc-heading">
-          <span class="doc doc-object-name doc-function-name">headers</span>
-
-
-</h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">headers</span><span class="p">()</span>
-</span></code></pre></div></td></tr></table></div>
-
-  <div class="doc doc-contents ">
-
-          <details class="quote">
-            <summary>Source code in <code>fio_wrapper/fio_adapter.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="k">def</span> <span class="nf">headers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-          </details>
-  </div>
-
-</div>
 
 
 <div class="doc doc-object doc-function">
@@ -1648,7 +1700,7 @@
 
 
 </h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">err_codes</span><span class="o">=</span><span class="p">[])</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">err_codes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1699,15 +1751,29 @@
         <tr>
           <td><code>err_codes</code></td>
           <td>
-                <code>list</code>
+                <code><span title="typing.List">List</span>[int]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>List of error codes to handle in calling function. Defaults to [].</p>
+              <p>List of error codes to handle in calling function. Defaults to None.</p>
             </div>
           </td>
           <td>
-                <code>[]</code>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Request timeout in seconds. Defaults to None.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
@@ -1739,49 +1805,55 @@
 
           <details class="quote">
             <summary>Source code in <code>fio_wrapper/fio_adapter.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-72">72</a></span>
-<span class="normal"><a href="#__codelineno-0-73">73</a></span>
-<span class="normal"><a href="#__codelineno-0-74">74</a></span>
-<span class="normal"><a href="#__codelineno-0-75">75</a></span>
-<span class="normal"><a href="#__codelineno-0-76">76</a></span>
-<span class="normal"><a href="#__codelineno-0-77">77</a></span>
-<span class="normal"><a href="#__codelineno-0-78">78</a></span>
-<span class="normal"><a href="#__codelineno-0-79">79</a></span>
-<span class="normal"><a href="#__codelineno-0-80">80</a></span>
-<span class="normal"><a href="#__codelineno-0-81">81</a></span>
-<span class="normal"><a href="#__codelineno-0-82">82</a></span>
-<span class="normal"><a href="#__codelineno-0-83">83</a></span>
-<span class="normal"><a href="#__codelineno-0-84">84</a></span>
-<span class="normal"><a href="#__codelineno-0-85">85</a></span>
-<span class="normal"><a href="#__codelineno-0-86">86</a></span>
-<span class="normal"><a href="#__codelineno-0-87">87</a></span>
-<span class="normal"><a href="#__codelineno-0-88">88</a></span>
-<span class="normal"><a href="#__codelineno-0-89">89</a></span>
-<span class="normal"><a href="#__codelineno-0-90">90</a></span>
-<span class="normal"><a href="#__codelineno-0-91">91</a></span>
-<span class="normal"><a href="#__codelineno-0-92">92</a></span>
-<span class="normal"><a href="#__codelineno-0-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
-</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a>    <span class="bp">self</span><span class="p">,</span>
-</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a>    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a>    <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a>    <span class="n">err_codes</span><span class="o">=</span><span class="p">[],</span>
-</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
-</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Performs a GET request towards endpoint</span>
-</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a>
-</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="sd">    Args:</span>
-</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="sd">        endpoint (str): URL</span>
-</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="sd">        params (Dict, optional): GET parameters. Defaults to None.</span>
-</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="sd">        err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].</span>
-</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a>
-</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="sd">    Returns:</span>
-</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="sd">        Tuple[int, any]: Request status code and request data</span>
-</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do</span><span class="p">(</span>
-</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a>        <span class="n">http_method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
-</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a>        <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
-</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a>        <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a>        <span class="n">err_codes</span><span class="o">=</span><span class="n">err_codes</span><span class="p">,</span>
-</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="p">)</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a>    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a>    <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a>    <span class="n">err_codes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a>    <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Performs a GET request towards endpoint</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">        endpoint (str): URL</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        params (Dict, optional): GET parameters. Defaults to None.</span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">        err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.</span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">        timeout (float, optional): Request timeout in seconds. Defaults to None.</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">    Returns:</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">        Tuple[int, any]: Request status code and request data</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do</span><span class="p">(</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a>        <span class="n">http_method</span><span class="o">=</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a>        <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a>        <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="n">err_codes</span><span class="o">=</span><span class="n">err_codes</span><span class="p">,</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -1799,7 +1871,19 @@
 
 
 </h4>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">err_codes</span><span class="o">=</span><span class="p">[])</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">post</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="n">endpoint</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">err_codes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
   <div class="doc doc-contents ">
@@ -1864,15 +1948,29 @@
         <tr>
           <td><code>err_codes</code></td>
           <td>
-                <code>list</code>
+                <code><span title="typing.List">List</span>[int]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>List of error codes to handle in calling function. Defaults to [].</p>
+              <p>List of error codes to handle in calling function. Defaults to None.</p>
             </div>
           </td>
           <td>
-                <code>[]</code>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timeout</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Request timeout in seconds. Defaults to None.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
           </td>
         </tr>
     </tbody>
@@ -1904,47 +2002,61 @@
 
           <details class="quote">
             <summary>Source code in <code>fio_wrapper/fio_adapter.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
-<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
-<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
-<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
-<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
-<span class="normal"><a href="#__codelineno-0-100">100</a></span>
-<span class="normal"><a href="#__codelineno-0-101">101</a></span>
-<span class="normal"><a href="#__codelineno-0-102">102</a></span>
-<span class="normal"><a href="#__codelineno-0-103">103</a></span>
-<span class="normal"><a href="#__codelineno-0-104">104</a></span>
-<span class="normal"><a href="#__codelineno-0-105">105</a></span>
-<span class="normal"><a href="#__codelineno-0-106">106</a></span>
-<span class="normal"><a href="#__codelineno-0-107">107</a></span>
-<span class="normal"><a href="#__codelineno-0-108">108</a></span>
-<span class="normal"><a href="#__codelineno-0-109">109</a></span>
-<span class="normal"><a href="#__codelineno-0-110">110</a></span>
-<span class="normal"><a href="#__codelineno-0-111">111</a></span>
-<span class="normal"><a href="#__codelineno-0-112">112</a></span>
-<span class="normal"><a href="#__codelineno-0-113">113</a></span>
-<span class="normal"><a href="#__codelineno-0-114">114</a></span>
-<span class="normal"><a href="#__codelineno-0-115">115</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="k">def</span> <span class="nf">post</span><span class="p">(</span>
-</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a>    <span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">err_codes</span><span class="o">=</span><span class="p">[]</span>
-</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
-</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Performs a POST request towards endpoint</span>
-</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a>
-</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="sd">    Args:</span>
-</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">        endpoint (str): URL</span>
-</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">        params (Dict, optional): POST parameters. Defaults to None.</span>
-</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">        data (Dict, optional): POST data. Defaults to None.</span>
-</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">        err_codes (list, optional): List of error codes to handle in calling function. Defaults to [].</span>
-</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a>
-</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">    Returns:</span>
-</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        Tuple[int, any]: Request status code and request data</span>
-</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do</span><span class="p">(</span>
-</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a>        <span class="n">http_method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
-</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
-</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112"></a>        <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
-</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113"></a>        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114"></a>        <span class="n">err_codes</span><span class="o">=</span><span class="n">err_codes</span><span class="p">,</span>
-</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="p">)</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-114">114</a></span>
+<span class="normal"><a href="#__codelineno-0-115">115</a></span>
+<span class="normal"><a href="#__codelineno-0-116">116</a></span>
+<span class="normal"><a href="#__codelineno-0-117">117</a></span>
+<span class="normal"><a href="#__codelineno-0-118">118</a></span>
+<span class="normal"><a href="#__codelineno-0-119">119</a></span>
+<span class="normal"><a href="#__codelineno-0-120">120</a></span>
+<span class="normal"><a href="#__codelineno-0-121">121</a></span>
+<span class="normal"><a href="#__codelineno-0-122">122</a></span>
+<span class="normal"><a href="#__codelineno-0-123">123</a></span>
+<span class="normal"><a href="#__codelineno-0-124">124</a></span>
+<span class="normal"><a href="#__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#__codelineno-0-131">131</a></span>
+<span class="normal"><a href="#__codelineno-0-132">132</a></span>
+<span class="normal"><a href="#__codelineno-0-133">133</a></span>
+<span class="normal"><a href="#__codelineno-0-134">134</a></span>
+<span class="normal"><a href="#__codelineno-0-135">135</a></span>
+<span class="normal"><a href="#__codelineno-0-136">136</a></span>
+<span class="normal"><a href="#__codelineno-0-137">137</a></span>
+<span class="normal"><a href="#__codelineno-0-138">138</a></span>
+<span class="normal"><a href="#__codelineno-0-139">139</a></span>
+<span class="normal"><a href="#__codelineno-0-140">140</a></span>
+<span class="normal"><a href="#__codelineno-0-141">141</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="k">def</span> <span class="nf">post</span><span class="p">(</span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115"></a>    <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116"></a>    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117"></a>    <span class="n">params</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118"></a>    <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119"></a>    <span class="n">err_codes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120"></a>    <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">any</span><span class="p">]:</span>
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Performs a POST request towards endpoint</span>
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123"></a>
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125"></a><span class="sd">        endpoint (str): URL</span>
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126"></a><span class="sd">        params (Dict, optional): POST parameters. Defaults to None.</span>
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="sd">        data (Dict, optional): POST data. Defaults to None.</span>
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="sd">        err_codes (List[int], optional): List of error codes to handle in calling function. Defaults to None.</span>
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="sd">        timeout (float): Request timeout in seconds. Defaults to None.</span>
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130"></a>
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="sd">    Returns:</span>
+</span><span id="__span-0-132"><a id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="sd">        Tuple[int, any]: Request status code and request data</span>
+</span><span id="__span-0-133"><a id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-134"><a id="__codelineno-0-134" name="__codelineno-0-134"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_do</span><span class="p">(</span>
+</span><span id="__span-0-135"><a id="__codelineno-0-135" name="__codelineno-0-135"></a>        <span class="n">http_method</span><span class="o">=</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+</span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136"></a>        <span class="n">endpoint</span><span class="o">=</span><span class="n">endpoint</span><span class="p">,</span>
+</span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137"></a>        <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+</span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138"></a>        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+</span><span id="__span-0-139"><a id="__codelineno-0-139" name="__codelineno-0-139"></a>        <span class="n">err_codes</span><span class="o">=</span><span class="n">err_codes</span><span class="p">,</span>
+</span><span id="__span-0-140"><a id="__codelineno-0-140" name="__codelineno-0-140"></a>        <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+</span><span id="__span-0-141"><a id="__codelineno-0-141" name="__codelineno-0-141"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -2010,7 +2122,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "navigation.indexes", "content.tooltips", "navigation.path", "content.code.annotate", "content.code.copy", "content.code.select", "navigation.sections", "navigation.tabs"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
       
     
   </body>
