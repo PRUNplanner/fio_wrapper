@@ -1,6 +1,10 @@
 # Config
 
-## Base Configuration
+FIO Wrapper internally uses a configuration file to provide its standard capabilities. The configuration can be [overwritten](usage.md) by the user.
+
+
+
+## `base.ini`
 
 ```ini
 [FIO]
