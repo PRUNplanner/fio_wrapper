@@ -98,7 +98,7 @@ def validate_planet_search_distance_checks(
     if distance_checks is None:
         return False
 
-    if len(distance_checks) > 3:
+    if len(distance_checks) > 10:
         return False
 
     # ensure all distances are str

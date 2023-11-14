@@ -169,7 +169,7 @@ class Planet(AbstractPlanet, AbstractEndpoint):
                 distance_checks=distance_checks
             ):
                 raise PlanetSearchDistanceChecksInvalid(
-                    "Invalid distance checks. Can check for up to 3 distances."
+                    "Invalid distance checks. Can check for up to 10 distances."
                 )
 
         (status, data) = self.adapter.post(

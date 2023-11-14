@@ -106,6 +106,7 @@ class PlanetFull(Planet):
     PlanetTier: int
     UserNameSubmitted: str
     Timestamp: NaiveDatetime
+    DistanceResults: Optional[List[int]]
 
 
 class PlanetFullList(RootModel):

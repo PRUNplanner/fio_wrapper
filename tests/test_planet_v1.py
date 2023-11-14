@@ -645,6 +645,7 @@ def planet_full_1() -> Dict:
         "PlanetTier": 0,
         "UserNameSubmitted": "STRAKE",
         "Timestamp": "2023-07-15T00:21:41.935321",
+        "DistanceResults": [],
     }
 
 
