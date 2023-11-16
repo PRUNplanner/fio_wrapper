@@ -1,5 +1,5 @@
 import pytest
-from fio_wrapper import FIOAdapter, FIO, EndpointNotImplemented
+from fio_wrapper import FIO, EndpointNotImplemented
 from fio_wrapper.exceptions import UnknownFIOResponse
 
 
@@ -16,17 +16,17 @@ def test_fio_adapter_version_notimplemented() -> None:
 def test_fio_adapter_blankinit() -> None:
     adapter = FIO()
 
-    assert adapter.config.api_key() == None
-    assert adapter.config.version() == "1.0.0"
-    assert adapter.config.base_url() == "https://rest.fnar.net"
+    assert adapter.config.api_key == None
+    assert adapter.config.version == "1.0.0"
+    assert adapter.config.base_url == "https://rest.fnar.net"
 
 
 def test_fio_adapter_custominit() -> None:
     adapter = FIO(api_key="foo", version="1.0.0", base_url="coo", ssl_verify=False)
 
-    assert adapter.config.api_key() == "foo"
-    assert adapter.config.version() == "1.0.0"
-    assert adapter.config.base_url() == "coo"
+    assert adapter.config.api_key == "foo"
+    assert adapter.config.version == "1.0.0"
+    assert adapter.config.base_url == "coo"
 
 
 def test_fio_adapter_otherstatus(requests_mock) -> None:

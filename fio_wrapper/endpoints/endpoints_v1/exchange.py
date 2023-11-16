@@ -3,22 +3,16 @@
 from typing import Optional
 from fio_wrapper.endpoints.abstracts.abstract_endpoint import AbstractEndpoint
 from fio_wrapper.endpoints.abstracts.abstract_exchange import AbstractExchange
-from fio_wrapper.validators import (
-    validate_ticker,
-    validate_exchange_code,
-    validate_company_code,
-)
-from fio_wrapper.models.exchange_models import (
-    ExchangeTickerFull,
-    OrderList,
-    ExchangeTickerList,
-    ExchangeTickerFullList,
-)
-from fio_wrapper.exceptions import (
-    ExchangeTickerInvalid,
-    MaterialTickerInvalid,
-    ExchangeTickerNotFound,
-)
+from fio_wrapper.exceptions import ExchangeTickerInvalid
+from fio_wrapper.exceptions import ExchangeTickerNotFound
+from fio_wrapper.exceptions import MaterialTickerInvalid
+from fio_wrapper.models.exchange_models import ExchangeTickerFull
+from fio_wrapper.models.exchange_models import ExchangeTickerFullList
+from fio_wrapper.models.exchange_models import ExchangeTickerList
+from fio_wrapper.models.exchange_models import OrderList
+from fio_wrapper.validators import validate_company_code
+from fio_wrapper.validators import validate_exchange_code
+from fio_wrapper.validators import validate_ticker
 
 
 class Exchange(AbstractExchange, AbstractEndpoint):
@@ -100,7 +94,7 @@ class Exchange(AbstractExchange, AbstractEndpoint):
             ExchangeTickerList: Exchange ticker
         """
         (_, data) = self.adapter.get(
-            endpoint=self.urls.exchange_get_all_url(), timeout=timeout
+            endpoint=self.urls.exchange_get_all_url(), timeout=timeout, cached=1
         )
 
         return ExchangeTickerList.model_validate(data)

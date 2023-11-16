@@ -1,8 +1,10 @@
 import os
 import logging
-from configparser import ConfigParser, NoSectionError, NoOptionError
-from typing import Optional, List
-
+import yaml
+import importlib.util
+from typing import Optional
+from typing import List
+from typing import Dict
 from fio_wrapper.exceptions import UnknownConfig
 
 logger = logging.getLogger(__name__)
@@ -22,6 +24,53 @@ class Config:
         data (ConfigParser): Configuration Parser
 
     """
+
+    # https://stackoverflow.com/a/15836901
+    def data_merge(self, a, b):
+        """merges b into a and return merged result
+
+        NOTE: tuples and arbitrary objects are not handled as it is totally ambiguous what should happen
+        """
+        key = None
+        # ## debug output
+        # sys.stderr.write("DEBUG: %s to %s\n" %(b,a))
+        try:
+            if (
+                a is None
+                or isinstance(a, str)
+                or isinstance(a, int)
+                or isinstance(a, float)
+            ):
+                # border case for first run or if a is a primitive
+                a = b
+            elif isinstance(a, list):
+                # lists can be only appended
+                if isinstance(b, list):
+                    # merge lists
+                    a.extend(b)
+                else:
+                    # append to list
+                    a.append(b)
+            elif isinstance(a, dict):
+                # dicts must be merged
+                if isinstance(b, dict):
+                    for key in b:
+                        if key in a:
+                            a[key] = self.data_merge(a[key], b[key])
+                        else:
+                            a[key] = b[key]
+                else:
+                    raise Exception(
+                        'Cannot merge non-dict "%s" into dict "%s"' % (b, a)
+                    )
+            else:
+                raise Exception('NOT IMPLEMENTED "%s" into "%s"' % (b, a))
+        except TypeError as e:
+            raise Exception(
+                'TypeError "%s" in key "%s" when merging "%s" into "%s"'
+                % (e, key, b, a)
+            )
+        return a
 
     def __init__(
         self,
@@ -52,18 +101,22 @@ class Config:
         self._timeout = timeout
         self._ssl_verify = ssl_verify
 
-        # converters
-        converters = {"list": lambda x: [i.strip() for i in x.split(",")]}
-
         # initialize data
-        # ConfigParser handles succession by order of read()
-        self.data: ConfigParser = ConfigParser(converters=converters)
-        self.data.read(os.path.join(os.path.dirname(__file__), "base.ini"))
+        self._base_file = os.path.join(os.path.dirname(__file__), "base.yml")
 
-        # user config
+        # base configuration
+        with open(self._base_file, "r") as base_file:
+            self.data = yaml.safe_load(base_file)
+
+        # user config, if provided
         if user_config is not None:
-            self.data.read(user_config)
+            with open(user_config, "r") as user_file:
+                user = yaml.safe_load(user_file)
 
+                # self.data = self.dict_merge(self.data, user)
+                self.data = self.data_merge(self.data, user)
+
+    @property
     def versions(self) -> List[str]:
         """Gets the versions information from config
 
@@ -74,10 +127,11 @@ class Config:
             List[str]: List of versions
         """
         try:
-            return self.data.getlist("FIO", "versions")
+            return self.data["fio"]["versions"]
         except Exception as exc:
             raise SystemExit("No list of available FIO versions provided") from exc
 
+    @property
     def api_key(self) -> str:
         """Gets the FIO API key
 
@@ -88,11 +142,12 @@ class Config:
             return self._api_key
 
         try:
-            return self.get("FIO", "api_key")
-        except UnknownConfig:
+            return self.data["fio"]["api_key"]
+        except KeyError:
             # API Key can be blank
             return None
 
+    @property
     def version(self) -> str:
         """Gets the FIO version specified
 
@@ -106,10 +161,11 @@ class Config:
             return self._version
 
         try:
-            return self.get("FIO", "version")
+            return self.data["fio"]["version"]
         except Exception as exc:
             raise UnknownConfig("No version setting found") from exc
 
+    @property
     def application(self) -> str:
         """Gets the application name
 
@@ -123,10 +179,11 @@ class Config:
             return self._application
 
         try:
-            return self.get("FIO", "application")
-        except (NoSectionError, NoOptionError) as exc:
+            return self.get("fio", "application")
+        except KeyError as exc:
             raise UnknownConfig("No application setting found") from exc
 
+    @property
     def base_url(self) -> str:
         """Gets the FIO base url
 
@@ -140,10 +197,11 @@ class Config:
             return self._base_url
 
         try:
-            return self.get("FIO", "base_url")
-        except Exception as exc:
+            return self.data["fio"]["base_url"]
+        except KeyError as exc:
             raise UnknownConfig("No base_url setting found") from exc
 
+    @property
     def timeout(self) -> float:
         """Gets the timeout parameter
 
@@ -158,10 +216,11 @@ class Config:
 
         try:
             # timeout value must be float
-            return float(self.get("FIO", "timeout"))
-        except Exception as exc:
+            return self.data["fio"]["timeout"]
+        except KeyError as exc:
             raise UnknownConfig("No timeout setting found") from exc
 
+    @property
     def ssl_verify(self) -> float:
         """Gets the ssl verification parameter
 
@@ -175,9 +234,17 @@ class Config:
             return self._ssl_verify
 
         try:
-            return bool(self.get("FIO", "ssl_verify"))
-        except Exception as exc:
+            return self.data["fio"]["ssl_verify"]
+        except KeyError as exc:
             raise UnknownConfig("No ssl_verify setting found") from exc
+
+    @property
+    def cache(self) -> bool:
+        return self.data["cache"]["enabled"]
+
+    @property
+    def cache_default_expire(self) -> int:
+        return self.data["cache"]["default_expire"]
 
     def get(self, section: str, option: str) -> str:
         """Gets a configuration element
@@ -194,22 +261,54 @@ class Config:
         """
         logger.debug("get(): %s | %s", section, option)
         try:
-            return self.data.get(section, option)
-        except (NoSectionError, NoOptionError) as exc:
+            return self.data[section][option]
+        except KeyError as exc:
             raise UnknownConfig() from exc
 
-    def get_versioned(self, section: str, option: str) -> str:
-        """Gets a versioned configuration element
+    def get_url(self, option: str) -> str:
+        """Gets a url configuration element
 
         Args:
             section (str): Configuration section
             option (str): Configuration option
 
         Returns:
-            str: Versioned configuration element (e.g., 1.0.0_base)
+            str: URL configuration parameter
         """
-        option = f"{self.version()}_{option}"
 
-        logger.debug("get_versioned(): %s | %s", section, option)
+        try:
+            return self.data["fio_urls"][self.version][option]
+        except KeyError as exc:
+            raise UnknownConfig() from exc
 
-        return self.get(section, option)
+    def cache_url_expirations(self) -> Dict[str, any]:
+        # check if requests-cache is installed
+        if self.cache and importlib.util.find_spec("requests_cache") is not None:
+            from requests_cache import DO_NOT_CACHE, NEVER_EXPIRE
+
+            try:
+                expiration_list: Dict[str, any] = {}
+
+                # walk through given urls
+                for url, expiration in self.data["cache"]["urls"].items():
+                    # decide on potential values coming as int or str:
+                    #   int = take as seconds
+                    if type(expiration) == int:
+                        expiration_list[url] = expiration
+                    #   NEVER_EXPIRE
+                    elif expiration == "NEVER_EXPIRE":
+                        expiration_list[url] = NEVER_EXPIRE
+                    #   DO_NOT_CACHE
+                    elif expiration == "DO_NOT_CACHE":
+                        expiration_list[url] = DO_NOT_CACHE
+                    else:
+                        logger.warn(
+                            "Unknown expiration configuration: %s | %s", url, expiration
+                        )
+                return expiration_list
+            # no cache urls defined, return empty list
+            except KeyError:
+                return {}
+
+        else:
+            return {}

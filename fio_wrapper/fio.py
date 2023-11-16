@@ -74,21 +74,17 @@ class FIO:
         )
 
         # Check version availability
-        if self.config.version() not in self.config.versions():
+        if self.config.version not in self.config.versions:
             raise EndpointNotImplemented("FIO version not supported")
 
         # create adapter
-        self.adapter = FIOAdapter(
-            header=self.get_header(),
-            ssl_verify=self.config.ssl_verify(),
-            timeout=self.config.timeout(),
-        )
+        self.adapter = FIOAdapter(header=self.get_header(), config=self.config)
 
         # create urls
         self.urls: URLs = URLs(self.config)
 
         # add version 1.0.0 endpoints
-        if self.config.version() == "1.0.0":
+        if self.config.version == "1.0.0":
             self.Building = building_v1.Building(self.adapter, self.urls)
             self.Exchange = exchange_v1.Exchange(self.adapter, self.urls)
             self.Group = group_v1.Group(self.adapter, self.urls)
@@ -106,6 +102,6 @@ class FIO:
             Dict[str, str]: Contains "Authorization" and "X-FIO-Application"
         """
         return {
-            "Authorization": self.config.api_key(),
-            "X-FIO-Application": self.config.application(),
+            "Authorization": self.config.api_key,
+            "X-FIO-Application": self.config.application,
         }

@@ -1,9 +1,16 @@
 """Request adapter performing actual API calls towards FIO endpoints
 """
 import logging
-from typing import Dict, Tuple, List, Optional
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
+import importlib.util
+
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from fio_wrapper.config import Config
+
 from fio_wrapper.exceptions import UnknownFIOResponse
 
 logger = logging.getLogger(__name__)
@@ -19,12 +26,7 @@ class FIOAdapter:
 
     """
 
-    def __init__(
-        self,
-        header: Dict[str, str],
-        ssl_verify: bool = True,
-        timeout: float = 10.0,
-    ):
+    def __init__(self, config: Config, header: Dict[str, str]):
         """Initializes the FIO adapter
 
         Args:
@@ -33,12 +35,31 @@ class FIOAdapter:
             timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
         """
 
+        self.config = config
         self.header = header
-        self.ssl_verify = ssl_verify
-        self.timeout = timeout
+        self.ssl_verify = self.config.ssl_verify
+        self.timeout = self.config.timeout
 
-        if not ssl_verify:
+        if not self.ssl_verify:
             requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+
+        # register a session based on requests.session or, if installed
+        # requests-cache session handler
+
+        if self.config.cache and importlib.util.find_spec("requests_cache") is not None:
+            logger.debug("Using requests-cache Session")
+            from requests_cache import CachedSession
+
+            self._session = CachedSession(
+                cache_name="fio_wrapper",
+                backend="memory",
+                expire_after=self.config.cache_default_expire,
+                urls_expire_after=self.config.cache_url_expirations(),
+                cache_control=False,
+            )
+        else:
+            logger.debug("Using request Session")
+            self._session = requests.session()
 
     def _do(
         self,
@@ -48,6 +69,7 @@ class FIOAdapter:
         data: Dict = None,
         err_codes: Optional[List[int]] = None,
         timeout: Optional[float] = None,
+        cached: Optional[int] = None,
     ) -> Tuple[int, any]:
         try:
             logger.debug(
@@ -58,7 +80,7 @@ class FIOAdapter:
                 data,
             )
 
-            response = requests.request(
+            response = self._session.request(
                 method=http_method,
                 url=endpoint,
                 verify=self.ssl_verify,
@@ -91,6 +113,7 @@ class FIOAdapter:
         params: Dict = None,
         err_codes: Optional[List[int]] = None,
         timeout: Optional[float] = None,
+        cached: Optional[int] = None,
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
 
@@ -109,6 +132,7 @@ class FIOAdapter:
             params=params,
             err_codes=err_codes,
             timeout=timeout,
+            cached=cached,
         )
 
     def post(

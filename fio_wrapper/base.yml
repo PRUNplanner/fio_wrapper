@@ -1,0 +1,46 @@
+---
+fio:
+  application: FIO Wrapper
+  version: 1.0.0
+  base_url: https://rest.fnar.net
+  timeout: 10
+  ssl_verify: true
+  versions:
+    - 1.0.0
+cache:
+  enabled: false
+  default_expire: 3600
+fio_urls:
+  0.0.0:
+    base: foo
+  1.0.0:
+    material_base: /material
+    material_all: /allmaterials
+    exchange_base: /exchange
+    exchange_orders: /orders
+    exchange_all: /all
+    exchange_full: /full
+    building_base: /building
+    building_all: /allbuildings
+    recipe_base: /recipes
+    recipe_all: /allrecipes
+    planet_base: /planet
+    planet_all: /allplanets
+    planet_full: /allplanets/full
+    planet_sites: /sites
+    planet_search: /search
+    localmarket_base: /localmarket
+    localmarket_planet: /planet
+    localmarket_shipping_source: /shipping/source
+    localmarket_shipping_destination: /shipping/destination
+    localmarket_company: /company
+    sites_base: /sites
+    sites_planets: /planets
+    sites_warehouses: /warehouses
+    storage_base: /storage
+    storage_planets: /planets
+    groups: /auth/groups
+    groups_group: /auth/group
+    groups_groupmemberships: /auth/groupmemberships
+    groups_hub: /fioweb/grouphub
+    groups_burn: /fioweb/burn/group
