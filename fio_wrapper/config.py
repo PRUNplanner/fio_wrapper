@@ -39,42 +39,36 @@ class Config:
         key = None
         # ## debug output
         # sys.stderr.write("DEBUG: %s to %s\n" %(b,a))
-        try:
-            if (
-                a is None
-                or isinstance(a, str)
-                or isinstance(a, int)
-                or isinstance(a, float)
-            ):
-                # border case for first run or if a is a primitive
-                a = b
-            elif isinstance(a, list):
-                # lists can be only appended
-                if isinstance(b, list):
-                    # merge lists
-                    a.extend(b)
-                else:
-                    # append to list
-                    a.append(b)
-            elif isinstance(a, dict):
-                # dicts must be merged
-                if isinstance(b, dict):
-                    for key in b:
-                        if key in a:
-                            a[key] = self.data_merge(a[key], b[key])
-                        else:
-                            a[key] = b[key]
-                else:
-                    raise Exception(
-                        'Cannot merge non-dict "%s" into dict "%s"' % (b, a)
-                    )
+
+        if (
+            a is None
+            or isinstance(a, str)
+            or isinstance(a, int)
+            or isinstance(a, float)
+        ):
+            # border case for first run or if a is a primitive
+            a = b
+        elif isinstance(a, list):
+            # lists can be only appended
+            if isinstance(b, list):
+                # merge lists
+                a.extend(b)
             else:
-                raise Exception('NOT IMPLEMENTED "%s" into "%s"' % (b, a))
-        except TypeError as e:
-            raise Exception(
-                'TypeError "%s" in key "%s" when merging "%s" into "%s"'
-                % (e, key, b, a)
-            )
+                # append to list
+                a.append(b)
+        elif isinstance(a, dict):
+            # dicts must be merged
+            if isinstance(b, dict):
+                for key in b:
+                    if key in a:
+                        a[key] = self.data_merge(a[key], b[key])
+                    else:
+                        a[key] = b[key]
+            else:
+                raise Exception('Cannot merge non-dict "%s" into dict "%s"' % (b, a))
+        else:
+            raise Exception('NOT IMPLEMENTED "%s" into "%s"' % (b, a))
+
         return a
 
     def __init__(
@@ -131,10 +125,7 @@ class Config:
         Returns:
             List[str]: List of versions
         """
-        try:
-            return self.data["fio"]["versions"]
-        except Exception as exc:
-            raise SystemExit("No list of available FIO versions provided") from exc
+        return self.data["fio"]["versions"]
 
     @property
     def api_key(self) -> str:
@@ -156,26 +147,17 @@ class Config:
     def version(self) -> str:
         """Gets the FIO version specified
 
-        Raises:
-            UnknownConfig: No version setting found
-
         Returns:
             str: FIO API version
         """
         if self._version is not None:
             return self._version
 
-        try:
-            return self.data["fio"]["version"]
-        except Exception as exc:
-            raise UnknownConfig("No version setting found") from exc
+        return self.data["fio"]["version"]
 
     @property
     def application(self) -> str:
         """Gets the application name
-
-        Raises:
-            UnknownConfig: No application setting found
 
         Returns:
             str: Application name
@@ -183,17 +165,11 @@ class Config:
         if self._application is not None:
             return self._application
 
-        try:
-            return self.get("fio", "application")
-        except KeyError as exc:
-            raise UnknownConfig("No application setting found") from exc
+        return self.data["fio"]["application"]
 
     @property
     def base_url(self) -> str:
         """Gets the FIO base url
-
-        Raises:
-            UnknownConfig: No base_url setting found
 
         Returns:
             str: FIO base url
@@ -201,17 +177,11 @@ class Config:
         if self._base_url is not None:
             return self._base_url
 
-        try:
-            return self.data["fio"]["base_url"]
-        except KeyError as exc:
-            raise UnknownConfig("No base_url setting found") from exc
+        return self.data["fio"]["base_url"]
 
     @property
     def timeout(self) -> float:
         """Gets the timeout parameter
-
-        Raises:
-            UnknownConfig: No timeout setting found
 
         Returns:
             float: Timeout parameter
@@ -219,18 +189,11 @@ class Config:
         if self._timeout is not None:
             return self._timeout
 
-        try:
-            # timeout value must be float
-            return self.data["fio"]["timeout"]
-        except KeyError as exc:
-            raise UnknownConfig("No timeout setting found") from exc
+        return self.data["fio"]["timeout"]
 
     @property
     def ssl_verify(self) -> float:
         """Gets the ssl verification parameter
-
-        Raises:
-            UnknownConfig: No ssl_verify setting found
 
         Returns:
             float: Seconds as float of request timeout
@@ -238,10 +201,7 @@ class Config:
         if self._ssl_verify is not None:
             return self._ssl_verify
 
-        try:
-            return self.data["fio"]["ssl_verify"]
-        except KeyError as exc:
-            raise UnknownConfig("No ssl_verify setting found") from exc
+        return self.data["fio"]["ssl_verify"]
 
     @property
     def cache(self) -> bool:
@@ -302,32 +262,23 @@ class Config:
             Dict[str, any]: URL specific expiration settings
         """
         # check if requests-cache is installed
-        if self.cache and importlib.util.find_spec("requests_cache") is not None:
-            from requests_cache import DO_NOT_CACHE, NEVER_EXPIRE
-
-            try:
-                expiration_list: Dict[str, any] = {}
-
-                # walk through given urls
-                for url, expiration in self.data["cache"]["urls"].items():
-                    # decide on potential values coming as int or str:
-                    #   int = take as seconds
-                    if isinstance(expiration, int):
-                        expiration_list[url] = expiration
-                    #   NEVER_EXPIRE
-                    elif expiration == "NEVER_EXPIRE":
-                        expiration_list[url] = NEVER_EXPIRE
-                    #   DO_NOT_CACHE
-                    elif expiration == "DO_NOT_CACHE":
-                        expiration_list[url] = DO_NOT_CACHE
-                    else:
-                        logger.warn(
-                            "Unknown expiration configuration: %s | %s", url, expiration
-                        )
-                return expiration_list
-            # no cache urls defined, return empty list
-            except KeyError:
-                return {}
-
-        else:
+        if not self.cache or importlib.util.find_spec("requests_cache") is None:
             return {}
+
+        from requests_cache import DO_NOT_CACHE, NEVER_EXPIRE
+
+        expiration_list = {}
+
+        for url, expiration in self.data.get("cache", {}).get("urls", {}).items():
+            if isinstance(expiration, int):
+                expiration_list[url] = expiration
+            elif expiration == "NEVER_EXPIRE":
+                expiration_list[url] = NEVER_EXPIRE
+            elif expiration == "DO_NOT_CACHE":
+                expiration_list[url] = DO_NOT_CACHE
+            else:
+                logger.warning(
+                    "Unknown expiration configuration: %s | %s", url, expiration
+                )
+
+        return expiration_list

@@ -8,4 +8,4 @@ omit =
     # omit abstract endpoints
     */abstracts/*
     # omit config due to base_config
-    */config.py
+    # */config.py
