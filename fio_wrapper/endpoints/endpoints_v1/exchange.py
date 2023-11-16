@@ -94,7 +94,7 @@ class Exchange(AbstractExchange, AbstractEndpoint):
             ExchangeTickerList: Exchange ticker
         """
         (_, data) = self.adapter.get(
-            endpoint=self.urls.exchange_get_all_url(), timeout=timeout, cached=1
+            endpoint=self.urls.exchange_get_all_url(), timeout=timeout
         )
 
         return ExchangeTickerList.model_validate(data)

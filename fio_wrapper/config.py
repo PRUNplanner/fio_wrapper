@@ -29,7 +29,12 @@ class Config:
     def data_merge(self, a, b):
         """merges b into a and return merged result
 
-        NOTE: tuples and arbitrary objects are not handled as it is totally ambiguous what should happen
+        Args:
+            a (Dict): First dictionary
+            b (Dict): Second dictionary
+
+        NOTE:
+            tuples and arbitrary objects are not handled as it is totally ambiguous what should happen
         """
         key = None
         # ## debug output
@@ -240,10 +245,20 @@ class Config:
 
     @property
     def cache(self) -> bool:
+        """Gets the cache usage status
+
+        Returns:
+            bool: Cache used, true or false
+        """
         return self.data["cache"]["enabled"]
 
     @property
     def cache_default_expire(self) -> int:
+        """Gets the cache default expiration time
+
+        Returns:
+            int: Expiration time in seconds
+        """
         return self.data["cache"]["default_expire"]
 
     def get(self, section: str, option: str) -> str:
@@ -269,7 +284,6 @@ class Config:
         """Gets a url configuration element
 
         Args:
-            section (str): Configuration section
             option (str): Configuration option
 
         Returns:
@@ -282,6 +296,11 @@ class Config:
             raise UnknownConfig() from exc
 
     def cache_url_expirations(self) -> Dict[str, any]:
+        """Creates the dict for requests_cache url expirations
+
+        Returns:
+            Dict[str, any]: URL specific expiration settings
+        """
         # check if requests-cache is installed
         if self.cache and importlib.util.find_spec("requests_cache") is not None:
             from requests_cache import DO_NOT_CACHE, NEVER_EXPIRE

@@ -11,8 +11,6 @@ cache:
   enabled: false
   default_expire: 3600
 fio_urls:
-  0.0.0:
-    base: foo
   1.0.0:
     material_base: /material
     material_all: /allmaterials

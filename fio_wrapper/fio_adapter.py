@@ -17,22 +17,14 @@ logger = logging.getLogger(__name__)
 
 
 class FIOAdapter:
-    """FIO Adapater
-
-    Attributes:
-        header (Dict[str, str]): FIO Header.
-        ssl_verify (bool, optional): Verify https connection. Defaults to True.
-        timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
-
-    """
+    """FIO Adapater"""
 
     def __init__(self, config: Config, header: Dict[str, str]):
         """Initializes the FIO adapter
 
         Args:
+            config (Config): Wrapper configuration.
             header (Dict[str, str]): FIO Header.
-            ssl_verify (bool, optional): Verify https connection. Defaults to True.
-            timeout (float, optional): Request timeout in seconds. Defaults to 10.0.
         """
 
         self.config = config
@@ -69,7 +61,6 @@ class FIOAdapter:
         data: Dict = None,
         err_codes: Optional[List[int]] = None,
         timeout: Optional[float] = None,
-        cached: Optional[int] = None,
     ) -> Tuple[int, any]:
         try:
             logger.debug(
@@ -113,7 +104,6 @@ class FIOAdapter:
         params: Dict = None,
         err_codes: Optional[List[int]] = None,
         timeout: Optional[float] = None,
-        cached: Optional[int] = None,
     ) -> Tuple[int, any]:
         """Performs a GET request towards endpoint
 
@@ -132,7 +122,6 @@ class FIOAdapter:
             params=params,
             err_codes=err_codes,
             timeout=timeout,
-            cached=cached,
         )
 
     def post(

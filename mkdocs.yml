@@ -84,6 +84,7 @@ nav:
     - Usage: usage.md
     - Available Routes: 'routes.md'  
     - Timeouts: 'timeouts.md'
+    - Caching: 'caching.md'
   - Components:
     - FIO: fio.md
     - Adapter: fio_adapter.md
