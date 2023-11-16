@@ -1,4 +1,6 @@
 import pytest
+import importlib.util
+from requests_cache import CachedSession
 from fio_wrapper import FIO, EndpointNotImplemented
 from fio_wrapper.exceptions import UnknownFIOResponse
 
@@ -11,6 +13,14 @@ def ftx_fio() -> FIO:
 def test_fio_adapter_version_notimplemented() -> None:
     with pytest.raises(EndpointNotImplemented):
         FIO(version="0.0.0")
+
+
+def test_fio_adapter_requests_cache() -> None:
+    adapter = FIO(config="tests/config_cache.yml")
+
+    assert adapter.config.cache == True
+    assert importlib.util.find_spec("requests_cache") is not None
+    assert type(adapter.adapter._session) == CachedSession
 
 
 def test_fio_adapter_blankinit() -> None:

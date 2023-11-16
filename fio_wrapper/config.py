@@ -293,7 +293,7 @@ class Config:
                 for url, expiration in self.data["cache"]["urls"].items():
                     # decide on potential values coming as int or str:
                     #   int = take as seconds
-                    if type(expiration) == int:
+                    if isinstance(expiration, int):
                         expiration_list[url] = expiration
                     #   NEVER_EXPIRE
                     elif expiration == "NEVER_EXPIRE":
