@@ -1,13 +1,13 @@
 # Caching
 
-Out of the box FIO Wrapper does not include any form of caching for FIO requests. As this can be extremely helpful to minimize load on FIO and wait times you can install the wrapper with `cache` extra.
+By default, FIO Wrapper does not include any form of caching for FIO requests. Enabling caching can be extremely helpful to minimize load on FIO and reduce wait times. You can install the wrapper with the `cache` extra.
 
 ## Installation of FIO Wrapper with Cache Extra
 ```python
 pip install fio-wrapper[cache]
 ```
 
-FIO Wrapper will now make use of [requests-cache](https://requests-cache.readthedocs.io/en/stable/index.html) as persistent HTTP cache on top of Pythons `requests` library. This package will only use `memory` caching.
+FIO Wrapper will now make use of [requests-cache](https://requests-cache.readthedocs.io/en/stable/index.html) as a persistent HTTP cache on top of Python's `requests` library. This package will only use `memory` caching.
 
 ## Cache configuration
 Caching can only be enabled with a [user configuration file](config.md) provided when instantiating the `FIO` wrapper. 
@@ -40,3 +40,5 @@ cache:
     "*/exchange/all": NEVER_EXPIRE
     "*/exchange/full": DO_NOT_CACHE
 ```
+
+**Note**: Make sure to adjust the configuration according to your specific caching needs.
