@@ -9,7 +9,7 @@ Timeouts can be defined by the user on two levels:
 
 FIO Wrapper includes a default fallback to `10.0` seconds, if no value is defined by the user. Overwriting to `None` to disable timeouts is possible.
 
-## [`FIO`](fio.md) instantiation
+## [`FIO`](fio.md) Instantiation
 
 Define a default timeout for all requests by overwriting the [`Adapter`](fio_adapter.md) default.
 
@@ -23,13 +23,13 @@ fio = FIO(timeout=5)
 
 FIO Wrapper will now apply the timeout of `5 seconds` to all calls it is making towards FIO.
 
-## Configuration file
+## Configuration File
 
-A standard timeout can also be defined in a users [configuration file](config.md).
+A standard timeout can also be defined in a user's [configuration file](config.md).
 
-## Indidivual endpoint calls
+## Individual Endpoint Calls
 
-All endpoints allow passing the optional `timeout` argument that is of type `Optional[float]` and defaults to `None`.
+All endpoints allow passing the optional `timeout` argument, which is of type `Optional[float]` and defaults to `None`.
 
 ```python
 from fio_wrapper import FIO
@@ -46,4 +46,4 @@ all_exchange = fio.Exchange.all(timeout=3.5)
 
 ```
 
-It is highly recommended to not set any timeout to `None` to avoid infinite loops especially on expensive FIO endpoints like [`Group`](endpoints/group.md).
+It is highly recommended not to set any timeout to `None` to avoid infinite loops especially on expensive FIO endpoints like [`Group`](endpoints/group.md).

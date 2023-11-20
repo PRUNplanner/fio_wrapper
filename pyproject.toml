@@ -5,9 +5,6 @@ description = "Python API wrapper for Prosperous Universes community API FIO."
 authors = ["Jan <jplacht+pyfio@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://jplacht.github.io/fio_wrapper/"
-documentation = "https://jplacht.github.io/fio_wrapper/"
-repository = "https://github.com/jplacht/fio_wrapper"
 keywords = ["fio", "prosperous universe", "api", "wrapper"]
 classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -29,15 +26,17 @@ include = [
 ]
 
 [tool.poetry.urls]
-homepage = "https://jplacht.github.io/fio_wrapper/"
-documentation = "https://jplacht.github.io/fio_wrapper/"
-source = "https://github.com/jplacht/fio_wrapper"
-repository = "https://github.com/jplacht/fio_wrapper"
+Homepage = "https://jplacht.github.io/fio_wrapper/"
+Documentation = "https://jplacht.github.io/fio_wrapper/"
+Source = "https://github.com/jplacht/fio_wrapper"
+Repository = "https://github.com/jplacht/fio_wrapper"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.31.0"
 pydantic = "^2.4.2"
+pyyaml = "^6.0.1"
+requests-cache = {extras = ["cache"], version = "^1.1.0", optional=true}
 
 [tool.poetry.dev-dependencies]
 black = "^23.10.1"
@@ -58,3 +57,6 @@ mkdocs = "^1.5.3"
 mkdocstrings = {extras = ["python"], version = "^0.23.0"}
 mkdocs-material = "^9.4.7"
 mkdocs-coverage = "^1.0.0"
+
+[tool.poetry.extras]
+cache = ["requests-cache"]

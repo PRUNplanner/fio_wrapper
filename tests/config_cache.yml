@@ -1,0 +1,7 @@
+cache:
+  enabled: true
+  default_expire: 10 # 10 seconds
+  urls:
+    "*/material/*": 3600
+    "*/exchange/all": NEVER_EXPIRE
+    "*/exchange/full": DO_NOT_CACHE

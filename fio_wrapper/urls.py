@@ -11,61 +11,57 @@ class URLs:
     def __init__(self, config: Config) -> None:
         self.config = config
 
-        self.base_url = config.base_url()
+        self.base_url = config.base_url
 
         # material
-        self.material_base = config.get_versioned("URL", "material_base")
-        self.material_allmaterials = config.get_versioned("URL", "material_all")
+        self.material_base = config.get_url("material_base")
+        self.material_allmaterials = config.get_url("material_all")
 
         # exchange
-        self.exchange_base = config.get_versioned("URL", "exchange_base")
-        self.exchange_orders = config.get_versioned("URL", "exchange_orders")
-        self.exchange_all = config.get_versioned("URL", "exchange_all")
-        self.exchange_full = config.get_versioned("URL", "exchange_full")
+        self.exchange_base = config.get_url("exchange_base")
+        self.exchange_orders = config.get_url("exchange_orders")
+        self.exchange_all = config.get_url("exchange_all")
+        self.exchange_full = config.get_url("exchange_full")
 
         # building
-        self.building_base = config.get_versioned("URL", "building_base")
-        self.building_all = config.get_versioned("URL", "building_all")
+        self.building_base = config.get_url("building_base")
+        self.building_all = config.get_url("building_all")
 
         # recipe
-        self.recipe_base = config.get_versioned("URL", "recipe_base")
-        self.recipe_all = config.get_versioned("URL", "recipe_all")
+        self.recipe_base = config.get_url("recipe_base")
+        self.recipe_all = config.get_url("recipe_all")
 
         # planet
-        self.planet_base = config.get_versioned("URL", "planet_base")
-        self.planet_all = config.get_versioned("URL", "planet_all")
-        self.planet_full = config.get_versioned("URL", "planet_full")
-        self.planet_sites = config.get_versioned("URL", "planet_sites")
-        self.planet_search = config.get_versioned("URL", "planet_search")
+        self.planet_base = config.get_url("planet_base")
+        self.planet_all = config.get_url("planet_all")
+        self.planet_full = config.get_url("planet_full")
+        self.planet_sites = config.get_url("planet_sites")
+        self.planet_search = config.get_url("planet_search")
 
         # localmarket
-        self.localmarket_base = config.get_versioned("URL", "localmarket_base")
-        self.localmarket_planet = config.get_versioned("URL", "localmarket_planet")
-        self.localmarket_shipping_source = config.get_versioned(
-            "URL", "localmarket_shipping_source"
+        self.localmarket_base = config.get_url("localmarket_base")
+        self.localmarket_planet = config.get_url("localmarket_planet")
+        self.localmarket_shipping_source = config.get_url("localmarket_shipping_source")
+        self.localmarket_shipping_destination = config.get_url(
+            "localmarket_shipping_destination"
         )
-        self.localmarket_shipping_destination = config.get_versioned(
-            "URL", "localmarket_shipping_destination"
-        )
-        self.localmarket_company = config.get_versioned("URL", "localmarket_company")
+        self.localmarket_company = config.get_url("localmarket_company")
 
         # sites
-        self.sites_base = config.get_versioned("URL", "sites_base")
-        self.sites_planets = config.get_versioned("URL", "sites_planets")
-        self.sites_warehouses = config.get_versioned("URL", "sites_warehouses")
+        self.sites_base = config.get_url("sites_base")
+        self.sites_planets = config.get_url("sites_planets")
+        self.sites_warehouses = config.get_url("sites_warehouses")
 
         # storage
-        self.storage_base = config.get_versioned("URL", "storage_base")
-        self.storage_planets = config.get_versioned("URL", "storage_planets")
+        self.storage_base = config.get_url("storage_base")
+        self.storage_planets = config.get_url("storage_planets")
 
         # groups
-        self.groups = config.get_versioned("URL", "groups")
-        self.groups_group = config.get_versioned("URL", "groups_group")
-        self.groups_groupmemberships = config.get_versioned(
-            "URL", "groups_groupmemberships"
-        )
-        self.groups_hub = config.get_versioned("URL", "groups_hub")
-        self.groups_burn = config.get_versioned("URL", "groups_burn")
+        self.groups = config.get_url("groups")
+        self.groups_group = config.get_url("groups_group")
+        self.groups_groupmemberships = config.get_url("groups_groupmemberships")
+        self.groups_hub = config.get_url("groups_hub")
+        self.groups_burn = config.get_url("groups_burn")
 
     # Material
     def material_url(self) -> str:

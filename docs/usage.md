@@ -48,13 +48,19 @@ The complete list of parameters can be found on [`FIO()`](fio.md).
 
 FIO Wrapper can use a configuration file provided upon instantiation to overwrite its [base configuration](config.md).
 
-Example configuration file `config.ini`:
+Example configuration file `config.yml`:
 
-```ini
-[FIO]
-application = My Awesome FIO application
-timeout = 3
-api_key = MY_FIO_API_KEY
+```yaml
+fio:
+  application: MyExampleApplication
+  version: 1.0.0
+cache:
+  enabled: true
+  default_expire: 10 # seconds
+  urls:
+    "*/material/*": 3600
+    "*/exchange/all": NEVER_EXPIRE
+    "*/exchange/full": DO_NOT_CACHE
 ```
 
 Use this configuration file on [`FIO()`](fio.md) by providing the `config` attribute:
@@ -62,5 +68,5 @@ Use this configuration file on [`FIO()`](fio.md) by providing the `config` attri
 ```python
 from fio_wrapper import FIO
 
-fio = FIO(config="config.ini")
+fio = FIO(config="config.yml")
 ```

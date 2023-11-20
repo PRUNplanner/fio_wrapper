@@ -1,10 +1,4 @@
-# Config
-
-FIO Wrapper internally uses a configuration file to provide its standard capabilities. The configuration can be [overwritten](usage.md) by the user.
-
-## `base.yml`
-
-```yaml
+---
 fio:
   application: FIO Wrapper
   version: 1.0.0
@@ -48,8 +42,3 @@ fio_urls:
     groups_groupmemberships: /auth/groupmemberships
     groups_hub: /fioweb/grouphub
     groups_burn: /fioweb/burn/group
-
-```
-
-## Config() class
-::: config
