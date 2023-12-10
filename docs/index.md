@@ -11,8 +11,8 @@
 
 **FIO Wrapper** was developed as part of [PRUNplanner](https://prunplanner.org/), the Prosperous Universe Empire and Base Planning Tool.
 
-- Source Code: [https://github.com/jplacht/fio_wrapper](https://github.com/jplacht/fio_wrapper)
+- Source Code: [https://github.com/prunplanner/fio_wrapper](https://github.com/prunplanner/fio_wrapper)
 
-- Documentation: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+- Documentation: [https://prunplanner.github.io/fio_wrapper/](https://prunplanner.github.io/fio_wrapper/)
 
-- PyPi Package: [https://jplacht.github.io/fio_wrapper/](https://jplacht.github.io/fio_wrapper/)
+- PyPi Package: [https://prunplanner.github.io/fio_wrapper/](https://prunplanner.github.io/fio_wrapper/)
