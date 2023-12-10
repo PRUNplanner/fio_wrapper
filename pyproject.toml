@@ -26,10 +26,9 @@ include = [
 ]
 
 [tool.poetry.urls]
-Homepage = "https://jplacht.github.io/fio_wrapper/"
-Documentation = "https://jplacht.github.io/fio_wrapper/"
-Source = "https://github.com/jplacht/fio_wrapper"
-Repository = "https://github.com/jplacht/fio_wrapper"
+Homepage = "https://prunplanner.github.io/fio_wrapper/"
+Documentation = "https://prunplanner.github.io/fio_wrapper/"
+Source = "https://github.com/prunplanner/fio_wrapper"
 
 [tool.poetry.dependencies]
 python = "^3.8"
