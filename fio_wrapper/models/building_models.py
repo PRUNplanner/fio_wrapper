@@ -31,6 +31,7 @@ class BuildingCost(BaseModel):
 
 class BuildingTicker(BaseModel):
     Recipes: Optional[List[BuildingRecipe]]
+    BuildingCosts: Optional[List[BuildingCost]]
     BuildingId: str = Field(min_length=32)
     Name: str
     Ticker: str = Field(max_length=3)
