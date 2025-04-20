@@ -88,16 +88,16 @@ class PlanetFull(Planet):
     HasShipyard: bool
     FactionCode: Optional[str]
     FactionName: Optional[str]
-    GovernorId: Optional[str] = Field(min_length=32)
-    GovernorUserName: Optional[str]
-    GovernorCorporationId: Optional[str] = Field(min_length=32)
-    GovernorCorporationName: Optional[str]
-    GovernorCorporationCode: Optional[str]
+    GovernorId: Optional[str] = Field(min_length=32, default=None)
+    GovernorUserName: Optional[str] = Field(default=None)
+    GovernorCorporationId: Optional[str] = Field(min_length=32, default=None)
+    GovernorCorporationName: Optional[str] = Field(default=None)
+    GovernorCorporationCode: Optional[str] = Field(default=None)
     CurrencyName: Optional[str]
     CurrencyCode: Optional[str]
-    CollectorId: Optional[str] = Field(min_length=32)
-    CollectorName: Optional[str]
-    CollectorCode: Optional[str]
+    CollectorId: Optional[str] = Field(min_length=32, default=None)
+    CollectorName: Optional[str] = Field(default=None)
+    CollectorCode: Optional[str] = Field(default=None)
     BaseLocalMarketFee: int
     LocalMarketFeeFactor: int
     WarehouseFee: int
@@ -106,7 +106,7 @@ class PlanetFull(Planet):
     PlanetTier: int
     UserNameSubmitted: str
     Timestamp: NaiveDatetime
-    DistanceResults: Optional[List[int]]
+    DistanceResults: Optional[List[int]] = Field(default=None)
 
 
 class PlanetFullList(RootModel):
