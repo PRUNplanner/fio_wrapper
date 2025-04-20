@@ -34,7 +34,7 @@ class COGCProgram(BaseModel):
 
 class COGCVote(BaseModel):
     CompanyName: str
-    CompanyCode: str
+    CompanyCode: Optional[str] = Field(default=None)
     Influence: float
     VoteType: str
     VoteTimeEpochMs: datetime
