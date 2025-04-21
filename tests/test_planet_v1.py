@@ -32,25 +32,25 @@ def planet_full_1() -> Dict:
     return {
         "Resources": [
             {
+                "MaterialId": "bcf4a2029e461cf76d29de8c66ec2ff9",
+                "ResourceType": "GASEOUS",
+                "Factor": 0.10999999940395355
+            },
+            {
                 "MaterialId": "ec8dbb1d3f51d89c61b6f58fdd64a7f0",
                 "ResourceType": "LIQUID",
-                "Factor": 0.10999999940395355,
+                "Factor": 0.20999999344348907
             },
             {
                 "MaterialId": "6e16dbf050b98d9c4fc9c615b3367a0f",
                 "ResourceType": "GASEOUS",
-                "Factor": 0.17000000178813934,
+                "Factor": 0.2800000011920929
             },
             {
-                "MaterialId": "1f9a0293d9ba9bf519f71432e695edeb",
+                "MaterialId": "c5236c5b79b9e75ddbce16887aeda338",
                 "ResourceType": "MINERAL",
-                "Factor": 0.28999999165534973,
-            },
-            {
-                "MaterialId": "b9640b0d66e7d0ca7e4d3132711c97fc",
-                "ResourceType": "MINERAL",
-                "Factor": 0.20999999344348907,
-            },
+                "Factor": 0.23000000417232513
+            }
         ],
         "BuildRequirements": [
             {
@@ -60,7 +60,7 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "ef423f673d9e8c82043b4c5c63f6b55e",
                 "MaterialAmount": 4,
                 "MaterialWeight": 0.30000001192092896,
-                "MaterialVolume": 1.2000000476837158,
+                "MaterialVolume": 1.2000000476837158
             },
             {
                 "MaterialName": "truss",
@@ -69,7 +69,7 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "f8aebc7dd84ce14fae131aa0203d4498",
                 "MaterialAmount": 8,
                 "MaterialWeight": 0.10000000149011612,
-                "MaterialVolume": 1.5,
+                "MaterialVolume": 1.5
             },
             {
                 "MaterialName": "largePlasticsBoard",
@@ -78,7 +78,7 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "6316282906a9f68b0c7bb4396a26aa95",
                 "MaterialAmount": 12,
                 "MaterialWeight": 0.07999999821186066,
-                "MaterialVolume": 0.800000011920929,
+                "MaterialVolume": 0.800000011920929
             },
             {
                 "MaterialName": "lightweightDeckElements",
@@ -87,7 +87,7 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "ef423f673d9e8c82043b4c5c63f6b55e",
                 "MaterialAmount": 4,
                 "MaterialWeight": 0.10000000149011612,
-                "MaterialVolume": 1.2000000476837158,
+                "MaterialVolume": 1.2000000476837158
             },
             {
                 "MaterialName": "lightweightWindow",
@@ -96,7 +96,7 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "ef423f673d9e8c82043b4c5c63f6b55e",
                 "MaterialAmount": 4,
                 "MaterialWeight": 0.30000001192092896,
-                "MaterialVolume": 0.5,
+                "MaterialVolume": 0.5
             },
             {
                 "MaterialName": "mineralConstructionGranulate",
@@ -105,547 +105,449 @@ def planet_full_1() -> Dict:
                 "MaterialCategory": "156bbcce730fba6169338d560f05fd26",
                 "MaterialAmount": 100,
                 "MaterialWeight": 0.23999999463558197,
-                "MaterialVolume": 0.10000000149011612,
-            },
+                "MaterialVolume": 0.10000000149011612
+            }
         ],
         "ProductionFees": [
             {
                 "Category": "AGRICULTURE",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FUEL_REFINING",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FUEL_REFINING",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "MANUFACTURING",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 30.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "MANUFACTURING",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 120.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "MANUFACTURING",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 270.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "MANUFACTURING",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1080.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "MANUFACTURING",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1980.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "METALLURGY",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "METALLURGY",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "METALLURGY",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "METALLURGY",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1000.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "METALLURGY",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "RESOURCE_EXTRACTION",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "RESOURCE_EXTRACTION",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "RESOURCE_EXTRACTION",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "RESOURCE_EXTRACTION",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "RESOURCE_EXTRACTION",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "AGRICULTURE",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "AGRICULTURE",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FUEL_REFINING",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "AGRICULTURE",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FUEL_REFINING",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FOOD_INDUSTRIES",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CHEMISTRY",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 55,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CHEMISTRY",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 55,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CHEMISTRY",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CHEMISTRY",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1000.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CHEMISTRY",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1980.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CONSTRUCTION",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CONSTRUCTION",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CONSTRUCTION",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CONSTRUCTION",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1000.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "CONSTRUCTION",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "ELECTRONICS",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "ELECTRONICS",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "ELECTRONICS",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "ELECTRONICS",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1080.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "ELECTRONICS",
                 "WorkforceLevel": "SCIENTIST",
-                "FeeAmount": 1980,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 1980.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FOOD_INDUSTRIES",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 20.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "AGRICULTURE",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FOOD_INDUSTRIES",
                 "WorkforceLevel": "TECHNICIAN",
-                "FeeAmount": 270,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 240.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FOOD_INDUSTRIES",
                 "WorkforceLevel": "ENGINEER",
-                "FeeAmount": 1080,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FUEL_REFINING",
                 "WorkforceLevel": "PIONEER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
+                "FeeAmount": 10.0,
+                "FeeCurrency": "CIS"
             },
             {
                 "Category": "FOOD_INDUSTRIES",
                 "WorkforceLevel": "SETTLER",
-                "FeeAmount": 43,
-                "FeeCurrency": "NCC",
-            },
+                "FeeAmount": 80.0,
+                "FeeCurrency": "CIS"
+            }
         ],
         "COGCPrograms": [
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1698863376669,
-                "EndEpochMs": 1699468176669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1745168530311,
+                "EndEpochMs": 1745773330311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1693420176669,
-                "EndEpochMs": 1694024976669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1740934930311,
+                "EndEpochMs": 1741539730311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1698258576669,
-                "EndEpochMs": 1698863376669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1739725330311,
+                "EndEpochMs": 1740330130311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1697653776669,
-                "EndEpochMs": 1698258576669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1740330130311,
+                "EndEpochMs": 1740934930311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1697048976669,
-                "EndEpochMs": 1697653776669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1743958930311,
+                "EndEpochMs": 1744563730311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1696444176669,
-                "EndEpochMs": 1697048976669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1743354130311,
+                "EndEpochMs": 1743958930311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1695839376669,
-                "EndEpochMs": 1696444176669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1744563730311,
+                "EndEpochMs": 1745168530311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1695234576669,
-                "EndEpochMs": 1695839376669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1741539730311,
+                "EndEpochMs": 1742144530311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1694629776669,
-                "EndEpochMs": 1695234576669,
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1742144530311,
+                "EndEpochMs": 1742749330311
             },
             {
-                "ProgramType": "ADVERTISING_CHEMISTRY",
-                "StartEpochMs": 1694024976669,
-                "EndEpochMs": 1694629776669,
-            },
+                "ProgramType": "ADVERTISING_MANUFACTURING",
+                "StartEpochMs": 1742749330311,
+                "EndEpochMs": 1743354130311
+            }
         ],
         "COGCVotes": [
             {
-                "CompanyName": "SpectrumSupplies",
-                "CompanyCode": "SMSS",
-                "Influence": 1800,
-                "VoteType": "WORKFORCE_PIONEERS",
-                "VoteTimeEpochMs": 1698496827276,
+                "CompanyName": "NIKNIK's Co",
+                "CompanyCode": "NIK",
+                "Influence": 580.0,
+                "VoteType": "ADVERTISING_FUEL_REFINING",
+                "VoteTimeEpochMs": 1744659692143
             },
             {
-                "CompanyName": "Citrus Export Syndicate",
-                "CompanyCode": "LYME",
-                "Influence": 1175,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258583932,
+                "CompanyName": "Food'R'Us",
+                "CompanyCode": "FRS",
+                "Influence": 1252.5,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744564075651
             },
             {
-                "CompanyName": "Cypher Industries",
-                "CompanyCode": "CYPH",
-                "Influence": 2660,
-                "VoteType": "WORKFORCE_PIONEERS",
-                "VoteTimeEpochMs": 1698258592451,
+                "CompanyName": "FaLLen Corp",
+                "CompanyCode": "FALL",
+                "Influence": 650.0,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744566039083
             },
             {
-                "CompanyName": "KB Industries",
-                "CompanyCode": "KBI",
-                "Influence": 1560,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258642937,
+                "CompanyName": "Androidica Intergalactic",
+                "CompanyCode": "PC7",
+                "Influence": 3408.75,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744566415817
             },
             {
-                "CompanyName": "King Victualler",
-                "CompanyCode": "KKV",
-                "Influence": 2378.75,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258728183,
+                "CompanyName": "SUPERBAD VENTURES",
+                "CompanyCode": "EZ",
+                "Influence": 762.5,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744772298420
             },
             {
-                "CompanyName": "Highlander",
-                "CompanyCode": "HGH",
-                "Influence": 1109.25,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258893360,
+                "CompanyName": "OmniFuel",
+                "CompanyCode": "OMNF",
+                "Influence": 195.0,
+                "VoteType": "ADVERTISING_FUEL_REFINING",
+                "VoteTimeEpochMs": 1744771628656
             },
             {
-                "CompanyName": "Tinker Industries",
-                "CompanyCode": "TIN",
-                "Influence": 1287.5,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258974694,
+                "CompanyName": "InterStellaTrucking",
+                "CompanyCode": "IST",
+                "Influence": 525.0,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744940893909
             },
             {
-                "CompanyName": "Copious Ore and Kabobs",
-                "CompanyCode": "COK",
-                "Influence": 1526.25,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698258982077,
+                "CompanyName": "Industry Cubed",
+                "CompanyCode": "III",
+                "Influence": 380.0,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744890639597
             },
             {
-                "CompanyName": "Rexus",
-                "CompanyCode": "REXX",
-                "Influence": 2043.75,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698259359537,
+                "CompanyName": "Endurance",
+                "CompanyCode": "ED24",
+                "Influence": 2000.0,
+                "VoteType": "ADVERTISING_MANUFACTURING",
+                "VoteTimeEpochMs": 1744563747393
             },
             {
-                "CompanyName": "Portgas",
-                "CompanyCode": "POGA",
-                "Influence": 1937.5,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698259856364,
-            },
-            {
-                "CompanyName": "Lumber Liquidators",
-                "CompanyCode": "BMEX",
-                "Influence": 1308.75,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698549400005,
-            },
-            {
-                "CompanyName": "BlackGuard",
-                "CompanyCode": "BG",
-                "Influence": 1210,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698260129804,
-            },
-            {
-                "CompanyName": "Nosirrath",
-                "CompanyCode": "NOS",
-                "Influence": 1742.5,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698260828767,
-            },
-            {
-                "CompanyName": "East India Space Company",
-                "CompanyCode": "EISC",
-                "Influence": 3600,
-                "VoteType": "WORKFORCE_PIONEERS",
-                "VoteTimeEpochMs": 1698260889724,
-            },
-            {
-                "CompanyName": "Nanny Co-op",
-                "CompanyCode": "NNY",
-                "Influence": 1680,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698261324311,
-            },
-            {
-                "CompanyName": "LavAzza",
-                "CompanyCode": "LAVA",
-                "Influence": 1345,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698261736114,
-            },
-            {
-                "CompanyName": "Lumerz LLP",
-                "CompanyCode": "LUME",
-                "Influence": 1447.5,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698273248488,
-            },
-            {
-                "CompanyName": "Nth Metal",
-                "CompanyCode": "NTH",
-                "Influence": 1135,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698277336087,
-            },
-            {
-                "CompanyName": "Amp Partners",
-                "CompanyCode": "AMP",
-                "Influence": 2368.75,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698288361647,
-            },
-            {
-                "CompanyName": "Steelwing Hydrotechnical",
-                "CompanyCode": "SWHY",
-                "Influence": 1280,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698314954316,
-            },
-            {
-                "CompanyName": "Infernal Foundaries",
-                "CompanyCode": "IFRN",
-                "Influence": 760,
-                "VoteType": "WORKFORCE_PIONEERS",
-                "VoteTimeEpochMs": 1698350987777,
-            },
-            {
-                "CompanyName": "Skyprod",
-                "CompanyCode": "SKYP",
-                "Influence": 1782.5,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698260471995,
-            },
-            {
-                "CompanyName": "Bizotic",
-                "CompanyCode": "BZT",
-                "Influence": 1436.25,
-                "VoteType": "ADVERTISING_CHEMISTRY",
-                "VoteTimeEpochMs": 1698651904545,
-            },
+                "CompanyName": "KB Industries (liquidated)",
+                "CompanyCode": None,
+                "Influence": 800.0,
+                "VoteType": "ADVERTISING_ELECTRONICS",
+                "VoteTimeEpochMs": 1743887753138
+            }
         ],
         "COGCUpkeep": [],
-        "PlanetId": "7f1135f5d7792a058c8be66e7cbcb536",
-        "PlanetNaturalId": "OT-580b",
-        "PlanetName": "Montem",
+        "PlanetId": "a09f3bf153025929b2fb266e4119931a",
+        "PlanetNaturalId": "UV-351a",
+        "PlanetName": "Katoa",
         "Namer": None,
         "NamingDataEpochMs": 0,
         "Nameable": False,
-        "SystemId": "49b6615d39ccba05752b3be77b2ebf36",
-        "Gravity": 0.922335147857666,
-        "MagneticField": 0.7182995080947876,
-        "Mass": 7.797300945837227e24,
-        "MassEarth": 1.3056432008743286,
-        "OrbitSemiMajorAxis": 139417977000,
-        "OrbitEccentricity": 0.03147958219051361,
-        "OrbitInclination": 0.04501096159219742,
-        "OrbitRightAscension": 0,
-        "OrbitPeriapsis": 0,
-        "OrbitIndex": 2,
-        "Pressure": 0.9165661931037903,
-        "Radiation": 1.4921821515009263e-23,
-        "Radius": 7584996.5,
-        "Sunlight": 1621.1890869140625,
+        "SystemId": "92029ff27c1abe932bd2c61ee4c492c7",
+        "Gravity": 0.9244412779808044,
+        "MagneticField": 0.6173155903816223,
+        "Mass": 5.658493204210973E+24,
+        "MassEarth": 0.947503924369812,
+        "OrbitSemiMajorAxis": 249802440000.0,
+        "OrbitEccentricity": 0.04760166257619858,
+        "OrbitInclination": -0.04166974499821663,
+        "OrbitRightAscension": 0.0,
+        "OrbitPeriapsis": 0.0,
+        "OrbitIndex": 3,
+        "Pressure": 1.04933762550354,
+        "Radiation": 6.345644847682585E-24,
+        "Radius": 6454139.5,
+        "Sunlight": 507.498046875,
         "Surface": True,
-        "Temperature": 3.772547960281372,
-        "Fertility": -0.19999998807907104,
+        "Temperature": 11.877347946166992,
+        "Fertility": -0.1600000262260437,
         "HasLocalMarket": True,
         "HasChamberOfCommerce": True,
         "HasWarehouse": True,
         "HasAdministrationCenter": True,
         "HasShipyard": False,
-        "FactionCode": "NC",
-        "FactionName": "NEO Charter Exploration",
-        "GovernorId": "5ceba0296b7aa04fb0dbf704c3be3d42",
-        "GovernorUserName": "DogeConomy",
-        "GovernorCorporationId": "2ed91b7077fd578a6552b48d2b3a95fc",
-        "GovernorCorporationName": "Rubicate's Montem Govmt V2.0",
-        "GovernorCorporationCode": "RMG2",
-        "CurrencyName": "NCE Coupons",
-        "CurrencyCode": "NCC",
-        "CollectorId": "2ed91b7077fd578a6552b48d2b3a95fc",
-        "CollectorName": "Rubicate's Montem Govmt V2.0",
-        "CollectorCode": "RMG2",
-        "BaseLocalMarketFee": 0,
-        "LocalMarketFeeFactor": 3,
-        "WarehouseFee": 100,
-        "PopulationId": "a6f1ef590c2110aa3195e97ef931d122",
+        "FactionCode": "CI",
+        "FactionName": "Castillo-Ito Mercantile",
+        "GoverningEntity": "99aca2be2d2e47be5585f63e7c17ea26",
+        "CurrencyName": "Sol",
+        "CurrencyCode": "CIS",
+        "BaseLocalMarketFee": 0.0,
+        "LocalMarketFeeFactor": 5.0,
+        "WarehouseFee": 100.0,
+        "EstablishmentFee": 0.0,
+        "PopulationId": "d1c90d1c7d92931bfcea1a4dda0fe33c",
         "COGCProgramStatus": "ACTIVE",
         "PlanetTier": 0,
-        "UserNameSubmitted": "STRAKE",
-        "Timestamp": "2023-07-15T00:21:41.935321",
-        "DistanceResults": [],
+        "UserNameSubmitted": "LEGUVAN",
+        "Timestamp": "2024-09-10T15:37:42.141591"
     }
 
 
